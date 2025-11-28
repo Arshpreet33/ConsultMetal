@@ -4,17 +4,30 @@
  * Main application component with routing
  */
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout/Layout';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import './App.css';
 
+// Component to scroll to top on route change
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 function App() {
   return (
     <LanguageProvider>
       <Router>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<ContactPage />} />

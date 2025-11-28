@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
 import companyConfig from '../../config/company.config';
 import './Header.css';
@@ -14,6 +14,7 @@ const Header = () => {
   const { getText, toggleLanguage } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   const nav = companyConfig.navigation;
 
@@ -51,19 +52,19 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className={`header-nav ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
-            <Link to="/" className="nav-link" onClick={closeMobileMenu}>
+            <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={closeMobileMenu}>
               {getText(nav.home)}
             </Link>
-            <Link to="/about" className="nav-link" onClick={closeMobileMenu}>
+            <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} onClick={closeMobileMenu}>
               {getText(nav.aboutUs)}
             </Link>
-            <Link to="/products" className="nav-link" onClick={closeMobileMenu}>
+            <Link to="/products" className={`nav-link ${location.pathname === '/products' ? 'active' : ''}`} onClick={closeMobileMenu}>
               {getText(nav.products)}
             </Link>
-            <Link to="/services" className="nav-link" onClick={closeMobileMenu}>
+            <Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`} onClick={closeMobileMenu}>
               {getText(nav.services)}
             </Link>
-            <Link to="/contact" className="nav-link" onClick={closeMobileMenu}>
+            <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={closeMobileMenu}>
               {getText(nav.contact)}
             </Link>
 
