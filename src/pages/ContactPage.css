@@ -220,6 +220,31 @@
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
+.form-group.error input,
+.form-group.error textarea {
+  border-color: var(--color-error);
+}
+
+.form-group.error input:focus,
+.form-group.error textarea:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+}
+
+.form-success {
+  background-color: #ecfdf5;
+  border: 1px solid #10b981;
+  color: #065f46;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 150px;

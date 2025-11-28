@@ -20,6 +20,71 @@ const ContactPage = () => {
     message: ''
   });
 
+  const [errors, setErrors] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    message: ''
+  });
+  const [formSuccess, setFormSuccess] = useState('');
+
+  const validateField = (name, value) => {
+    switch (name) {
+      case 'name':
+        return !value.trim() ? getText({
+          en: 'Name is required',
+          fr: 'Le nom est requis'
+        }) : '';
+      case 'email':
+        if (!value.trim()) {
+          return getText({
+            en: 'Email is required',
+            fr: 'L\'email est requis'
+          });
+        } else if (!/\S+@\S+\.\S+/.test(value)) {
+          return getText({
+            en: 'Please enter a valid email address',
+            fr: 'Veuillez entrer une adresse email valide'
+          });
+        }
+        return '';
+      default:
+        return '';
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {
+      name: validateField('name', formData.name),
+      phone: '',
+      email: validateField('email', formData.email),
+      message: ''
+    };
+
+    setErrors(newErrors);
+    const hasError = Object.values(newErrors).some(error => error !== '');
+
+    // Focus the first invalid field for accessibility
+    if (hasError) {
+      const firstErrorField = Object.keys(newErrors).find(key => newErrors[key]);
+      if (firstErrorField) {
+        const el = document.getElementById(firstErrorField);
+        if (el && typeof el.focus === 'function') el.focus();
+      }
+    }
+
+    return !hasError;
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    const error = validateField(name, value);
+    setErrors(prev => ({
+      ...prev,
+      [name]: error
+    }));
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -30,15 +95,31 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return; // Stop submission if validation fails
+    }
+
     // TODO: Implement form submission logic
     console.log('Form submitted:', formData);
-    alert(getText({
+    const successMessage = getText({
       en: 'Thank you for contacting us! We will get back to you soon.',
       fr: 'Merci de nous avoir contactés! Nous vous répondrons bientôt.'
-    }));
+    });
+    setFormSuccess(successMessage);
+    // clear success message after 6 seconds
+    setTimeout(() => setFormSuccess(''), 6000);
     
     // Reset form
     setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      message: ''
+    });
+    
+    // Reset errors
+    setErrors({
       name: '',
       phone: '',
       email: '',
@@ -143,8 +224,13 @@ const ContactPage = () => {
 
             {/* Contact Form */}
             <div className="contact-form-section">
-              <form onSubmit={handleSubmit} className="contact-form">
-                <div className="form-group">
+              <form onSubmit={handleSubmit} className="contact-form" noValidate>
+                {formSuccess && (
+                  <div className="form-success" role="status" aria-live="polite">
+                    {formSuccess}
+                  </div>
+                )}
+                <div className={`form-group ${errors.name ? 'error' : ''}`}>
                   <label htmlFor="name">
                     {getText(contact.form.name)}
                   </label>
@@ -154,11 +240,17 @@ const ContactPage = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     required
+                    aria-invalid={errors.name ? 'true' : 'false'}
+                    aria-describedby={errors.name ? 'error-name' : undefined}
                   />
+                  {errors.name && (
+                    <div id="error-name" className="error-message" role="alert" aria-live="assertive">{errors.name}</div>
+                  )}
                 </div>
 
-                <div className="form-group">
+                <div className={`form-group ${errors.phone ? 'error' : ''}`}>
                   <label htmlFor="phone">
                     {getText(contact.form.phone)}
                   </label>
@@ -168,11 +260,15 @@ const ContactPage = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    required
+                    aria-invalid={errors.phone ? 'true' : 'false'}
+                    aria-describedby={errors.phone ? 'error-phone' : undefined}
                   />
+                  {errors.phone && (
+                    <div id="error-phone" className="error-message" role="alert" aria-live="assertive">{errors.phone}</div>
+                  )}
                 </div>
 
-                <div className="form-group">
+                <div className={`form-group ${errors.email ? 'error' : ''}`}>
                   <label htmlFor="email">
                     {getText(contact.form.email)}
                   </label>
@@ -182,11 +278,17 @@ const ContactPage = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     required
+                    aria-invalid={errors.email ? 'true' : 'false'}
+                    aria-describedby={errors.email ? 'error-email' : undefined}
                   />
+                  {errors.email && (
+                    <div id="error-email" className="error-message" role="alert" aria-live="assertive">{errors.email}</div>
+                  )}
                 </div>
 
-                <div className="form-group">
+                <div className={`form-group ${errors.message ? 'error' : ''}`}>
                   <label htmlFor="message">
                     {getText(contact.form.message)}
                   </label>
@@ -196,8 +298,12 @@ const ContactPage = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows="5"
-                    required
+                    aria-invalid={errors.message ? 'true' : 'false'}
+                    aria-describedby={errors.message ? 'error-message' : undefined}
                   ></textarea>
+                  {errors.message && (
+                    <div id="error-message" className="error-message" role="alert" aria-live="assertive">{errors.message}</div>
+                  )}
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-lg">
