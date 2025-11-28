@@ -1,0 +1,10 @@
+/**
+ * Index Styles - ConsultMetal
+ * 
+ * Root level styles (kept minimal)
+ */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

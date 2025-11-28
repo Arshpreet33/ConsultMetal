@@ -1,0 +1,10 @@
+/**
+ * App Styles - ConsultMetal
+ * 
+ * Import all CSS files in proper order
+ */
+
+/* CSS Variables and Base Styles */
+@import './assets/styles/variables.css';
+@import './assets/styles/globals.css';
+@import './assets/styles/utilities.css';

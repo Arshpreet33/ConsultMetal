@@ -1,0 +1,36 @@
+/**
+ * Layout Styles - ConsultMetal
+ */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  /* Add top padding to account for fixed header */
+  padding-top: var(--header-height);
+}
+
+/* Remove padding for pages with full-width heroes */
+.main-content > * {
+  /* First child (hero sections) can overlap header */
+}
+
+.main-content > *:first-child {
+  margin-top: calc(-1 * var(--header-height));
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 70px;
+  }
+
+  .main-content > *:first-child {
+    margin-top: -70px;
+  }
+}
