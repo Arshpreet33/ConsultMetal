@@ -10,6 +10,8 @@ import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout/Layout';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import ProductsPage from './pages/ProductsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import './App.css';
 
 // Component to scroll to top on route change
@@ -33,8 +35,9 @@ function App() {
             <Route path="/" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:slug" element={<ProductDetailPage />} />
             {/* Placeholder routes for future pages */}
-            <Route path="/products" element={<ContactPage />} />
             <Route path="/services" element={<ContactPage />} />
           </Routes>
         </Layout>
