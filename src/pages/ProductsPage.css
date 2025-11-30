@@ -59,7 +59,7 @@
  * BREADCRUMBS
  * ======================================== */
 .breadcrumbs {
-  background-color: var(--bg-secondary);
+  background-color: #f5f5fa;
   padding: var(--space-4) 0;
   border-bottom: 1px solid var(--border-light);
 }
@@ -87,13 +87,13 @@
 }
 
 .breadcrumb-item a {
-  color: var(--color-primary);
+  color: #565695;
   text-decoration: none;
   transition: color var(--transition-fast) var(--easing-default);
 }
 
 .breadcrumb-item a:hover {
-  color: var(--color-primary-dark);
+  color: #343477;
   text-decoration: underline;
 }
 
@@ -127,7 +127,7 @@
 }
 
 .product-card:hover {
-  box-shadow: var(--shadow-blue-lg);
+  box-shadow: 0 12px 32px rgba(52, 52, 119, 0.15);
   transform: translateY(-4px);
 }
 
@@ -186,7 +186,7 @@
 }
 
 .product-title-link:hover {
-  color: var(--color-primary);
+  color: #343477;
 }
 
 .product-title {

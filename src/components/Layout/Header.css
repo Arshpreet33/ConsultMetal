@@ -110,7 +110,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gradient-primary);
+  background: #565695;
   transition: width var(--transition-normal) var(--easing-default);
 }
 

@@ -184,25 +184,25 @@
 }
 
 .btn-primary {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #343477 0%, #565695 100%);
   color: var(--color-white);
-  box-shadow: var(--shadow-blue);
+  box-shadow: 0 4px 14px rgba(52, 52, 119, 0.25);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-blue-lg);
+  box-shadow: 0 6px 20px rgba(52, 52, 119, 0.35);
   color: var(--color-white);
 }
 
 .btn-secondary {
   background-color: var(--color-white);
-  color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  color: #565695;
+  border: 2px solid #565695;
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-primary);
+  background-color: #565695;
   color: var(--color-white);
 }
 

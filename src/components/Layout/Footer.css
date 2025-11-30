@@ -3,7 +3,7 @@
  */
 
 .footer {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #09093B 0%, #1a1a59 100%);
   color: var(--text-white);
   padding: var(--space-16) 0 var(--space-6);
   margin-top: auto;
@@ -90,9 +90,9 @@
 }
 
 .footer-links a:hover {
-  color: var(--text-white);
+  color: #8080b3;
   padding-left: var(--space-4);
-  border-left-color: var(--text-white);
+  border-left-color: #8080b3;
 }
 
 /* ========================================

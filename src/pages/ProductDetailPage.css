@@ -59,7 +59,7 @@
  * BREADCRUMBS
  * ======================================== */
 .breadcrumbs {
-  background-color: var(--bg-secondary);
+  background-color: #f5f5fa;
   padding: var(--space-4) 0;
   border-bottom: 1px solid var(--border-light);
 }
@@ -87,13 +87,13 @@
 }
 
 .breadcrumb-item a {
-  color: var(--color-primary);
+  color: #565695;
   text-decoration: none;
   transition: color var(--transition-fast) var(--easing-default);
 }
 
 .breadcrumb-item a:hover {
-  color: var(--color-primary-dark);
+  color: #343477;
   text-decoration: underline;
 }
 
@@ -194,7 +194,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--color-primary);
+  color: #565695;
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-xl);
 }

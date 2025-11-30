@@ -112,7 +112,7 @@
 .details-heading {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  color: #343477;
   margin: 0 0 var(--space-2) 0;
 }
 
@@ -130,14 +130,14 @@
   padding: var(--space-4);
   background-color: var(--bg-blue);
   border-radius: var(--radius-lg);
-  border-left: 4px solid var(--color-primary);
+  border-left: 4px solid #565695;
 }
 
 .contact-item .icon {
   width: 24px;
   height: 24px;
   flex-shrink: 0;
-  color: var(--color-primary);
+  color: #565695;
   margin-top: 2px;
 }
 
@@ -154,14 +154,14 @@
 }
 
 .contact-item a {
-  color: var(--color-primary);
+  color: #565695;
   text-decoration: none;
   font-size: var(--font-size-base);
   transition: color var(--transition-fast) var(--easing-default);
 }
 
 .contact-item a:hover {
-  color: var(--color-primary-dark);
+  color: #343477;
   text-decoration: underline;
 }
 
@@ -216,8 +216,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: #343477;
+  box-shadow: 0 0 0 3px rgba(52, 52, 119, 0.12);
 }
 
 .form-group.error input,

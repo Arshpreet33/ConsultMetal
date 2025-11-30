@@ -79,7 +79,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: 2.5px;
-  color: var(--color-primary);
+  color: #565695;
   text-transform: uppercase;
   margin-bottom: 0px;
 }
@@ -102,7 +102,7 @@
  * BACKGROUND/HISTORY SECTION (Image on Left)
  * ======================================== */
 .background-section {
-  background-color: var(--bg-secondary);
+  background-color: #f5f5fa;
 }
 
 .background-content {
@@ -234,15 +234,15 @@
 }
 
 .industry-card:hover {
-  border-color: var(--color-primary);
+  border-color: #565695;
   transform: translateY(-4px);
-  box-shadow: var(--shadow-blue);
+  box-shadow: 0 8px 24px rgba(86, 86, 149, 0.2);
 }
 
 .industry-icon {
   width: 80px;
   height: 80px;
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #343477 0%, #565695 100%);
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
@@ -268,7 +268,7 @@
  * CTA SECTION (Between Mission and Industries)
  * ======================================== */
 .cta-section {
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, #1a1a59 0%, #343477 100%);
   padding: var(--space-16) 0;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -306,7 +306,7 @@
 }
 
 .btn-cta {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-4) var(--space-10);
@@ -315,7 +315,7 @@
   text-decoration: none;
   border-radius: var(--radius-lg);
   background-color: var(--text-white);
-  color: var(--color-primary);
+  color: #343477;
   border: 2px solid var(--text-white);
   transition: all var(--transition-normal) var(--easing-default);
   cursor: pointer;
