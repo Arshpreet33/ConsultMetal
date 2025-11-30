@@ -81,9 +81,9 @@ const ProductsPage = () => {
                   <Link to={`/products/${product.slug}`} className="product-title-link">
                     <h2 className="product-title">{getText(product.name)}</h2>
                   </Link>
-                  <p className="product-description">
+                  {/* <p className="product-description">
                     {getText(product.description)}
-                  </p>
+                  </p> */}
                   <Link to={`/products/${product.slug}`} className="btn btn-primary">
                     {getText({
                       en: 'Learn More',

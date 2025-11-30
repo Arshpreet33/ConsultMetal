@@ -9,26 +9,26 @@
 
 export const themeConfig = {
   // ========================================
-  // PRIMARY COLORS - Blue Theme
+  // PRIMARY COLORS - Deep Purple/Blue Theme
   // ========================================
   colors: {
     primary: {
-      main: "#2563eb", // Vibrant blue
-      light: "#3b82f6",
-      dark: "#1e40af",
-      darker: "#1e3a8a",
+      main: "#343477", // Deep purple-blue (primary brand)
+      light: "#565695", // Medium purple-blue
+      dark: "#1a1a59", // Dark purple-blue
+      darker: "#09093B", // Darkest purple-blue
     },
 
     secondary: {
-      main: "#0ea5e9", // Sky blue
-      light: "#38bdf8",
-      dark: "#0284c7",
+      main: "#565695", // Medium purple (for accents)
+      light: "#8080b3", // Light purple-blue
+      dark: "#343477", // Deep purple
     },
 
     accent: {
-      main: "#06b6d4", // Cyan
-      light: "#22d3ee",
-      dark: "#0891b2",
+      main: "#8080b3", // Light purple-blue (for highlights)
+      light: "#a0a0c9", // Even lighter
+      dark: "#565695", // Medium purple
     },
 
     // Neutral colors
@@ -58,8 +58,8 @@ export const themeConfig = {
     background: {
       primary: "#ffffff",
       secondary: "#f9fafb",
-      dark: "#1f2937",
-      blue: "#eff6ff", // Light blue background
+      dark: "#09093B", // Darkest purple for dark sections
+      blue: "#f5f5fa", // Very light purple tint
     },
 
     // Text colors
@@ -68,7 +68,7 @@ export const themeConfig = {
       secondary: "#4b5563",
       light: "#6b7280",
       white: "#ffffff",
-      blue: "#2563eb",
+      blue: "#343477", // Deep purple for emphasis
     },
 
     // Border colors
@@ -76,7 +76,7 @@ export const themeConfig = {
       light: "#e5e7eb",
       medium: "#d1d5db",
       dark: "#9ca3af",
-      blue: "#3b82f6",
+      blue: "#565695", // Medium purple
     },
   },
 
@@ -84,9 +84,9 @@ export const themeConfig = {
   // GRADIENTS
   // ========================================
   gradients: {
-    primary: "linear-gradient(135deg, #2563eb 0%, #1e40af 100%)",
-    secondary: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)",
-    hero: "linear-gradient(135deg, rgba(37, 99, 235, 0.95) 0%, rgba(30, 64, 175, 0.95) 100%)",
+    primary: "linear-gradient(135deg, #343477 0%, #1a1a59 100%)",
+    secondary: "linear-gradient(135deg, #565695 0%, #343477 100%)",
+    hero: "linear-gradient(135deg, rgba(52, 52, 119, 0.95) 0%, rgba(26, 26, 89, 0.95) 100%)",
     overlay:
       "linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6))",
     overlayLight:
@@ -103,8 +103,8 @@ export const themeConfig = {
     xl: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
     "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
     inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
-    blue: "0 10px 30px -5px rgba(37, 99, 235, 0.3)",
-    blueLg: "0 20px 40px -10px rgba(37, 99, 235, 0.4)",
+    blue: "0 10px 30px -5px rgba(52, 52, 119, 0.3)", // Deep purple shadow
+    blueLg: "0 20px 40px -10px rgba(52, 52, 119, 0.4)", // Deep purple shadow
   },
 
   // ========================================

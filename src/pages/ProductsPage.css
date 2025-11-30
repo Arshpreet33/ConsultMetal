@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/products/products-hero.jpg');
+  background-image: url('/images/products/products-hero.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -155,6 +155,20 @@
 
 .product-card:hover .product-image img {
   transform: scale(1.05);
+}
+
+/* Overlay on image when hovered */
+.product-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 89, 0.0); /* dark purple-blue, start transparent */
+  transition: background 200ms var(--easing-default);
+  pointer-events: none;
+}
+
+.product-card:hover .product-image::after {
+  background: rgba(26, 26, 89, 0.7); /* dark purple-blue overlay at ~70% */
 }
 
 .product-content {
