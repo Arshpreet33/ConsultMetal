@@ -12,6 +12,8 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
+import ServicesPage from './pages/ServicesPage';
+import ServiceDetailPage from './pages/ServiceDetailPage';
 import './App.css';
 
 // Component to scroll to top on route change
@@ -37,8 +39,8 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/products/:slug" element={<ProductDetailPage />} />
-            {/* Placeholder routes for future pages */}
-            <Route path="/services" element={<ContactPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:slug" element={<ServiceDetailPage />} />
           </Routes>
         </Layout>
       </Router>

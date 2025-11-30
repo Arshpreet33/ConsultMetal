@@ -1,0 +1,262 @@
+/**
+ * Services Page Styles - ConsultMetal
+ */
+
+/* ========================================
+ * HERO SECTION
+ * ======================================== */
+.services-hero {
+  position: relative;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/images/services/services-hero.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 30, 30, 0.7);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--text-white);
+  padding-top: var(--header-height);
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 3px;
+  margin-bottom: var(--space-3);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-title {
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-white);
+  margin: 0;
+  text-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+ * BREADCRUMBS
+ * ======================================== */
+.breadcrumbs {
+  background-color: #f5f5fa;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--font-size-sm);
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: '›';
+  margin-left: var(--space-2);
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+.breadcrumb-item a {
+  color: #565695;
+  text-decoration: none;
+  transition: color var(--transition-fast) var(--easing-default);
+}
+
+.breadcrumb-item a:hover {
+  color: #343477;
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: var(--text-secondary);
+}
+
+/* ========================================
+ * SERVICES GRID
+ * ======================================== */
+.services-content {
+  background-color: var(--bg-primary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: var(--space-12);
+  margin-top: var(--space-8);
+}
+
+.service-card {
+  background-color: var(--bg-white);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-normal) var(--easing-default);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  box-shadow: 0 12px 32px rgba(52, 52, 119, 0.15);
+  transform: translateY(-4px);
+}
+
+.service-image-link {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  padding-top: 60%; /* 5:3 aspect ratio */
+}
+
+.service-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow) var(--easing-default);
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+/* Overlay on image when hovered */
+.service-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 89, 0.0); /* dark purple-blue, start transparent */
+  transition: background 200ms var(--easing-default);
+  pointer-events: none;
+}
+
+.service-card:hover .service-image::after {
+  background: rgba(26, 26, 89, 0.7); /* dark purple-blue overlay at ~70% */
+}
+
+.service-content {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  flex: 1;
+}
+
+.service-title-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-fast) var(--easing-default);
+}
+
+.service-title-link:hover {
+  color: #343477;
+}
+
+.service-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: var(--line-height-tight);
+}
+
+.service-description {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  flex: 1;
+}
+
+.service-content .btn {
+  align-self: flex-start;
+  margin-top: var(--space-2);
+}
+
+/* ========================================
+ * RESPONSIVE
+ * ======================================== */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    height: 350px;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-4xl);
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-content {
+    padding: var(--space-6);
+  }
+
+  .service-title {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero {
+    height: 250px;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .service-content .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
