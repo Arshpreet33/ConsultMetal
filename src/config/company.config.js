@@ -152,7 +152,7 @@ export const companyConfig = {
           "En décomposant un produit en ses différentes pièces, nous sommes en mesure d'analyser sa conception et, finalement, la façon dont il sera produit. Minimiser les opérations impliquées dans sa fabrication permettra de plus grands gains de temps et d'efficacité tout en entraînant des gains de productivité et de rentabilité. Pouvons-nous réduire le nombre de coups? Pouvons-nous avoir moins de plis? Fondamentalement, pouvons-nous le produire plus rapidement et moins cher tout en maintenant la même norme de qualité ou une norme supérieure?",
         ],
       },
-      image: "/images/services/product-analysis.jpeg",
+      image: "/images/services/product-analysis.png",
     },
     {
       id: "software-recommendation",
