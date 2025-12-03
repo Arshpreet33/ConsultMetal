@@ -29,7 +29,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(30, 30, 30, 0.7);
+  background: var(--overlay-hero);
   z-index: 1;
 }
 
@@ -68,6 +68,8 @@
   margin: 0;
 }
 
+/* Hero animation moved to shared component: src/components/Shared/HeroAnimated.css */
+
 /* ========================================
  * COMMON SECTION STYLES
  * ======================================== */
@@ -86,10 +88,98 @@
 
 .about-page .section-title {
   font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-bold);
   color: var(--text-primary);
-  margin: 0 0 var(--space-10) 0;
+  margin: 0; /* spacing moved to .section-heading */
   line-height: 1.2;
+}
+
+/* ========================================
+ * SECTION HEADING WITH RULE + ANIMATION
+ * ======================================== */
+.about-page .section-heading {
+  margin-bottom: var(--space-10);
+  opacity: 0;
+  transform: translateX(0); /* overridden by directional rules */
+  transition: transform 1400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 1400ms ease;
+  will-change: transform, opacity;
+}
+
+/* direction-specific starting positions */
+.about-page .section-heading[data-dir="from-left"] {
+  transform: translateX(-200px);
+}
+
+.about-page .section-heading[data-dir="from-right"] {
+  transform: translateX(200px);
+}
+
+/* animated state when scrolled into view */
+.about-page .section-heading.animate-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.about-page .section-rule {
+  display: inline-block;
+  width: 64px;
+  height: 2px;
+  background: currentColor; /* match text color */
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center; /* default origin */
+  transition: transform 1200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Direction-based rule origin for consistent draw direction */
+.about-page .section-heading[data-dir="from-left"] .section-rule {
+  transform-origin: left center;
+}
+
+.about-page .section-heading[data-dir="from-right"] .section-rule {
+  transform-origin: right center;
+}
+
+/* Animate the rule and the heading when in view */
+.about-page .section-heading.animate-in .section-rule {
+  transform: scaleX(1);
+}
+
+.about-page .section-title {
+  font-size: 60px;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.about-page .section-title .title-our {
+  font-weight: 500;
+}
+
+.about-page .section-title .title-subject {
+  font-weight: 300;
+}
+
+/* smaller screen tweaks: slightly smaller rule and tighter spacing */
+@media (max-width: 768px) {
+  .about-page .section-heading {
+    gap: var(--space-3);
+  }
+
+  .about-page .section-rule {
+    width: 48px;
+    height: 2px;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-page .section-heading,
+  .about-page .section-rule {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }
 
 .section-header.centered {
@@ -110,6 +200,14 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-20);
   align-items: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.background-content.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .background-image {
@@ -138,11 +236,20 @@
 }
 
 .background-paragraph {
-  font-size: var(--font-size-lg);
+  font-size: 15px;
+  font-weight: 400;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: #000000;
   margin: 0;
   text-align: justify;
+}
+
+/* First paragraph as subheader */
+.background-paragraph:first-child {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
 }
 
 /* ========================================
@@ -157,6 +264,14 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-20);
   align-items: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.mission-content.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .mission-text {
@@ -170,11 +285,20 @@
 }
 
 .mission-paragraph {
-  font-size: var(--font-size-lg);
+  font-size: 15px;
+  font-weight: 400;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: #000000;
   margin: 0;
   text-align: justify;
+}
+
+/* First paragraph as subheader */
+.mission-paragraph:first-child {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
 }
 
 .mission-image {
@@ -192,143 +316,12 @@
   display: block;
 }
 
-/* ========================================
- * INDUSTRIES SECTION
- * ======================================== */
-.industries-section {
-  background-color: var(--bg-primary);
-}
-
-.industries-section .section-header {
-  text-align: center;
-}
-
-.industries-section .section-title {
-  color: var(--text-primary);
-  font-size: var(--font-size-4xl);
-}
-
-.industries-section .section-description {
-  color: var(--text-secondary);
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--space-16);
-}
-
-.industries-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-8);
-}
-
-.industry-card {
-  background-color: var(--bg-primary);
-  border: 2px solid var(--border-light);
-  border-radius: var(--radius-xl);
-  padding: var(--space-12) var(--space-8);
-  text-align: center;
-  transition: all var(--transition-normal) var(--easing-default);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-6);
-}
-
-.industry-card:hover {
-  border-color: #565695;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(86, 86, 149, 0.2);
-}
-
-.industry-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #343477 0%, #565695 100%);
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-white);
-  font-size: 40px;
-}
-
-.industry-icon svg {
-  width: 48px;
-  height: 48px;
-}
-
-.industry-name {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-primary);
-  margin: 0;
-  line-height: var(--line-height-tight);
-}
-
-/* ========================================
- * CTA SECTION (Between Mission and Industries)
- * ======================================== */
-.cta-section {
-  background: linear-gradient(135deg, #1a1a59 0%, #343477 100%);
-  padding: var(--space-16) 0;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  width: 100vw;
-}
-
-.cta-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--space-12);
-}
-
-.cta-text {
-  flex: 1;
-}
-
-.cta-title {
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-white);
-  margin: 0 0 var(--space-3) 0;
-  line-height: var(--line-height-tight);
-}
-
-.cta-subtitle {
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-  color: rgba(255, 255, 255, 0.95);
-  margin: 0;
-}
-
-.cta-button {
-  flex-shrink: 0;
-}
-
-.btn-cta {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-4) var(--space-10);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  text-decoration: none;
-  border-radius: var(--radius-lg);
-  background-color: var(--text-white);
-  color: #343477;
-  border: 2px solid var(--text-white);
-  transition: all var(--transition-normal) var(--easing-default);
-  cursor: pointer;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-}
-
-.btn-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
-  background-color: transparent;
-  color: var(--text-white);
-}
+/* Industries and CTA sections have been moved into shared components.
+   Keep their CSS in `src/components/Shared/CTASection.css` and
+   `src/components/Shared/IndustriesSection.css` respectively.
+*/
+/* CTA has been moved to its shared component; styles live in
+   `src/components/Shared/CTASection.css` */
 
 /* ========================================
  * RESPONSIVE STYLES
@@ -350,15 +343,7 @@
     order: -1;
   }
 
-  .cta-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .industries-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-6);
-  }
+  /* CTA and Industries responsive rules moved to shared component CSS */
 }
 
 @media (max-width: 768px) {
@@ -394,22 +379,7 @@
     text-align: left;
   }
 
-  .cta-section {
-    padding: var(--space-12) 0;
-  }
-
-  .cta-title {
-    font-size: var(--font-size-2xl);
-  }
-
-  .cta-subtitle {
-    font-size: var(--font-size-base);
-  }
-
-  .industries-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
+  /* CTA and Industries responsive rules moved to shared component CSS */
 }
 
 @media (max-width: 480px) {
@@ -434,17 +404,5 @@
     height: 300px;
   }
 
-  .cta-title {
-    font-size: var(--font-size-xl);
-  }
-
-  .cta-subtitle {
-    font-size: var(--font-size-sm);
-  }
-
-  .btn-cta {
-    padding: var(--space-3) var(--space-6);
-    font-size: var(--font-size-sm);
-    width: 100%;
-  }
+  /* CTA responsive rules moved to `src/components/Shared/CTASection.css` */
 }

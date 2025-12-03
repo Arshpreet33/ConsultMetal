@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/services/services-hero.png');
+  background-image: url('/images/services/services-hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(30, 30, 30, 0.7);
+  background: var(--overlay-hero);
   z-index: 1;
 }
 
@@ -37,6 +37,24 @@
   text-align: center;
   color: var(--text-white);
   padding-top: var(--header-height);
+}
+
+/* ========================================
+ * SERVICE PAGE - ICON TONE
+ * Make icons on the Services page a light grey tone
+ * Scoped to services-page only
+ * ======================================== */
+.services-page .icon,
+.services-page .services-icon,
+.services-page .industries-icon {
+  color: var(--color-gray-400);
+  fill: currentColor; /* for SVG icons that use currentColor */
+  stroke: currentColor;
+}
+
+.services-page svg {
+  color: var(--color-gray-400);
+  fill: currentColor;
 }
 
 .hero-subtitle {
@@ -110,7 +128,8 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  /* Default desktop: 3 equal columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-12);
   margin-top: var(--space-8);
 }
@@ -213,6 +232,14 @@
 /* ========================================
  * RESPONSIVE
  * ======================================== */
+/* Medium screens (e.g., laptops & smaller desktops): use 2 columns */
+@media (max-width: 1366px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-10);
+  }
+}
+
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: 1fr;

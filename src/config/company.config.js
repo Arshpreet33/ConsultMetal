@@ -63,7 +63,7 @@ export const companyConfig = {
           "Les séquences de pliage peuvent également être déterminées à l'avance afin de maintenir le flux de production.",
         ],
       },
-      image: "/images/products/nesting-software.png",
+      image: "/images/products/nesting-software.jpg",
     },
     {
       id: "cad-cam-software",
@@ -117,7 +117,7 @@ export const companyConfig = {
           "Les machines doivent être considérées comme une cellule. Déterminer si une seule cellule est indépendante ou dépendante d'une autre est crucial. L'usine dans son ensemble doit être considérée comme une entité autonome avec chaque cellule jouant un rôle essentiel. En déterminant le bon chemin de travail et en liant ensemble les diverses infrastructures, on déterminera finalement la durabilité et le succès à long terme.",
         ],
       },
-      image: "/images/services/workflow-design.png",
+      image: "/images/services/workflow-design.jpg",
     },
     {
       id: "product-analysis",
@@ -138,7 +138,7 @@ export const companyConfig = {
           "En décomposant un produit en ses différentes pièces, nous sommes en mesure d'analyser sa conception et, finalement, la façon dont il sera produit. Minimiser les opérations impliquées dans sa fabrication permettra de plus grands gains de temps et d'efficacité tout en entraînant des gains de productivité et de rentabilité. Pouvons-nous réduire le nombre de coups? Pouvons-nous avoir moins de plis? Fondamentalement, pouvons-nous le produire plus rapidement et moins cher tout en maintenant la même norme de qualité ou une norme supérieure?",
         ],
       },
-      image: "/images/services/product-analysis.png",
+      image: "/images/services/product-analysis.jpg",
     },
     {
       id: "software-recommendation",
@@ -159,7 +159,7 @@ export const companyConfig = {
           "En analysant les opérations depuis l'étape de saisie des commandes jusqu'à la production finale, nous pouvons prendre des décisions éclairées sur le type de plateforme requis. Adopter une approche dispersée entraîne souvent des dépenses inutiles. Le logiciel doit être pertinent pour les opérations en cours tout en étant suffisamment flexible pour évoluer à mesure que vous grandissez.",
         ],
       },
-      image: "/images/services/software-recommendation.png",
+      image: "/images/services/software-recommendation.jpg",
     },
     {
       id: "software-development",
@@ -184,7 +184,7 @@ export const companyConfig = {
           "Le développement de programmes personnalisés peut être une solution autonome ou faire partie d'un ensemble plus large.",
         ],
       },
-      image: "/images/services/software-development.png",
+      image: "/images/services/software-development.jpg",
     },
     {
       id: "capital-expenditure",
@@ -209,7 +209,7 @@ export const companyConfig = {
           "En fin de compte, nous devons nous demander quel sera notre retour sur investissement.",
         ],
       },
-      image: "/images/services/capital-expenditure.jpeg",
+      image: "/images/services/capital-expenditure.jpg",
     },
     {
       id: "cad-development",
@@ -232,7 +232,7 @@ export const companyConfig = {
           "La modélisation paramétrique joue un rôle essentiel dans les gammes de produits d'aujourd'hui. Être capable de fabriquer des produits similaires avec des dimensions variables sans avoir à redessiner constamment un nouveau modèle est essentiel à la fabrication allégée. Imaginez pouvoir contrôler dynamiquement vos modèles CAO. Chez Consult Metal, nous faisons également cela.",
         ],
       },
-      image: "/images/services/cad-development.png",
+      image: "/images/services/cad-development.jpg",
     },
   ],
 
@@ -292,16 +292,20 @@ export const companyConfig = {
       },
       paragraphs: [
         {
-          en: "With more than 20 plus years in the sheet metal industry, the experts at Consult Metal are at the cutting-edge of lean manufacturing.",
-          fr: "Avec plus de 20 ans d'expérience dans l'industrie de la tôle, les experts de Consult Metal sont à la pointe de la fabrication lean.",
+          en: "Your Partner in Lean Manufacturing Excellence",
+          fr: "Votre partenaire d'excellence en fabrication lean",
         },
         {
-          en: "We offer the most up-to-date software packages as well as knowledge-based services in order to optimize your operations and minimize costs. From order entry through to product design and final output, we can analyze each and every step of operations in order to gain maximum efficiency at every stage of the manufacturing process.",
-          fr: "Nous offrons les progiciels les plus récents ainsi que des services basés sur les connaissances afin d'optimiser vos opérations et de minimiser les coûts. De la saisie des commandes à la conception du produit et à la production finale, nous pouvons analyser chaque étape des opérations afin d'obtenir une efficacité maximale à chaque étape du processus de fabrication.",
+          en: "With over 20 years of experience in the sheet metal industry, Consult Metal is your trusted partner for driving efficiency and reducing costs. We combine cutting-edge software solutions with deep industry expertise to help you streamline operations and maximize productivity.",
+          fr: "Avec plus de 20 ans d'expérience dans l'industrie de la tôle, Consult Metal est votre partenaire de confiance pour améliorer l'efficacité et réduire les coûts. Nous combinons des solutions logicielles de pointe avec une expertise industrielle approfondie pour vous aider à rationaliser les opérations et maximiser la productivité.",
         },
         {
-          en: "Know that our professionals have first-hand knowledge of the production process. Having worked our way up from the shop floor, we are able to see operations both from an operator's and manager's perspective.",
-          fr: "Sachez que nos professionnels ont une connaissance de première main du processus de production. Ayant travaillé depuis l'atelier, nous sommes en mesure de voir les opérations à la fois du point de vue de l'opérateur et du gestionnaire.",
+          en: "From order entry to product design and final output, we analyze every step of your process to uncover opportunities for improvement. Our goal: deliver lean, cost-effective manufacturing solutions that work for you.",
+          fr: "De la saisie des commandes à la conception du produit et à la production finale, nous analysons chaque étape de votre processus pour découvrir des opportunités d'amélioration. Notre objectif : fournir des solutions de fabrication lean et rentables qui fonctionnent pour vous.",
+        },
+        {
+          en: "What sets us apart? Our team has hands-on experience from the shop floor to management. This unique perspective allows us to provide practical, results-driven strategies tailored to your business needs.",
+          fr: "Qu'est-ce qui nous distingue ? Notre équipe possède une expérience pratique de l'atelier à la direction. Cette perspective unique nous permet de fournir des stratégies pratiques et axées sur les résultats, adaptées aux besoins de votre entreprise.",
         },
       ],
     },
@@ -340,12 +344,20 @@ export const companyConfig = {
       },
       paragraphs: [
         {
-          en: "At Consult Metal our goal is to foster a long-term relationship with our clients. The manufacturing process is a constantly evolving one and we strive to be there every step of the way. Not satisfied in merely pushing a product or service, we aim to offer a total solution with short-term results and long-term vision. Our various products and services are tools within our arsenal with which we can assist you in achieving operational success.",
-          fr: "Chez Consult Metal, notre objectif est de favoriser une relation à long terme avec nos clients. Le processus de fabrication est en constante évolution et nous nous efforçons d'être là à chaque étape du processus. Non satisfaits de simplement pousser un produit ou un service, nous visons à offrir une solution totale avec des résultats à court terme et une vision à long terme. Nos différents produits et services sont des outils dans notre arsenal avec lesquels nous pouvons vous aider à atteindre le succès opérationnel.",
+          en: "Building Long-Term Partnerships for Sustainable Success",
+          fr: "Construire des partenariats à long terme pour un succès durable",
         },
         {
-          en: "Achieving maximum automation is the ultimate goal in any manufacturing solution. By minimizing intervention, and thus down time, maximum throughput equates to maximized profits.",
-          fr: "Atteindre une automatisation maximale est l'objectif ultime de toute solution de fabrication. En minimisant les interventions et donc les temps d'arrêt, un débit maximal équivaut à des profits maximisés.",
+          en: "At Consult Metal, our mission is to foster lasting relationships with our clients. Manufacturing is a constantly evolving process, and we strive to be your trusted partner at every stage. We don't just sell products or services—we deliver complete solutions that combine short-term results with a long-term vision for growth.",
+          fr: "Chez Consult Metal, notre mission est de favoriser des relations durables avec nos clients. La fabrication est un processus en constante évolution, et nous nous efforçons d'être votre partenaire de confiance à chaque étape. Nous ne vendons pas seulement des produits ou des services—nous livrons des solutions complètes qui combinent des résultats à court terme avec une vision à long terme pour la croissance.",
+        },
+        {
+          en: "Our diverse range of tools and services is designed to help you achieve operational excellence and stay ahead in a competitive market.",
+          fr: "Notre gamme diversifiée d'outils et de services est conçue pour vous aider à atteindre l'excellence opérationnelle et à garder une longueur d'avance sur un marché concurrentiel.",
+        },
+        {
+          en: "Maximum automation is the ultimate goal of any modern manufacturing solution. By reducing manual intervention and minimizing downtime, we enable continuous production flow, which translates into higher throughput and maximized profits.",
+          fr: "L'automatisation maximale est l'objectif ultime de toute solution de fabrication moderne. En réduisant l'intervention manuelle et en minimisant les temps d'arrêt, nous permettons un flux de production continu, ce qui se traduit par un débit plus élevé et des profits maximisés.",
         },
       ],
     },

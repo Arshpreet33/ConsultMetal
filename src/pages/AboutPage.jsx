@@ -4,40 +4,57 @@
  * About Us page: Hero → Background → Mission → CTA → Industries
  */
 
+import { useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import companyConfig from '../config/company.config';
+import CTASection from '../components/Shared/CTASection';
+import IndustriesSection from '../components/Shared/IndustriesSection';
+import HeroAnimated from '../components/Shared/HeroAnimated';
 import './AboutPage.css';
 
 const AboutPage = () => {
   const { getText } = useLanguage();
-  const { about, industries } = companyConfig;
+  const { about } = companyConfig;
 
-  // Industry icons mapping based on emoji
-  const industryIcons = {
-    'HVAC': '🌡️',
-    'Door': '🚪',
-    'Stainless': '⚙️',
-    'Lab': '🔬',
-    'Agricultural': '🚜',
-    'Job': '🔧',
-  };
+  useEffect(() => {
+    // Animate section headings
+    const headings = document.querySelectorAll('.about-page .section-heading');
+    const backgroundContent = document.querySelector('.background-content');
+    const missionContent = document.querySelector('.mission-content');
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '-50px 0px' }
+    );
 
-  const getIndustryIcon = (industryName) => {
-    const name = industryName.en || industryName;
-    if (name.includes('HVAC')) return industryIcons['HVAC'];
-    if (name.includes('Door')) return industryIcons['Door'];
-    if (name.includes('Stainless')) return industryIcons['Stainless'];
-    if (name.includes('Lab')) return industryIcons['Lab'];
-    if (name.includes('Agricultural')) return industryIcons['Agricultural'];
-    if (name.includes('Job')) return industryIcons['Job'];
-    return industryIcons['HVAC']; // default
-  };
+    // Observe headings
+    if (headings && headings.length > 0) {
+      headings.forEach((h) => observer.observe(h));
+    }
+    
+    // Observe content sections
+    if (backgroundContent) observer.observe(backgroundContent);
+    if (missionContent) observer.observe(missionContent);
 
-  const getIconClass = (industryName) => {
-    const name = industryName.en || industryName;
-    if (name.includes('Agricultural')) return 'industry-icon tractor';
-    return 'industry-icon';
-  };
+    return () => {
+      if (headings && headings.length > 0) {
+        headings.forEach((h) => observer.unobserve(h));
+      }
+      if (backgroundContent) observer.unobserve(backgroundContent);
+      if (missionContent) observer.unobserve(missionContent);
+    };
+  }, []);
+
+  // Hero animation is handled by the shared `HeroAnimated` component
+
+  // Hero animation is handled by the shared `HeroAnimated` component
 
   return (
     <div className="about-page">
@@ -46,9 +63,11 @@ const AboutPage = () => {
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <p className="hero-subtitle">{getText(about.hero.title)}</p>
-            <h1 className="hero-title">{getText(about.hero.heading)}</h1>
-            <p className="hero-description">{getText(about.hero.subtitle)}</p>
+            <HeroAnimated
+              title={getText(about.hero.heading)}
+              description={getText(about.hero.subtitle)}
+              clipOriginY="30%"
+            />
           </div>
         </div>
       </section>
@@ -61,8 +80,12 @@ const AboutPage = () => {
               <img src="/images/about/history.jpeg" alt="Our History" />
             </div>
             <div className="background-text">
-              <p className="section-label">{getText(about.background.label)}</p>
-              <h2 className="section-title">{getText(about.background.title)}</h2>
+              {/* <p className="section-label">{getText(about.background.label)}</p> */}
+              <div className="section-heading" data-dir="from-right">
+                <h2 className="section-title">
+                  <span className="title-our">Our</span> <span className="title-subject">History</span>
+                </h2>
+              </div>
               <div className="background-paragraphs">
                 {about.background.paragraphs.map((paragraph, index) => (
                   <p key={index} className="background-paragraph">
@@ -80,8 +103,12 @@ const AboutPage = () => {
         <div className="container">
           <div className="mission-content">
             <div className="mission-text">
-              <p className="section-label">{getText(about.mission.label)}</p>
-              <h2 className="section-title">{getText(about.mission.title)}</h2>
+              {/* <p className="section-label">{getText(about.mission.label)}</p> */}
+              <div className="section-heading" data-dir="from-left">
+                <h2 className="section-title">
+                  <span className="title-our">Our</span> <span className="title-subject">Mission</span>
+                </h2>
+              </div>
               <div className="mission-paragraphs">
                 {about.mission.paragraphs.map((paragraph, index) => (
                   <p key={index} className="mission-paragraph">
@@ -97,48 +124,11 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* CTA Section - Between Mission and Industries */}
-      <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <div className="cta-text">
-              <h2 className="cta-title">{getText(about.cta.title)}</h2>
-              <p className="cta-subtitle">{getText(about.cta.subtitle)}</p>
-            </div>
-            <div className="cta-button">
-              <a href="/contact" className="btn btn-cta">
-                {getText(about.cta.buttonText)}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* CTA Section */}
+      <CTASection />
 
       {/* Industries We Serve Section */}
-      <section className="industries-section section">
-        <div className="container">
-          <div className="section-header centered">
-            <h2 className="section-title">{getText(industries.title)}</h2>
-            <p className="section-description">
-              {getText({
-                en: "Specialized expertise across diverse manufacturing sectors",
-                fr: "Expertise spécialisée dans divers secteurs manufacturiers"
-              })}
-            </p>
-          </div>
-
-          <div className="industries-grid">
-            {industries.list.map((industry, index) => (
-              <div key={index} className="industry-card">
-                <div className={getIconClass(industry.name)}>
-                  {getIndustryIcon(industry.name)}
-                </div>
-                <h3 className="industry-name">{getText(industry.name)}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <IndustriesSection />
     </div>
   );
 };

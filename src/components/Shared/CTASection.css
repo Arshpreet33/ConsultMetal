@@ -1,0 +1,118 @@
+/**
+ * CTA Section Styles - ConsultMetal
+ */
+
+.cta-section {
+  background: linear-gradient(135deg, #1a1a59 0%, #343477 100%);
+  padding: var(--space-16) 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+  overflow: hidden;
+}
+
+.cta-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.cta-text {
+  flex: 1;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-text.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.cta-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-white);
+  margin: 0 0 var(--space-3) 0;
+  line-height: var(--line-height-tight);
+}
+
+.cta-subtitle {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+}
+
+.cta-button {
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.45s;
+}
+
+.cta-button.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.btn-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-10);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-lg);
+  background-color: var(--text-white);
+  color: #343477;
+  border: 2px solid var(--text-white);
+  transition: all var(--transition-normal) var(--easing-default);
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  color: var(--text-white);
+}
+
+/* ========================================
+ * RESPONSIVE
+ * ======================================== */
+@media (max-width: 1024px) {
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .cta-subtitle {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: var(--space-12) 0;
+  }
+
+  .cta-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .btn-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}

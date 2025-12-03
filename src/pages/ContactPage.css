@@ -28,7 +28,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(30, 30, 30, 0.7);
+  background: var(--overlay-hero);
   z-index: 1;
 }
 

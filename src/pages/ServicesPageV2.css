@@ -1,0 +1,280 @@
+/**
+ * ServicesPageV2.css
+ * 
+ * Modern sleek design with:
+ * - Bigger images (80% taller containers)
+ * - Bottom text overlay with blue gradient
+ * - Minimal spacing (8px gap)
+ * - No rounded corners
+ * - Full dark overlay on hover with scale effect
+ */
+
+/* Hero Section */
+.services-page-v2 .services-hero {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/images/services/services-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
+}
+
+.services-page-v2 .services-content {
+  padding-bottom: var(--space-16);
+}
+
+.services-page-v2 .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--overlay-hero);
+  z-index: 1;
+}
+
+.services-page-v2 .hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--color-white);
+}
+
+/* Breadcrumbs */
+.services-page-v2 .breadcrumbs {
+  background: var(--color-gray-50);
+  padding: var(--space-4) 0;
+}
+
+.services-page-v2 .breadcrumb-list {
+  list-style: none;
+  display: flex;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+}
+
+.services-page-v2 .breadcrumb-item a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.services-page-v2 .breadcrumb-item a:hover {
+  color: var(--color-primary-dark);
+}
+
+.services-page-v2 .breadcrumb-item.active {
+  color: var(--color-gray-600);
+}
+
+.services-page-v2 .breadcrumb-item:not(:last-child)::after {
+  content: '/';
+  margin-left: var(--space-2);
+  color: var(--color-gray-400);
+}
+
+/* Services Grid V2 - Modern Design */
+.services-grid-v2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+}
+
+.service-card-v2 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  background: var(--color-black);
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.service-card-v2.animate-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card-v2.animate-in:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.service-card-v2.animate-in:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.service-card-v2.animate-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.service-card-v2.animate-in:nth-child(4) {
+  animation-delay: 0s;
+}
+
+.service-card-v2.animate-in:nth-child(5) {
+  animation-delay: 0.15s;
+}
+
+.service-card-v2.animate-in:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+.service-card-v2:hover {
+  transform: translateY(-4px);
+}
+
+/* Image wrapper */
+.service-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.service-image-v2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card-v2:hover .service-image-v2 {
+  transform: scale(1.08);
+}
+
+/* Full dark overlay - only visible on hover */
+.service-overlay-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.service-card-v2:hover .service-overlay-full {
+  opacity: 1;
+}
+
+/* Text overlay at bottom with blue gradient */
+.service-text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-6) var(--space-5);
+  background: linear-gradient(
+    to top,
+    rgba(42, 42, 110, 0.8) 0%,
+    rgba(58, 58, 122, 0.7) 30%,
+    rgba(74, 74, 146, 0.5) 60%,
+    rgba(74, 74, 146, 0.2) 85%,
+    rgba(74, 74, 146, 0) 100%
+  );
+  z-index: 3;
+  transition: opacity 0.4s ease;
+}
+
+.service-title-v2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin: 0 0 var(--space-3) 0;
+  line-height: var(--line-height-tight);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card-v2:hover .service-title-v2 {
+  transform: scale(1.02);
+}
+
+.service-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-white);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.service-card-v2:hover .service-cta {
+  opacity: 1;
+  transform: translateX(0) scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 1366px) {
+  .services-grid-v2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+  
+  .service-card-v2 {
+    height: 480px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  
+  .service-card-v2 {
+    height: 420px;
+  }
+  
+  .service-title-v2 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .service-text-overlay {
+    padding: var(--space-5) var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page-v2 .services-hero {
+    min-height: 50vh;
+  }
+  
+  .service-card-v2 {
+    height: 360px;
+  }
+  
+  .service-title-v2 {
+    font-size: var(--font-size-base);
+  }
+  
+  .service-text-overlay {
+    padding: var(--space-4) var(--space-3);
+  }
+}

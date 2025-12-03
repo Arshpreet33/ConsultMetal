@@ -7,6 +7,9 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import companyConfig from '../config/company.config';
+import CTASection from '../components/Shared/CTASection';
+import IndustriesSection from '../components/Shared/IndustriesSection';
+import HeroAnimated from '../components/Shared/HeroAnimated';
 import './ProductsPage.css';
 
 const ProductsPage = () => {
@@ -20,18 +23,11 @@ const ProductsPage = () => {
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <p className="hero-subtitle">
-              {getText({
-                en: 'OUR PRODUCTS',
-                fr: 'NOS PRODUITS'
-              })}
-            </p>
-            <h1 className="hero-title">
-              {getText({
-                en: 'Products',
-                fr: 'Produits'
-              })}
-            </h1>
+            <HeroAnimated
+              subtitle={getText({ en: 'OUR PRODUCTS', fr: 'NOS PRODUITS' })}
+              title={getText({ en: 'Products', fr: 'Produits' })}
+              clipOriginY="30%"
+            />
           </div>
         </div>
       </section>
@@ -96,6 +92,12 @@ const ProductsPage = () => {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <CTASection />
+
+      {/* Industries We Serve Section */}
+      <IndustriesSection />
     </div>
   );
 };

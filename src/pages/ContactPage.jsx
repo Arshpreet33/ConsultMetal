@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import companyConfig from '../config/company.config';
 import './ContactPage.css';
+import HeroAnimated from '../components/Shared/HeroAnimated';
 
 const ContactPage = () => {
   const { getText } = useLanguage();
@@ -134,13 +135,11 @@ const ContactPage = () => {
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <p className="hero-subtitle">
-              {getText({
-                en: 'CONTACT US',
-                fr: 'CONTACTEZ-NOUS'
-              })}
-            </p>
-            <h1 className="hero-title">Contact</h1>
+            <HeroAnimated
+              subtitle={getText({ en: 'CONTACT US', fr: 'CONTACTEZ-NOUS' })}
+              title={getText({ en: 'Contact', fr: 'Contact' })}
+              clipOriginY="30%"
+            />
           </div>
         </div>
       </section>

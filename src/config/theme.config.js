@@ -125,6 +125,18 @@ export const themeConfig = {
   },
 
   // ========================================
+  // OVERLAY COLORS (Hero & Industries)
+  // These are used for backdrop overlays (e.g., hero sections and industries)
+  // Exported as hex and opacity so that the CSS generator can create variables
+  // and the value can be reused across pages.
+  overlays: {
+    hero: "#000000", // default hero overlay color (blackish)
+    industries: "#000000", // industries overlay color (same by default)
+    heroOpacity: 0.7,
+    industriesOpacity: 0.7,
+  },
+
+  // ========================================
   // SPACING SCALE
   // ========================================
   spacing: {

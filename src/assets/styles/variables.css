@@ -80,6 +80,15 @@
   --gradient-hero: linear-gradient(135deg, rgba(52, 52, 119, 0.95) 0%, rgba(26, 26, 89, 0.95) 100%);
   --gradient-overlay: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
   --gradient-overlay-light: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+
+  /* ========================================
+   * OVERLAY COLORS (Hero & Industries)
+   * The overlay can be configured in theme.config.js and is exposed
+   * as CSS variables for reuse across hero sections and the industries
+   * backdrop.
+   * ======================================== */
+  --overlay-hero: rgba(0, 0, 0, 0.5);
+  --overlay-industries: rgba(0, 0, 0, 0.5);
   
   /* ========================================
    * SHADOWS

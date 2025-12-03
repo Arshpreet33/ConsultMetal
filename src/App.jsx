@@ -13,6 +13,8 @@ import ContactPage from './pages/ContactPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import ServicesPage from './pages/ServicesPage';
+import ServicesPageV2 from './pages/ServicesPageV2';
+import ServicesPageV3 from './pages/ServicesPageV3';
 import ServiceDetailPage from './pages/ServiceDetailPage';
 import './App.css';
 
@@ -40,6 +42,8 @@ function App() {
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/products/:slug" element={<ProductDetailPage />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services-v2" element={<ServicesPageV2 />} />
+            <Route path="/services-v3" element={<ServicesPageV3 />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
           </Routes>
         </Layout>
