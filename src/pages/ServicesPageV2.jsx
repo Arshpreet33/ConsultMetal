@@ -19,7 +19,7 @@ import './ServicesPageV2.css';
 
 const ServicesPageV2 = () => {
   const { getText } = useLanguage();
-  const { services } = companyConfig;
+  const { services, servicesPage } = companyConfig;
   const cardsRef = useRef([]);
 
   useEffect(() => {
@@ -58,6 +58,7 @@ const ServicesPageV2 = () => {
           <div className="hero-content">
             <HeroAnimated
               title={getText({ en: 'Services', fr: 'Services' })}
+              description={getText(servicesPage.headerDescription)}
               clipOriginY="30%"
             />
           </div>

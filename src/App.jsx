@@ -12,8 +12,8 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
-import ServicesPage from './pages/ServicesPage';
-import ServicesPageV2 from './pages/ServicesPageV2';
+import ServicesPage from './pages/ServicesPageV2';
+import ServicesPageV2 from './pages/ServicesPage';
 import ServicesPageV3 from './pages/ServicesPageV3';
 import ServiceDetailPage from './pages/ServiceDetailPage';
 import './App.css';
@@ -36,7 +36,7 @@ function App() {
         <ScrollToTop />
         <Layout>
           <Routes>
-            <Route path="/" element={<ContactPage />} />
+            <Route path="/" element={<AboutPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/products" element={<ProductsPage />} />

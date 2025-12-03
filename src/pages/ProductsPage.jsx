@@ -24,7 +24,6 @@ const ProductsPage = () => {
         <div className="container">
           <div className="hero-content">
             <HeroAnimated
-              subtitle={getText({ en: 'OUR PRODUCTS', fr: 'NOS PRODUITS' })}
               title={getText({ en: 'Products', fr: 'Produits' })}
               description={getText(productsPage.headerDescription)}
               clipOriginY="30%"

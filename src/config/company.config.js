@@ -70,7 +70,7 @@ export const companyConfig = {
           "Les séquences de pliage peuvent également être déterminées à l'avance afin de maintenir le flux de production.",
         ],
       },
-      image: "/images/products/nesting-software.jpg",
+      image: "/images/products/nesting-software.png",
     },
     {
       id: "cad-cam-software",
@@ -97,7 +97,7 @@ export const companyConfig = {
           "La modélisation paramétrique joue un rôle essentiel dans les gammes de produits d'aujourd'hui. Être capable de fabriquer des produits similaires avec des dimensions variables sans avoir à redessiner constamment un nouveau modèle est essentiel à la fabrication allégée. Imaginez pouvoir contrôler dynamiquement vos modèles CAO. Chez Consult Metal, nous faisons également cela.",
         ],
       },
-      image: "/images/products/cad-cam-software.jpeg",
+      image: "/images/products/cad-cam-software.jpg",
     },
   ],
 
@@ -502,8 +502,8 @@ export const companyConfig = {
       fr: "CONTACT",
     },
     email: "info@consultmetal.com",
-    phone: "(403) 465-0786",
-    fax: "(403) 207-2005",
+    phone: "(514) 586-5982",
+    fax: "",
     form: {
       name: { en: "Name", fr: "Nom" },
       phone: { en: "Phone", fr: "Téléphone" },

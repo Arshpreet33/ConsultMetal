@@ -136,7 +136,6 @@ const ContactPage = () => {
         <div className="container">
           <div className="hero-content">
             <HeroAnimated
-              subtitle={getText({ en: 'CONTACT US', fr: 'CONTACTEZ-NOUS' })}
               title={getText({ en: 'Contact', fr: 'Contact' })}
               clipOriginY="30%"
             />
@@ -171,19 +170,6 @@ const ContactPage = () => {
 
               {/* Contact Details */}
               <div className="contact-details">
-                <h4 className="details-heading">
-                  {getText({
-                    en: 'What We Do:',
-                    fr: 'Ce que nous faisons:'
-                  })}
-                </h4>
-                <p>
-                  {getText({
-                    en: 'We provide cutting-edge software solutions and consulting services for the sheet metal industry, helping businesses optimize their manufacturing processes.',
-                    fr: 'Nous fournissons des solutions logicielles de pointe et des services de conseil pour l\'industrie de la tôle, aidant les entreprises à optimiser leurs processus de fabrication.'
-                  })}
-                </p>
-
                 <div className="contact-item">
                   <svg className="icon" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
