@@ -9,7 +9,7 @@
  * ======================================== */
 .about-hero {
   position: relative;
-  min-height: 500px;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,7 +98,7 @@
  * SECTION HEADING WITH RULE + ANIMATION
  * ======================================== */
 .about-page .section-heading {
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-2);
   opacity: 0;
   transform: translateX(0); /* overridden by directional rules */
   transition: transform 1400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 1400ms ease;
@@ -232,7 +232,7 @@
 .background-paragraphs {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-3);
 }
 
 .background-paragraph {
@@ -275,6 +275,10 @@
   color: var(--color-primary);
 }
 
+.background-text .btn {
+  margin-top: var(--space-8);
+}
+
 /* ========================================
  * MISSION SECTION (Image on Right)
  * ======================================== */
@@ -304,7 +308,7 @@
 .mission-paragraphs {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-3);
 }
 
 .mission-paragraph {
@@ -345,6 +349,10 @@
   font-size: 25px;
   font-weight: 500;
   color: var(--color-primary);
+}
+
+.mission-text .btn {
+  margin-top: var(--space-8);
 }
 
 .mission-image {

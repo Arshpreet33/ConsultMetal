@@ -39,6 +39,13 @@ export const companyConfig = {
   // ========================================
   // PRODUCTS
   // ========================================
+  productsPage: {
+    headerDescription: {
+      en: "Smart products for smarter production—built for speed, accuracy, and reliability",
+      fr: "Produits intelligents pour une production plus intelligente—conçus pour la rapidité, la précision et la fiabilité",
+    },
+  },
+
   products: [
     {
       id: "nesting-software",
@@ -97,6 +104,13 @@ export const companyConfig = {
   // ========================================
   // SERVICES
   // ========================================
+  servicesPage: {
+    headerDescription: {
+      en: "Expert solutions designed to streamline your manufacturing process from start to finish",
+      fr: "Solutions expertes conçues pour rationaliser votre processus de fabrication du début à la fin",
+    },
+  },
+
   services: [
     {
       id: "workflow-design",

@@ -14,7 +14,7 @@ import './ServicesPage.css';
 
 const ServicesPage = () => {
   const { getText } = useLanguage();
-  const { services } = companyConfig;
+  const { services, servicesPage } = companyConfig;
 
   return (
     <div className="services-page">
@@ -25,6 +25,7 @@ const ServicesPage = () => {
             <div className="hero-content">
               <HeroAnimated
                 title={getText({ en: 'Services', fr: 'Services' })}
+                description={getText(servicesPage.headerDescription)}
                 clipOriginY="30%"
               />
             </div>

@@ -11,6 +11,7 @@ import CTASection from '../components/Shared/CTASection';
 import IndustriesSection from '../components/Shared/IndustriesSection';
 import HeroAnimated from '../components/Shared/HeroAnimated';
 import './AboutPage.css';
+import { Link } from 'react-router-dom';
 
 const AboutPage = () => {
   const { getText } = useLanguage();
@@ -83,7 +84,7 @@ const AboutPage = () => {
               {/* <p className="section-label">{getText(about.background.label)}</p> */}
               <div className="section-heading" data-dir="from-right">
                 <h2 className="section-title">
-                  <span className="title-our">Our</span> <span className="title-subject">History</span>
+                  <span className="title-our">Our History</span>
                 </h2>
               </div>
               <div className="background-paragraphs">
@@ -93,6 +94,9 @@ const AboutPage = () => {
                   </p>
                 ))}
               </div>
+              <Link to="/products" className="btn btn-primary">
+                {getText({ en: 'Discover More', fr: 'Découvrir plus' })} &rarr;
+              </Link>
             </div>
           </div>
         </div>
@@ -106,7 +110,7 @@ const AboutPage = () => {
               {/* <p className="section-label">{getText(about.mission.label)}</p> */}
               <div className="section-heading" data-dir="from-left">
                 <h2 className="section-title">
-                  <span className="title-our">Our</span> <span className="title-subject">Mission</span>
+                  <span className="title-our">Our Mission</span>
                 </h2>
               </div>
               <div className="mission-paragraphs">
@@ -116,6 +120,9 @@ const AboutPage = () => {
                   </p>
                 ))}
               </div>
+              <Link to="/services" className="btn btn-primary">
+                {getText({ en: 'What We Offer', fr: 'Ce que nous offrons' })} &rarr;
+              </Link>
             </div>
             <div className="mission-image">
               <img src="/images/about/mission.png" alt="Our Mission" />

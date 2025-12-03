@@ -14,7 +14,7 @@ import './ProductsPage.css';
 
 const ProductsPage = () => {
   const { getText } = useLanguage();
-  const { products } = companyConfig;
+  const { products, productsPage } = companyConfig;
 
   return (
     <div className="products-page">
@@ -26,6 +26,7 @@ const ProductsPage = () => {
             <HeroAnimated
               subtitle={getText({ en: 'OUR PRODUCTS', fr: 'NOS PRODUITS' })}
               title={getText({ en: 'Products', fr: 'Produits' })}
+              description={getText(productsPage.headerDescription)}
               clipOriginY="30%"
             />
           </div>
