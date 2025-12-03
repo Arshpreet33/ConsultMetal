@@ -105,9 +105,9 @@ const ServicesPageV2 = () => {
                   <div className="service-overlay-full"></div>
                   <div className="service-text-overlay">
                     <h2 className="service-title-v2">{getText(service.name)}</h2>
-                    <span className="service-cta">
+                    {/* <span className="service-cta">
                       {getText({ en: 'Explore', fr: 'Explorer' })} &rarr;
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </Link>

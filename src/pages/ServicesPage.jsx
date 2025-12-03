@@ -56,7 +56,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="services-content section">
+      <section className="services-content">
         <div className="container">
           <div className="services-grid">
             {services.map((service) => (
@@ -75,12 +75,6 @@ const ServicesPage = () => {
                 <div className="service-content">
                   <Link to={`/services/${service.slug}`} className="service-title-link">
                     <h2 className="service-title">{getText(service.name)}</h2>
-                  </Link>
-                  <Link to={`/services/${service.slug}`} className="btn btn-primary">
-                    {getText({
-                      en: 'Learn More',
-                      fr: 'En savoir plus'
-                    })}
                   </Link>
                 </div>
               </div>

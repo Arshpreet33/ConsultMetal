@@ -21,6 +21,10 @@
   width: 100vw;
 }
 
+.services-page .services-content {
+  padding-bottom: var(--space-16);
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -154,7 +158,8 @@
   display: block;
   overflow: hidden;
   position: relative;
-  padding-top: 60%; /* 5:3 aspect ratio */
+  /* increased height to make images bigger */
+  padding-top: 70%; /* taller aspect ratio */
 }
 
 .service-image {
@@ -191,11 +196,15 @@
 }
 
 .service-content {
-  padding: var(--space-8);
+  /* entire content area is now a primary gradient background (white text) */
+  padding: var(--space-4) var(--space-6);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  flex: 1;
+  gap: var(--space-2);
+  /* don't stretch to fill the full card height */
+  flex: none;
+  background: linear-gradient(135deg, #343477 0%, #565695 100%);
+  color: var(--color-white);
 }
 
 .service-title-link {
@@ -209,11 +218,31 @@
 }
 
 .service-title {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
   color: var(--text-primary);
-  margin: 0;
-  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.15;
+}
+
+.services-page .service-content .service-title-link {
+  /* Title link should appear simple on top of the blue background */
+  display: inline-block;
+  background: transparent;
+  color: var(--color-white);
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+.services-page .service-content .service-title-link:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.service-title {
+  color: var(--color-white) !important;
 }
 
 .service-description {
@@ -225,8 +254,8 @@
 }
 
 .service-content .btn {
-  align-self: flex-start;
-  margin-top: var(--space-2);
+  /* Hide button if still present in markup, but we plan to remove in JSX */
+  display: none;
 }
 
 /* ========================================
@@ -265,11 +294,15 @@
   }
 
   .service-content {
-    padding: var(--space-6);
+    padding: var(--space-4);
   }
 
   .service-title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-lg);
+  }
+
+  .services-page .service-title-link {
+    padding: var(--space-2) var(--space-4);
   }
 }
 

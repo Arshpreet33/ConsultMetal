@@ -117,7 +117,7 @@ export const companyConfig = {
           "Les machines doivent être considérées comme une cellule. Déterminer si une seule cellule est indépendante ou dépendante d'une autre est crucial. L'usine dans son ensemble doit être considérée comme une entité autonome avec chaque cellule jouant un rôle essentiel. En déterminant le bon chemin de travail et en liant ensemble les diverses infrastructures, on déterminera finalement la durabilité et le succès à long terme.",
         ],
       },
-      image: "/images/services/workflow-design.jpg",
+      image: "/images/services/workflow-design.png",
     },
     {
       id: "product-analysis",
@@ -138,7 +138,7 @@ export const companyConfig = {
           "En décomposant un produit en ses différentes pièces, nous sommes en mesure d'analyser sa conception et, finalement, la façon dont il sera produit. Minimiser les opérations impliquées dans sa fabrication permettra de plus grands gains de temps et d'efficacité tout en entraînant des gains de productivité et de rentabilité. Pouvons-nous réduire le nombre de coups? Pouvons-nous avoir moins de plis? Fondamentalement, pouvons-nous le produire plus rapidement et moins cher tout en maintenant la même norme de qualité ou une norme supérieure?",
         ],
       },
-      image: "/images/services/product-analysis.jpg",
+      image: "/images/services/product-analysis.jpeg",
     },
     {
       id: "software-recommendation",
@@ -159,7 +159,7 @@ export const companyConfig = {
           "En analysant les opérations depuis l'étape de saisie des commandes jusqu'à la production finale, nous pouvons prendre des décisions éclairées sur le type de plateforme requis. Adopter une approche dispersée entraîne souvent des dépenses inutiles. Le logiciel doit être pertinent pour les opérations en cours tout en étant suffisamment flexible pour évoluer à mesure que vous grandissez.",
         ],
       },
-      image: "/images/services/software-recommendation.jpg",
+      image: "/images/services/software-recommendation.png",
     },
     {
       id: "software-development",
@@ -184,7 +184,7 @@ export const companyConfig = {
           "Le développement de programmes personnalisés peut être une solution autonome ou faire partie d'un ensemble plus large.",
         ],
       },
-      image: "/images/services/software-development.jpg",
+      image: "/images/services/software-development.png",
     },
     {
       id: "capital-expenditure",
@@ -209,7 +209,7 @@ export const companyConfig = {
           "En fin de compte, nous devons nous demander quel sera notre retour sur investissement.",
         ],
       },
-      image: "/images/services/capital-expenditure.jpg",
+      image: "/images/services/capital-expenditure.jpeg",
     },
     {
       id: "cad-development",

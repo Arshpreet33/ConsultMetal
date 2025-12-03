@@ -201,9 +201,10 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-white);
-  margin: 0 0 var(--space-3) 0;
+  /* margin: 0 0 var(--space-3) 0; */
   line-height: var(--line-height-tight);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 0px;
 }
 
 .service-card-v2:hover .service-title-v2 {
