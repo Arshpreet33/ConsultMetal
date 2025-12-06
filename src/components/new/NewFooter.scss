@@ -193,12 +193,16 @@
     align-items: center;
     gap: $spacing-sm;
     font-size: $font-size-sm;
-    color: rgba($color-text-light, 0.9);
+    color: $color-text-primary;
     text-decoration: none;
     @include transition;
+    background: rgba($color-lighter, 0.95);
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
 
     &:hover {
-      color: $color-text-white;
+      color: $color-primary;
+      background: $color-lighter;
 
       .contact-icon {
         color: $color-primary-light;

@@ -17,10 +17,11 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: $space-16;
   max-width: 1400px;
   margin: 0 auto;
+  align-items: start;
 }
 
 /* ========================================
@@ -110,6 +111,16 @@
       box-shadow: 0 0 0 4px rgba($color-primary, 0.1);
     }
 
+    &.error {
+      border-color: $color-accent-error;
+      background: rgba($color-accent-error, 0.05);
+
+      &:focus {
+        border-color: $color-accent-error;
+        box-shadow: 0 0 0 4px rgba($color-accent-error, 0.1);
+      }
+    }
+
     &::placeholder {
       color: $color-text-tertiary;
     }
@@ -123,6 +134,14 @@
   select {
     cursor: pointer;
   }
+}
+
+.error-message {
+  display: block;
+  margin-top: $space-2;
+  font-size: 0.875rem;
+  color: $color-accent-error;
+  font-weight: 500;
 }
 
 .btn {
@@ -217,12 +236,13 @@
 
 .contact-info-card {
   background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
-  padding: $space-10 $space-8;
+  padding: $space-10;
   border-radius: $radius-xl;
   border: 1px solid $color-border-light;
   box-shadow: $shadow-md;
   position: sticky;
   top: 100px;
+  height: fit-content;
 }
 
 .info-title {
@@ -309,6 +329,110 @@
 }
 
 /* ========================================
+ * TOAST NOTIFICATION
+ * ======================================== */
+.toast-notification {
+  position: fixed;
+  top: $space-8;
+  right: $space-8;
+  background: #ffffff;
+  border-radius: $radius-lg;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(16, 185, 129, 0.2);
+  min-width: 400px;
+  overflow: hidden;
+  z-index: 9999;
+  animation: slideInRight 0.3s $easing-smooth;
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(calc(100% + #{$space-8}));
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+.toast-content {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-4;
+  padding: $space-5 $space-6;
+}
+
+.toast-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.toast-message {
+  flex: 1;
+  padding-top: $space-1;
+}
+
+.toast-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $color-text-primary;
+  margin-bottom: $space-1;
+}
+
+.toast-text {
+  font-size: 0.9rem;
+  color: $color-text-secondary;
+  line-height: 1.5;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: $color-text-tertiary;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-top: -4px;
+
+  &:hover {
+    background: rgba($color-text-primary, 0.08);
+    color: $color-text-primary;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.toast-progress {
+  height: 4px;
+  background: linear-gradient(90deg, #10b981, #059669);
+  transition: width 0.05s linear;
+  border-bottom-left-radius: $radius-lg;
+  border-bottom-right-radius: $radius-lg;
+}
+
+/* ========================================
  * RESPONSIVE STYLES
  * ======================================== */
 @media (max-width: 1024px) {
@@ -372,6 +496,31 @@
   .btn {
     padding: $space-3 $space-6;
     font-size: 1rem;
+  }
+
+  .toast-notification {
+    top: $space-4;
+    right: $space-4;
+    left: $space-4;
+    min-width: auto;
+  }
+
+  .toast-content {
+    padding: $space-4;
+  }
+
+  .toast-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+
+  .toast-title {
+    font-size: 0.95rem;
+  }
+
+  .toast-text {
+    font-size: 0.85rem;
   }
 }
 
