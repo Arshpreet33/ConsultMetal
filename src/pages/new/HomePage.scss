@@ -681,6 +681,14 @@
   position: relative;
   overflow: hidden;
   animation: gridMove 30s linear infinite;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s $easing-smooth;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   @include respond-to(md) {
     padding: $space-16 0;
@@ -773,7 +781,10 @@
   transform: translateY(40px);
   opacity: 0;
   transition: all 0.5s $easing-smooth;
-  animation: fadeInUp 0.6s ease forwards;
+
+  .products-showcase.visible & {
+    animation: fadeInUp 0.6s ease forwards;
+  }
 
   &:hover {
     transform: translateY(-8px);
@@ -879,6 +890,14 @@
   overflow: hidden;
   background-size: 200% 100%, 100% 100%;
   animation: waveMove 12s ease-in-out infinite alternate;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s $easing-smooth;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   @include respond-to(md) {
     padding: $space-16 0;
@@ -961,6 +980,14 @@
 
 .video-content {
   max-width: 600px;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s $easing-smooth;
+
+  .video-section.visible & {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   .section-title {
     font-size: 3.5rem;
@@ -1035,6 +1062,15 @@
 
 .video-wrapper {
   width: 100%;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s $easing-smooth;
+  transition-delay: 0.2s;
+
+  .video-section.visible & {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   iframe {
     width: 100%;
@@ -1068,6 +1104,14 @@
   position: relative;
   overflow: hidden;
   animation: patternSlide 40s linear infinite;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s $easing-smooth;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   @include respond-to(md) {
     padding: $space-16 0;
@@ -1153,7 +1197,11 @@
   box-shadow: $shadow-sm;
   transform: translateY(40px);
   opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
+  transition: all 0.5s $easing-smooth;
+
+  .testimonials-section.visible & {
+    animation: fadeInUp 0.6s ease forwards;
+  }
 
   &::before {
     content: '';

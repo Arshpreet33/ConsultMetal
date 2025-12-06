@@ -20,6 +20,9 @@ const HomePage = () => {
   
   const [servicesRef, servicesVisible] = useScrollReveal();
   const [aboutRef, aboutVisible] = useScrollReveal();
+  const [productsRef, productsVisible] = useScrollReveal();
+  const [videoRef, videoVisible] = useScrollReveal();
+  const [testimonialsRef, testimonialsVisible] = useScrollReveal();
 
   // Get the first 3 services for the preview section
   const featuredServices = services.slice(0, 3);
@@ -176,7 +179,7 @@ const HomePage = () => {
       <IndustriesSection />
 
       {/* Products Showcase Section */}
-      <section className="products-showcase">
+      <section className={`products-showcase ${productsVisible ? 'visible' : ''}`} ref={productsRef}>
         <div className="container">
           <div className="section-header">
             <IndustrialBadge 
@@ -233,7 +236,7 @@ const HomePage = () => {
       </section>
 
       {/* Video Section */}
-      <section className="video-section">
+      <section className={`video-section ${videoVisible ? 'visible' : ''}`} ref={videoRef}>
         <div className="geometric-bg right"></div>
         <div className="container">
           <div className="video-grid">
@@ -282,7 +285,7 @@ const HomePage = () => {
       />
 
       {/* Testimonials Section */}
-      <section className="testimonials-section">
+      <section className={`testimonials-section ${testimonialsVisible ? 'visible' : ''}`} ref={testimonialsRef}>
         <div className="container">
           <div className="section-header">
             <IndustrialBadge 
