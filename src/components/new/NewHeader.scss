@@ -1,0 +1,311 @@
+/**
+ * NewHeader Styles - ConsultMetal New Design
+ */
+
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+.new-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-index-sticky;
+  @include transition(all, $duration-normal);
+
+  .header-background {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    backdrop-filter: blur(0px);
+    @include transition;
+  }
+
+  &.scrolled .header-background {
+    background: rgba($color-dark, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: $shadow-md;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-lg 0;
+    @include transition;
+  }
+
+  &.scrolled .header-content {
+    padding: $spacing-md 0;
+  }
+
+  // Logo
+  .header-logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    text-decoration: none;
+    @include transition;
+
+    &:hover .logo-icon {
+      transform: scale(1.1);
+    }
+  }
+
+  .logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: $gradient-primary;
+    border-radius: $border-radius-md;
+    position: relative;
+    overflow: hidden;
+    @include transition;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: $gradient-metallic;
+      opacity: 0;
+      @include transition;
+    }
+
+    .logo-letter {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $color-text-white;
+      position: relative;
+      z-index: 2;
+
+      &:first-child {
+        margin-right: -4px;
+      }
+    }
+  }
+
+  .header-logo:hover .logo-icon::before {
+    opacity: 1;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    @include respond-to(md) {
+      display: none;
+    }
+  }
+
+  .logo-name {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-white;
+    line-height: 1;
+  }
+
+  .logo-tagline {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $color-primary-light;
+    letter-spacing: $letter-spacing-wider;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  // Navigation
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-2xl;
+
+    @include respond-to(lg) {
+      display: none;
+    }
+  }
+
+  .nav-link {
+    position: relative;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: rgba($color-text-white, 0.8);
+    text-decoration: none;
+    padding: $spacing-sm 0;
+    @include transition;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $gradient-text;
+      @include transition;
+    }
+
+    &:hover {
+      color: $color-text-white;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &.active {
+      color: $color-text-white;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  // Actions
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+
+  .language-toggle {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: rgba($color-text-white, 0.8);
+    background: transparent;
+    border: 1px solid rgba($color-text-white, 0.2);
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    @include transition;
+
+    &:hover {
+      color: $color-text-white;
+      border-color: rgba($color-text-white, 0.4);
+      background: rgba($color-text-white, 0.05);
+    }
+
+    @include respond-to(lg) {
+      display: none;
+    }
+  }
+
+  .btn-small {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+
+    @include respond-to(lg) {
+      display: none;
+    }
+  }
+
+  // Mobile Menu Toggle
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: $spacing-sm;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    @include respond-to(lg) {
+      display: flex;
+    }
+
+    .hamburger-line {
+      width: 24px;
+      height: 2px;
+      background: $color-text-white;
+      border-radius: $border-radius-full;
+      @include transition;
+    }
+  }
+
+  &.menu-open .mobile-menu-toggle {
+    .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translateY(7px);
+    }
+
+    .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translateY(-7px);
+    }
+  }
+
+  // Mobile Menu
+  .mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color-dark, 0.98);
+    backdrop-filter: blur(20px);
+    transform: translateX(100%);
+    @include transition(transform, $duration-normal);
+    overflow-y: auto;
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .mobile-nav {
+    padding: $spacing-2xl $spacing-xl;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .mobile-nav-link {
+    padding: $spacing-lg;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    color: rgba($color-text-white, 0.8);
+    text-decoration: none;
+    border-radius: $border-radius-md;
+    @include transition;
+
+    &:hover,
+    &.active {
+      color: $color-text-white;
+      background: rgba($color-primary, 0.2);
+    }
+  }
+
+  .mobile-actions {
+    margin-top: $spacing-xl;
+    padding-top: $spacing-xl;
+    border-top: 1px solid rgba($color-text-white, 0.1);
+  }
+
+  .language-toggle-mobile {
+    width: 100%;
+    padding: $spacing-lg;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $color-text-white;
+    background: $gradient-primary;
+    border: none;
+    border-radius: $border-radius-md;
+    cursor: pointer;
+    @include transition;
+
+    &:hover {
+      transform: translateY(-2px);
+      @include shadow-md;
+    }
+  }
+}

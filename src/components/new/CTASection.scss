@@ -1,0 +1,132 @@
+/**
+ * CTASection Styles - ConsultMetal New Design
+ */
+
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+.cta-section {
+  position: relative;
+  padding: $spacing-5xl 0;
+  overflow: hidden;
+  background: $gradient-dark;
+
+  @include respond-to(lg) {
+    padding: $spacing-4xl 0;
+  }
+
+  @include respond-to(md) {
+    padding: $spacing-3xl 0;
+  }
+
+  // Background
+  .cta-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Overlay
+  .cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: $overlay-dark;
+    z-index: 2;
+  }
+
+  // Pattern
+  .cta-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: $backdrop-pattern;
+    opacity: 0.5;
+    z-index: 3;
+  }
+
+  // Content
+  .container {
+    position: relative;
+    z-index: 4;
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(60px);
+    @include transition(all, $duration-slower);
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .cta-title {
+    font-size: $font-size-5xl;
+    font-weight: $font-weight-light;
+    color: $color-text-white;
+    margin-bottom: $spacing-lg;
+    line-height: $line-height-tight;
+
+    @include respond-to(lg) {
+      font-size: $font-size-4xl;
+    }
+
+    @include respond-to(md) {
+      font-size: $font-size-3xl;
+    }
+
+    @include respond-to(xs) {
+      font-size: $font-size-2xl;
+    }
+  }
+
+  .cta-subtitle {
+    font-size: $font-size-xl;
+    color: rgba($color-text-light, 0.9);
+    margin-bottom: $spacing-2xl;
+    line-height: $line-height-relaxed;
+
+    @include respond-to(md) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: $spacing-lg;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include respond-to(xs) {
+      flex-direction: column;
+    }
+  }
+
+  .btn-outline-light {
+    background: transparent;
+    color: $color-text-white;
+    border-color: rgba($color-text-white, 0.5);
+
+    &:hover {
+      background: rgba($color-text-white, 0.1);
+      border-color: $color-text-white;
+    }
+  }
+
+  @include respond-to(xs) {
+    .btn-primary,
+    .btn-outline-light {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

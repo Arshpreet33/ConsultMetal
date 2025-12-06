@@ -1,0 +1,32 @@
+/**
+ * IndustrialBadge Styles - ConsultMetal New Design
+ */
+
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+.industrial-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $badge-gap;
+  margin-bottom: $spacing-lg;
+
+  .badge-line {
+    width: $badge-line-width;
+    height: $badge-line-height;
+    background: $gradient-text;
+    border-radius: $border-radius-full;
+  }
+
+  .badge-text {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-bold;
+    letter-spacing: $letter-spacing-widest;
+    text-transform: uppercase;
+    color: $badge-color;
+  }
+
+  &.centered {
+    justify-content: center;
+  }
+}

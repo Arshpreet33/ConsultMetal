@@ -1,0 +1,327 @@
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+.services-page-v2 {
+  min-height: 100vh;
+
+  // Services Section
+  .services-section {
+    padding: var(--space-24) 0;
+    background: #f8f9fa;
+
+    .section-intro {
+      text-align: center;
+      margin-bottom: var(--space-16);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  // Services Grid
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+
+    &.visible .service-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Service Card - Clean Modern Design - FORCE SPECIFICITY
+  .services-grid .service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(30px);
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 0;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(52, 52, 119, 0.18);
+      border-color: rgba(52, 52, 119, 0.2);
+
+      .service-image {
+        transform: scale(1.05);
+      }
+
+      .service-icon {
+        transform: scale(1.1);
+        background: linear-gradient(135deg, #565695, #343477);
+      }
+
+      .card-shine {
+        opacity: 1;
+        transform: translateX(100%);
+      }
+
+      .link-icon {
+        transform: translateX(6px);
+      }
+    }
+  }
+
+  // Service Image - Clean, minimal overlay
+  .services-grid .service-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f0f1f7 0%, #e2e4ef 100%);
+
+    .service-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .image-overlay {
+      display: none !important;
+    }
+  }
+
+  // Card Shine Effect
+  .card-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    opacity: 0;
+    transition: all 0.6s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  // Service Content
+  .services-grid .service-content {
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    flex-grow: 1;
+    background: linear-gradient(135deg, #343477 0%, #565695 100%);
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom: var(--space-2);
+      backdrop-filter: blur(10px);
+    }
+
+    .service-name {
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 var(--space-4);
+      line-height: 1.3;
+    }
+
+    .service-features {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      flex-grow: 1;
+      margin-bottom: var(--space-4);
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-2);
+
+        .feature-check {
+          color: #ffffff;
+          font-weight: 700;
+          flex-shrink: 0;
+          font-size: 1.1rem;
+          margin-top: 2px;
+        }
+
+        .feature-text {
+          color: rgba(255, 255, 255, 0.9);
+          line-height: 1.6;
+          font-size: 0.95rem;
+        }
+      }
+    }
+
+    .service-link-wrapper {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: #ffffff;
+      font-weight: 700;
+      margin-top: auto;
+
+      .link-text {
+        font-size: 1.05rem;
+      }
+
+      .link-icon {
+        font-size: 1.4rem;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+  }
+
+  // Card Accent
+  .services-grid .card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #343477, #565695);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .services-grid .service-card:hover .card-accent {
+    transform: scaleX(1);
+  }
+
+  // Why Choose Us Section
+  .why-choose-section {
+    padding: var(--space-20) 0;
+    background: white;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-8);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .benefit-card {
+      background: #f8f9fa;
+      padding: var(--space-8);
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(52, 52, 119, 0.12);
+        background: white;
+      }
+
+      .benefit-icon {
+        font-size: 3rem;
+        margin-bottom: var(--space-4);
+      }
+
+      .benefit-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1a1a3e;
+        margin-bottom: var(--space-3);
+      }
+
+      .benefit-description {
+        color: #5a5a7a;
+        line-height: 1.6;
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: var(--space-6);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-section {
+      padding: var(--space-16) 0;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+
+    .service-image-wrapper {
+      height: 220px;
+    }
+
+    .why-choose-section {
+      padding: var(--space-16) 0;
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .services-section {
+      padding: var(--space-12) 0;
+    }
+
+    .service-image-wrapper {
+      height: 200px;
+    }
+
+    .service-content {
+      padding: var(--space-6);
+
+      .service-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 1.75rem;
+      }
+
+      .service-name {
+        font-size: 1.3rem;
+      }
+    }
+
+    .why-choose-section {
+      padding: var(--space-12) 0;
+    }
+  }
+}

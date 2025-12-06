@@ -1,0 +1,130 @@
+/**
+ * PageBanner Styles - ConsultMetal New Design
+ */
+
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+.page-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: $gradient-dark;
+
+  // Heights
+  &.banner-small {
+    min-height: 300px;
+  }
+
+  &.banner-medium {
+    min-height: 400px;
+  }
+
+  &.banner-large {
+    min-height: 500px;
+  }
+
+  @include respond-to(md) {
+    &.banner-small {
+      min-height: 250px;
+    }
+
+    &.banner-medium {
+      min-height: 350px;
+    }
+
+    &.banner-large {
+      min-height: 400px;
+    }
+  }
+
+  // Background
+  .banner-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Overlay
+  .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: $overlay-dark;
+    z-index: 2;
+  }
+
+  // Pattern
+  .banner-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: $backdrop-pattern;
+    opacity: 1;
+    z-index: 3;
+  }
+
+  // Content
+  .container {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+  }
+
+  .banner-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(60px);
+    @include transition(all, $duration-slower);
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .banner-title {
+    font-size: $font-size-6xl;
+    font-weight: $font-weight-light;
+    color: $color-text-white;
+    margin-bottom: $spacing-lg;
+    line-height: $line-height-tight;
+
+    @include respond-to(lg) {
+      font-size: $font-size-5xl;
+    }
+
+    @include respond-to(md) {
+      font-size: $font-size-4xl;
+    }
+
+    @include respond-to(xs) {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  .banner-highlight {
+    @include gradient-text;
+    font-weight: $font-weight-bold;
+  }
+
+  .banner-description {
+    font-size: $font-size-xl;
+    color: rgba($color-text-light, 0.9);
+    line-height: $line-height-relaxed;
+    max-width: 700px;
+    margin: 0 auto;
+
+    @include respond-to(md) {
+      font-size: $font-size-lg;
+    }
+  }
+}

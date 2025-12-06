@@ -4,7 +4,7 @@
 
 .industries-section {
   position: relative;
-  background-image: url('/images/shared/industries-hero.jpg');
+  /* background-image: url('/images/shared/industries-hero.jpg'); */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

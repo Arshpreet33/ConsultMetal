@@ -1,0 +1,50 @@
+/**
+ * GeometricFrame Styles - ConsultMetal New Design
+ */
+
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+.geometric-frame {
+  position: relative;
+
+  .frame-corner {
+    position: absolute;
+    width: $frame-corner-size;
+    height: $frame-corner-size;
+    border: $frame-line-width solid $frame-color;
+    @include transition;
+
+    &.top-left {
+      top: 0;
+      left: 0;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    &.top-right {
+      top: 0;
+      right: 0;
+      border-left: none;
+      border-bottom: none;
+    }
+
+    &.bottom-left {
+      bottom: 0;
+      left: 0;
+      border-right: none;
+      border-top: none;
+    }
+
+    &.bottom-right {
+      bottom: 0;
+      right: 0;
+      border-left: none;
+      border-top: none;
+    }
+  }
+
+  &:hover .frame-corner {
+    border-color: $color-primary;
+  }
+}

@@ -18,6 +18,91 @@ export const companyConfig = {
     },
     establishedYear: "20+ years",
     logo: "/images/logo.svg",
+    tagline: {
+      en: "Precision Manufacturing Solutions",
+      fr: "Solutions de fabrication de précision",
+    },
+  },
+
+  // ========================================
+  // IMAGE ASSETS
+  // ========================================
+  imageAssets: {
+    // Home Page Images
+    home: {
+      hero: {
+        background: "/images/home/hero-bg.jpg",
+        video: "/videos/manufacturing-process.mp4",
+      },
+      stats: {
+        background: "/images/home/stats-bg.jpg",
+      },
+      services: {
+        background: "/images/home/services-preview-bg.jpg",
+      },
+      about: {
+        image: "/images/home/about-preview.png",
+      },
+      products: {
+        background: "/images/home/products-showcase-bg.jpg",
+      },
+      video: {
+        thumbnail: "/images/home/video-thumbnail.jpg",
+      },
+      testimonials: {
+        background: "/images/home/testimonials-bg.jpg",
+        clients: [
+          "/images/home/clients/client-1.png",
+          "/images/home/clients/client-2.png",
+          "/images/home/clients/client-3.png",
+          "/images/home/clients/client-4.png",
+        ],
+      },
+    },
+    // About Page Images
+    about: {
+      hero: "/images/about/about-hero.jpeg",
+      background: "/images/about/team.jpg",
+      mission: "/images/about/mission.jpg",
+    },
+    // Services Page Images
+    services: {
+      hero: "/images/services/services-hero.jpg",
+      workflowDesign: "/images/services/workflow-design.png",
+      productAnalysis: "/images/services/product-analysis.png",
+      softwareRecommendation: "/images/services/software-recommendation.png",
+      softwareDevelopment: "/images/services/software-development.png",
+      capitalExpenditure: "/images/services/capital-expenditure.jpeg",
+      cadDevelopment: "/images/services/cad-development.jpg",
+    },
+    // Products Page Images
+    products: {
+      hero: "/images/products/products-hero.jpg",
+      nestingSoftware: "/images/products/nesting-software.png",
+      cadCamSoftware: "/images/products/cad-cam-software.jpg",
+    },
+    // Contact Page Images
+    contact: {
+      hero: "/images/contact/contact-hero.jpg",
+      background: "/images/contact/contact-bg.jpg",
+    },
+    // Shared/Common Images
+    shared: {
+      patterns: {
+        dots: "/images/patterns/dots.svg",
+        grid: "/images/patterns/grid.svg",
+        geometric: "/images/patterns/geometric.svg",
+      },
+      overlays: {
+        gradient: "/images/overlays/gradient.png",
+        metallic: "/images/overlays/metallic.png",
+      },
+      icons: {
+        check: "/images/icons/check.svg",
+        arrow: "/images/icons/arrow.svg",
+        quote: "/images/icons/quote.svg",
+      },
+    },
   },
 
   // ========================================
@@ -37,6 +122,337 @@ export const companyConfig = {
   },
 
   // ========================================
+  // HOME PAGE
+  // ========================================
+  homePage: {
+    // Hero Section
+    hero: {
+      title: {
+        en: "Precision Manufacturing",
+        fr: "Fabrication de précision",
+      },
+      highlight: {
+        en: "Solutions",
+        fr: "Solutions",
+      },
+      subtitle: {
+        en: "Transforming sheet metal manufacturing through cutting-edge software solutions and expert consultation",
+        fr: "Transformer la fabrication de tôle grâce à des solutions logicielles de pointe et à des conseils d'experts",
+      },
+      description: {
+        en: "With over 20 years of industry expertise, we deliver lean manufacturing solutions that drive efficiency, reduce costs, and maximize productivity across diverse manufacturing sectors.",
+        fr: "Avec plus de 20 ans d'expertise dans l'industrie, nous livrons des solutions de fabrication lean qui améliorent l'efficacité, réduisent les coûts et maximisent la productivité dans divers secteurs manufacturiers.",
+      },
+      cta: {
+        primary: {
+          text: { en: "Explore Services", fr: "Explorer les services" },
+          link: "/services",
+        },
+        secondary: {
+          text: { en: "Contact Us", fr: "Contactez-nous" },
+          link: "/contact",
+        },
+      },
+    },
+
+    // Stats Section
+    stats: {
+      label: {
+        en: "OUR IMPACT",
+        fr: "NOTRE IMPACT",
+      },
+      items: [
+        {
+          value: "20+",
+          label: {
+            en: "Years of Excellence",
+            fr: "Années d'excellence",
+          },
+          description: {
+            en: "Industry leadership and expertise",
+            fr: "Leadership et expertise de l'industrie",
+          },
+        },
+        {
+          value: "500+",
+          label: {
+            en: "Projects Delivered",
+            fr: "Projets livrés",
+          },
+          description: {
+            en: "Successful implementations",
+            fr: "Implémentations réussies",
+          },
+        },
+        {
+          value: "100%",
+          label: {
+            en: "Client Satisfaction",
+            fr: "Satisfaction client",
+          },
+          description: {
+            en: "Commitment to quality",
+            fr: "Engagement envers la qualité",
+          },
+        },
+        {
+          value: "24/7",
+          label: {
+            en: "Support Available",
+            fr: "Support disponible",
+          },
+          description: {
+            en: "Always here to help",
+            fr: "Toujours là pour vous aider",
+          },
+        },
+      ],
+    },
+
+    // Services Preview
+    servicesPreview: {
+      label: {
+        en: "WHAT WE OFFER",
+        fr: "CE QUE NOUS OFFRONS",
+      },
+      title: {
+        en: "Comprehensive Services",
+        fr: "Services complets",
+      },
+      highlight: {
+        en: "Manufacturing Solutions",
+        fr: "Solutions de fabrication",
+      },
+      description: {
+        en: "From workflow optimization to capital expenditure recommendations, we provide end-to-end manufacturing solutions tailored to your business needs.",
+        fr: "De l'optimisation du flux de travail aux recommandations de dépenses en capital, nous fournissons des solutions de fabrication de bout en bout adaptées aux besoins de votre entreprise.",
+      },
+      cta: {
+        text: { en: "View All Services", fr: "Voir tous les services" },
+        link: "/services",
+      },
+      featured: [
+        {
+          id: "workflow-design",
+          icon: "workflow",
+          title: {
+            en: "Workflow Design",
+            fr: "Conception du flux de travail",
+          },
+          description: {
+            en: "Optimize your manufacturing process with strategic machinery layout and production flow design.",
+            fr: "Optimisez votre processus de fabrication avec une disposition stratégique des machines et une conception du flux de production.",
+          },
+        },
+        {
+          id: "product-analysis",
+          icon: "analysis",
+          title: {
+            en: "Product Analysis",
+            fr: "Analyse de produits",
+          },
+          description: {
+            en: "Break down products to minimize operations, reduce costs, and maintain quality standards.",
+            fr: "Décomposez les produits pour minimiser les opérations, réduire les coûts et maintenir les normes de qualité.",
+          },
+        },
+        {
+          id: "software-recommendation",
+          icon: "software",
+          title: {
+            en: "Software Solutions",
+            fr: "Solutions logicielles",
+          },
+          description: {
+            en: "Get expert recommendations on CAD/CAM software platforms tailored to your operations.",
+            fr: "Obtenez des recommandations d'experts sur les plateformes logicielles CAD/CAM adaptées à vos opérations.",
+          },
+        },
+      ],
+    },
+
+    // About Preview
+    aboutPreview: {
+      label: {
+        en: "WHO WE ARE",
+        fr: "QUI NOUS SOMMES",
+      },
+      title: {
+        en: "Your Partner in",
+        fr: "Votre partenaire en",
+      },
+      highlight: {
+        en: "Manufacturing Excellence",
+        fr: "Excellence manufacturière",
+      },
+      description: {
+        en: "With hands-on experience from the shop floor to management, we bring a unique perspective to manufacturing consulting. Our team combines technical expertise with practical knowledge to deliver solutions that work.",
+        fr: "Avec une expérience pratique de l'atelier à la direction, nous apportons une perspective unique au conseil en fabrication. Notre équipe combine l'expertise technique avec des connaissances pratiques pour fournir des solutions qui fonctionnent.",
+      },
+      features: [
+        {
+          en: "20+ years of industry expertise",
+          fr: "20+ ans d'expertise dans l'industrie",
+        },
+        {
+          en: "Hands-on shop floor experience",
+          fr: "Expérience pratique sur le terrain",
+        },
+        {
+          en: "Cutting-edge software solutions",
+          fr: "Solutions logicielles de pointe",
+        },
+        {
+          en: "Lean manufacturing specialists",
+          fr: "Spécialistes de la fabrication lean",
+        },
+      ],
+      cta: {
+        text: { en: "Learn More About Us", fr: "En savoir plus sur nous" },
+        link: "/about",
+      },
+    },
+
+    // Products Showcase
+    productsShowcase: {
+      label: {
+        en: "OUR PRODUCTS",
+        fr: "NOS PRODUITS",
+      },
+      title: {
+        en: "Powerful Software",
+        fr: "Logiciels puissants",
+      },
+      highlight: {
+        en: "Solutions",
+        fr: "Solutions",
+      },
+      description: {
+        en: "Industry-leading software packages designed to optimize material yield, reduce setup times, and streamline your entire production process.",
+        fr: "Progiciels de pointe conçus pour optimiser le rendement des matériaux, réduire les temps de configuration et rationaliser l'ensemble de votre processus de production.",
+      },
+      cta: {
+        text: { en: "Explore Products", fr: "Explorer les produits" },
+        link: "/products",
+      },
+    },
+
+    // Video Section
+    videoSection: {
+      label: {
+        en: "SEE US IN ACTION",
+        fr: "VOYEZ-NOUS EN ACTION",
+      },
+      title: {
+        en: "Manufacturing",
+        fr: "Fabrication",
+      },
+      highlight: {
+        en: "Transformation",
+        fr: "Transformation",
+      },
+      description: {
+        en: "Watch how our solutions transform manufacturing operations, from initial design through final production. See the power of optimized workflows and automated processes in action.",
+        fr: "Découvrez comment nos solutions transforment les opérations de fabrication, de la conception initiale à la production finale. Voyez la puissance des flux de travail optimisés et des processus automatisés en action.",
+      },
+      youtubeUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      thumbnailAlt: {
+        en: "Manufacturing process demonstration",
+        fr: "Démonstration du processus de fabrication",
+      },
+    },
+
+    // Testimonials Section
+    testimonials: {
+      label: {
+        en: "CLIENT SUCCESS",
+        fr: "SUCCÈS CLIENT",
+      },
+      title: {
+        en: "Trusted by",
+        fr: "Approuvé par",
+      },
+      highlight: {
+        en: "Industry Leaders",
+        fr: "Leaders de l'industrie",
+      },
+      description: {
+        en: "See why manufacturing companies across North America trust Consult Metal for their software and consulting needs.",
+        fr: "Découvrez pourquoi les entreprises manufacturières d'Amérique du Nord font confiance à Consult Metal pour leurs besoins en logiciels et en conseil.",
+      },
+      items: [
+        {
+          quote: {
+            en: "Consult Metal transformed our production process. Their workflow design reduced our setup times by 40% and increased overall efficiency significantly.",
+            fr: "Consult Metal a transformé notre processus de production. Leur conception de flux de travail a réduit nos temps de configuration de 40% et augmenté considérablement l'efficacité globale.",
+          },
+          author: {
+            en: "John Smith",
+            fr: "John Smith",
+          },
+          position: {
+            en: "Production Manager, HVAC Manufacturing",
+            fr: "Directeur de production, Fabrication CVC",
+          },
+        },
+        {
+          quote: {
+            en: "The nesting software they recommended has been a game-changer. Material waste is down, production speed is up, and ROI was achieved within months.",
+            fr: "Le logiciel d'imbrication qu'ils ont recommandé a changé la donne. Le gaspillage de matériaux est en baisse, la vitesse de production est en hausse et le retour sur investissement a été atteint en quelques mois.",
+          },
+          author: {
+            en: "Marie Dubois",
+            fr: "Marie Dubois",
+          },
+          position: {
+            en: "Operations Director, Stainless Steel Equipment",
+            fr: "Directrice des opérations, Équipement en acier inoxydable",
+          },
+        },
+        {
+          quote: {
+            en: "Their hands-on experience shows in every recommendation. They understand manufacturing from the ground up, making their solutions practical and effective.",
+            fr: "Leur expérience pratique se reflète dans chaque recommandation. Ils comprennent la fabrication de fond en comble, ce qui rend leurs solutions pratiques et efficaces.",
+          },
+          author: {
+            en: "Robert Chen",
+            fr: "Robert Chen",
+          },
+          position: {
+            en: "Owner, Custom Job Shop",
+            fr: "Propriétaire, Atelier d'usinage personnalisé",
+          },
+        },
+      ],
+    },
+
+    // Final CTA
+    finalCta: {
+      title: {
+        en: "Ready to Transform Your Manufacturing?",
+        fr: "Prêt à transformer votre fabrication?",
+      },
+      subtitle: {
+        en: "Let's discuss how our solutions can optimize your operations and drive measurable results.",
+        fr: "Discutons de la façon dont nos solutions peuvent optimiser vos opérations et générer des résultats mesurables.",
+      },
+      cta: {
+        primary: {
+          text: {
+            en: "Schedule Consultation",
+            fr: "Planifier une consultation",
+          },
+          link: "/contact",
+        },
+        secondary: {
+          text: { en: "Call Us Now", fr: "Appelez-nous maintenant" },
+          link: "tel:+15145865982",
+        },
+      },
+    },
+  },
+
+  // ========================================
   // PRODUCTS
   // ========================================
   productsPage: {
@@ -50,24 +466,36 @@ export const companyConfig = {
     {
       id: "nesting-software",
       name: {
-        en: "Nesting software",
+        en: "Nesting Software",
         fr: "Logiciel de nidification",
       },
       slug: "nesting-software",
+      category: {
+        en: "Software Solutions",
+        fr: "Solutions logicielles",
+      },
+      teaser: {
+        en: "Advanced nesting solutions that optimize material yield and reduce setup times for punch, laser, routing, and bending operations.",
+        fr: "Solutions d'imbrication avancées qui optimisent le rendement des matériaux et réduisent les temps de configuration pour les opérations de poinçonnage, laser, routage et pliage.",
+      },
       description: {
-        en: "This is an integrated manufacturing solution for the metal, wood and plastics industry. This innovative approach is designed to meet the challenges faced by many industries. Through optimized punch, laser, routing as well as bending solutions, this powerful tool is a must for any manufacturer looking to stay ahead of the competition.",
-        fr: "Il s'agit d'une solution de fabrication intégrée pour l'industrie du métal, du bois et des plastiques. Cette approche innovante est conçue pour relever les défis auxquels sont confrontées de nombreuses industries. Grâce à des solutions optimisées de poinçonnage, de laser, de routage et de pliage, cet outil puissant est indispensable pour tout fabricant souhaitant garder une longueur d'avance sur la concurrence.",
+        en: "This integrated manufacturing solution revolutionizes production for the metal, wood, and plastics industries. Our innovative approach is specifically designed to meet the evolving challenges faced by modern manufacturers. Through optimized punch, laser, routing, and bending solutions, this powerful tool is essential for any manufacturer determined to stay ahead of the competition and maximize operational efficiency.",
+        fr: "Cette solution de fabrication intégrée révolutionne la production pour les industries du métal, du bois et des plastiques. Notre approche innovante est spécifiquement conçue pour relever les défis évolutifs auxquels sont confrontés les fabricants modernes. Grâce à des solutions optimisées de poinçonnage, laser, routage et pliage, cet outil puissant est essentiel pour tout fabricant déterminé à garder une longueur d'avance sur la concurrence et maximiser l'efficacité opérationnelle.",
       },
       features: {
         en: [
-          "With a few simple clicks of the mouse, both 2D and 3D models can be imported and prepared for cutting in an instant. Powerful nesting solutions will optimize material yield and set-up times as opposed to manual nesting which is both time consuming and less efficient.",
-          "Tool sorting and cutting sequences are optimized in order to reduce tool changes and minimize the cutting path. Clamp repositioning and avoidance are also determined by the software.",
-          "Bending sequences can also be determined beforehand in order to maintain production flow.",
+          "Rapid Model Import & Preparation: With just a few clicks, seamlessly import both 2D and 3D models and prepare them for cutting instantly. Our powerful nesting algorithms dramatically optimize material yield and reduce setup times compared to manual nesting, which is both time-consuming and significantly less efficient.",
+          "Intelligent Tool Optimization: Advanced algorithms automatically optimize tool sorting and cutting sequences to minimize tool changes and reduce cutting paths. The software intelligently determines clamp repositioning and collision avoidance strategies, ensuring smooth, uninterrupted production.",
+          "Automated Bending Sequences: Plan and optimize bending sequences in advance to maintain consistent production flow and eliminate bottlenecks. This proactive approach ensures your bending operations seamlessly integrate with cutting processes.",
+          "Multi-Industry Compatibility: Designed to serve metal fabrication, woodworking, and plastics manufacturing with industry-specific optimization strategies.",
+          "Material Yield Maximization: Sophisticated nesting algorithms ensure maximum material utilization, significantly reducing waste and lowering material costs.",
         ],
         fr: [
-          "En quelques clics de souris, les modèles 2D et 3D peuvent être importés et préparés pour la découpe en un instant. Des solutions puissantes d'imbrication optimiseront le rendement des matériaux et les temps de configuration, contrairement à l'imbrication manuelle qui est à la fois chronophage et moins efficace.",
-          "Le tri des outils et les séquences de coupe sont optimisés afin de réduire les changements d'outils et de minimiser le chemin de coupe. Le repositionnement et l'évitement des pinces sont également déterminés par le logiciel.",
-          "Les séquences de pliage peuvent également être déterminées à l'avance afin de maintenir le flux de production.",
+          "Importation et préparation rapides de modèles : En quelques clics, importez facilement des modèles 2D et 3D et préparez-les pour la découpe instantanément. Nos algorithmes d'imbrication puissants optimisent considérablement le rendement des matériaux et réduisent les temps de configuration par rapport à l'imbrication manuelle, qui est à la fois chronophage et nettement moins efficace.",
+          "Optimisation intelligente des outils : Des algorithmes avancés optimisent automatiquement le tri des outils et les séquences de coupe pour minimiser les changements d'outils et réduire les chemins de coupe. Le logiciel détermine intelligemment les stratégies de repositionnement des pinces et d'évitement des collisions, garantissant une production fluide et ininterrompue.",
+          "Séquences de pliage automatisées : Planifiez et optimisez les séquences de pliage à l'avance pour maintenir un flux de production constant et éliminer les goulots d'étranglement. Cette approche proactive garantit que vos opérations de pliage s'intègrent parfaitement aux processus de découpe.",
+          "Compatibilité multi-industries : Conçu pour servir la fabrication de métal, le travail du bois et la fabrication de plastiques avec des stratégies d'optimisation spécifiques à l'industrie.",
+          "Maximisation du rendement des matériaux : Des algorithmes d'imbrication sophistiqués garantissent une utilisation maximale des matériaux, réduisant considérablement les déchets et diminuant les coûts de matériaux.",
         ],
       },
       image: "/images/products/nesting-software.png",
@@ -76,25 +504,35 @@ export const companyConfig = {
       id: "cad-cam-software",
       slug: "cad-cam-software",
       name: {
-        en: "CAD/CAM software",
+        en: "CAD/CAM Software",
         fr: "Logiciel CAD/CAM",
       },
+      category: {
+        en: "Software Solutions",
+        fr: "Solutions logicielles",
+      },
+      teaser: {
+        en: "Powerful 2D/3D design and manufacturing software for precise product development and seamless production workflows.",
+        fr: "Logiciel puissant de conception et de fabrication 2D/3D pour le développement précis de produits et des flux de production fluides.",
+      },
       description: {
-        en: "The success of any business is getting things started off right. Within the manufacturing process this starts at the design stage. A properly designed product will ultimately determine a company's success. How a product is designed will also have an effect on how it is manufactured.",
-        fr: "Le succès de toute entreprise passe par un bon démarrage. Dans le processus de fabrication, cela commence au stade de la conception. Un produit bien conçu déterminera en fin de compte le succès d'une entreprise. La façon dont un produit est conçu aura également un effet sur la façon dont il est fabriqué.",
+        en: "Success in manufacturing begins with getting the fundamentals right. Within the manufacturing process, this critical foundation starts at the design stage. A properly designed product doesn't just look good—it determines your company's competitive advantage and long-term success.\n\nThe way a product is designed directly influences manufacturing efficiency, cost-effectiveness, and overall production quality. Poor design decisions made early in the development cycle can result in costly production challenges, material waste, and quality issues that plague your manufacturing process for years.\n\nAs an authorized reseller of Autodesk products, Consult Metal delivers industry-leading CAD/CAM solutions that empower your team to design with confidence. Our comprehensive 2D/3D software packages provide the tools and capabilities necessary to transform concepts into production-ready designs that optimize manufacturability from the very beginning.",
+        fr: "Le succès en fabrication commence par obtenir les fondamentaux corrects. Dans le processus de fabrication, cette base critique commence au stade de la conception. Un produit bien conçu ne fait pas que bien paraître—il détermine votre avantage concurrentiel et votre succès à long terme.\n\nLa façon dont un produit est conçu influence directement l'efficacité de fabrication, la rentabilité et la qualité globale de production. De mauvaises décisions de conception prises au début du cycle de développement peuvent entraîner des défis de production coûteux, du gaspillage de matériaux et des problèmes de qualité qui affectent votre processus de fabrication pendant des années.\n\nEn tant que revendeur agréé de produits Autodesk, Consult Metal fournit des solutions CAD/CAM de pointe qui permettent à votre équipe de concevoir en toute confiance. Nos packages logiciels 2D/3D complets fournissent les outils et les capacités nécessaires pour transformer les concepts en conceptions prêtes pour la production qui optimisent la fabricabilité dès le début.",
       },
       features: {
         en: [
-          "As an authorized reseller of Autodesk products, Consult Metal can offer its clients a powerful 2D/3D package in order to get the design and conception stage off to the right start.",
-          "We are able to develop detailed 2D models which can be analyzed for errors that can lead to the production process. These same models can be folded and rendered in 3D format.",
-          "We can also take 3D models and break them down into flats and prepare the parts for immediate production.",
-          "Parametric modeling plays a critical role in today's product lines. Being able to manufacture similar products with varying dimensions without having to constantly redraw a new model is vital to lean manufacturing. Imagine being able to dynamically control your CAD models. At Consult Metal, we do this to.",
+          "Autodesk Authorized Partnership: As an authorized reseller of Autodesk products, Consult Metal provides clients with industry-leading 2D/3D CAD/CAM packages, ensuring your design and conception stage starts on the strongest possible foundation.",
+          "Comprehensive 2D Modeling & Error Analysis: Develop detailed, precision-engineered 2D models that can be thoroughly analyzed for potential production errors before they become costly mistakes. These models seamlessly fold and render into accurate 3D visualizations.",
+          "3D to Flat Pattern Conversion: Expert conversion of complex 3D models into flat patterns, with parts immediately prepared for production. This streamlined workflow eliminates delays and ensures manufacturing-ready outputs.",
+          "Dynamic Parametric Modeling: Leverage parametric modeling capabilities that are critical to modern product lines. Manufacture similar products with varying dimensions without constantly redrawing new models—a vital component of lean manufacturing. Dynamically control your CAD models to adapt quickly to changing customer requirements.",
+          "Seamless Design-to-Manufacturing Workflow: Integrate design seamlessly with your manufacturing processes, ensuring what's designed can be efficiently produced.",
         ],
         fr: [
-          "En tant que revendeur agréé de produits Autodesk, Consult Metal peut offrir à ses clients un ensemble 2D/3D puissant afin de commencer l'étape de conception et de conception du bon pied.",
-          "Nous sommes en mesure de développer des modèles 2D détaillés qui peuvent être analysés pour détecter les erreurs pouvant conduire au processus de production. Ces mêmes modèles peuvent être pliés et rendus au format 3D.",
-          "Nous pouvons également prendre des modèles 3D et les décomposer en plats et préparer les pièces pour une production immédiate.",
-          "La modélisation paramétrique joue un rôle essentiel dans les gammes de produits d'aujourd'hui. Être capable de fabriquer des produits similaires avec des dimensions variables sans avoir à redessiner constamment un nouveau modèle est essentiel à la fabrication allégée. Imaginez pouvoir contrôler dynamiquement vos modèles CAO. Chez Consult Metal, nous faisons également cela.",
+          "Partenariat autorisé Autodesk : En tant que revendeur agréé de produits Autodesk, Consult Metal fournit aux clients des packages CAD/CAM 2D/3D de pointe de l'industrie, garantissant que votre étape de conception et de conception commence sur la base la plus solide possible.",
+          "Modélisation 2D complète et analyse d'erreurs : Développez des modèles 2D détaillés et d'ingénierie de précision qui peuvent être analysés en profondeur pour détecter les erreurs de production potentielles avant qu'elles ne deviennent des erreurs coûteuses. Ces modèles se plient et se rendent de manière transparente en visualisations 3D précises.",
+          "Conversion 3D en patron plat : Conversion experte de modèles 3D complexes en patrons plats, avec des pièces immédiatement préparées pour la production. Ce flux de travail rationalisé élimine les retards et garantit des sorties prêtes à la fabrication.",
+          "Modélisation paramétrique dynamique : Tirez parti des capacités de modélisation paramétrique qui sont essentielles aux gammes de produits modernes. Fabriquez des produits similaires avec des dimensions variables sans redessiner constamment de nouveaux modèles—un composant vital de la fabrication allégée. Contrôlez dynamiquement vos modèles CAO pour vous adapter rapidement aux exigences changeantes des clients.",
+          "Flux de travail conception-fabrication transparent : Intégrez la conception de manière transparente avec vos processus de fabrication, garantissant que ce qui est conçu peut être produit efficacement.",
         ],
       },
       image: "/images/products/cad-cam-software.jpg",
@@ -119,16 +557,24 @@ export const companyConfig = {
         en: "Workflow Design",
         fr: "Conception du flux de travail",
       },
+      teaser: {
+        en: "Optimize your manufacturing layout with strategic machinery placement for seamless automated production workflows.",
+        fr: "Optimisez votre agencement de fabrication avec un placement stratégique des machines pour des flux de production automatisés fluides.",
+      },
       description: {
-        en: "By examining the manufacturing process as a whole, we are able to determine the proper layout of machinery in order to facilitate workflow. A step-by-step approach is required. The idea is to create an automated production line where each step of the manufacturing process follows a logical sequence.",
-        fr: "En examinant le processus de fabrication dans son ensemble, nous sommes en mesure de déterminer la disposition appropriée des machines afin de faciliter le flux de travail. Une approche étape par étape est nécessaire. L'idée est de créer une chaîne de production automatisée où chaque étape du processus de fabrication suit une séquence logique.",
+        en: "Through comprehensive examination of your entire manufacturing process, we determine the optimal machinery layout to facilitate maximum workflow efficiency. Our methodical, step-by-step approach creates automated production lines where each manufacturing stage follows a logical, efficient sequence. This strategic planning transforms disconnected operations into a cohesive, high-performance production system.",
+        fr: "Grâce à un examen approfondi de l'ensemble de votre processus de fabrication, nous déterminons l'agencement optimal des machines pour faciliter une efficacité maximale du flux de travail. Notre approche méthodique, étape par étape, crée des lignes de production automatisées où chaque étape de fabrication suit une séquence logique et efficace. Cette planification stratégique transforme des opérations déconnectées en un système de production cohésif et haute performance.",
       },
       details: {
         en: [
-          "Machinery needs to be looked at as a cell. Determining whether a single cell is independent or dependent upon another is critical. The plant as a whole needs to be viewed as a self-sustaining entity with each cell playing a critical role. By determining the proper work path and tying together the various infrastructure will ultimately determine long-term sustainability and success.",
+          "Cellular Manufacturing Philosophy: We analyze machinery as integrated cells, determining whether each cell operates independently or depends on others. This cell-based approach is critical to creating efficient, flexible manufacturing systems.",
+          "Holistic Plant Design: Your facility is viewed as a self-sustaining ecosystem where each manufacturing cell plays a vital role. We ensure seamless integration between all production components, creating harmonious workflow across your entire operation.",
+          "Optimized Work Paths: By meticulously determining the proper work path and interconnecting various infrastructure elements, we establish the foundation for long-term operational sustainability and business success.",
         ],
         fr: [
-          "Les machines doivent être considérées comme une cellule. Déterminer si une seule cellule est indépendante ou dépendante d'une autre est crucial. L'usine dans son ensemble doit être considérée comme une entité autonome avec chaque cellule jouant un rôle essentiel. En déterminant le bon chemin de travail et en liant ensemble les diverses infrastructures, on déterminera finalement la durabilité et le succès à long terme.",
+          "Philosophie de fabrication cellulaire : Nous analysons les machines comme des cellules intégrées, déterminant si chaque cellule fonctionne indépendamment ou dépend d'autres. Cette approche basée sur les cellules est essentielle pour créer des systèmes de fabrication efficaces et flexibles.",
+          "Conception holistique d'usine : Votre installation est considérée comme un écosystème autosuffisant où chaque cellule de fabrication joue un rôle vital. Nous assurons une intégration transparente entre tous les composants de production, créant un flux de travail harmonieux dans toute votre opération.",
+          "Chemins de travail optimisés : En déterminant méticuleusement le bon chemin de travail et en interconnectant divers éléments d'infrastructure, nous établissons les fondations d'une durabilité opérationnelle à long terme et d'un succès commercial.",
         ],
       },
       image: "/images/services/workflow-design.png",
@@ -140,16 +586,24 @@ export const companyConfig = {
         en: "Product Analysis",
         fr: "Analyse de produits",
       },
+      teaser: {
+        en: "Comprehensive product breakdown to streamline manufacturing operations and maximize efficiency without compromising quality.",
+        fr: "Décomposition complète du produit pour rationaliser les opérations de fabrication et maximiser l'efficacité sans compromettre la qualité.",
+      },
       description: {
-        en: "No two products are alike and neither should the way they are manufactured be either. The ultimate goal is to be able to produce it quicker without sacrificing quality.",
-        fr: "Aucun produit n'est identique et la façon dont ils sont fabriqués ne devrait pas non plus l'être. L'objectif ultime est de pouvoir le produire plus rapidement sans sacrifier la qualité.",
+        en: "Every product is unique, and so should be its manufacturing approach. Our comprehensive product analysis service focuses on one ultimate goal: producing your products faster and more cost-effectively without ever sacrificing quality. We challenge conventional manufacturing methods to uncover hidden opportunities for optimization and efficiency gains.",
+        fr: "Chaque produit est unique, et son approche de fabrication devrait l'être aussi. Notre service d'analyse de produits complet se concentre sur un objectif ultime : produire vos produits plus rapidement et de manière plus rentable sans jamais sacrifier la qualité. Nous remettons en question les méthodes de fabrication conventionnelles pour découvrir des opportunités cachées d'optimisation et de gains d'efficacité.",
       },
       details: {
         en: [
-          "By breaking down a product into its various component parts we are able to analyze its design, and ultimately, the way it will be produced. Minimizing the operations involved in its manufacturing will allow greater gains in time and efficiency while resulting in productivity gains and profitability. Can we reduce the number of hits? Can we have fewer bends? Basically, can we produce it faster and cheaper while maintaining the same or increased quality standard?",
+          "Comprehensive Component Breakdown: We meticulously deconstruct your product into its individual component parts, analyzing design elements and production requirements. This detailed examination reveals the most efficient manufacturing pathway for each element.",
+          "Operation Minimization Strategy: By reducing the number of manufacturing operations required, we unlock significant time and efficiency gains that directly translate to improved productivity and enhanced profitability.",
+          "Quality-First Cost Reduction: Produce products faster and at lower cost while maintaining—or even exceeding—current quality standards. Our optimizations never compromise on the excellence your customers expect.",
         ],
         fr: [
-          "En décomposant un produit en ses différentes pièces, nous sommes en mesure d'analyser sa conception et, finalement, la façon dont il sera produit. Minimiser les opérations impliquées dans sa fabrication permettra de plus grands gains de temps et d'efficacité tout en entraînant des gains de productivité et de rentabilité. Pouvons-nous réduire le nombre de coups? Pouvons-nous avoir moins de plis? Fondamentalement, pouvons-nous le produire plus rapidement et moins cher tout en maintenant la même norme de qualité ou une norme supérieure?",
+          "Décomposition complète des composants : Nous déconstruisons méticuleusement votre produit en ses pièces composantes individuelles, analysant les éléments de conception et les exigences de production. Cet examen détaillé révèle le chemin de fabrication le plus efficace pour chaque élément.",
+          "Stratégie de minimisation des opérations : En réduisant le nombre d'opérations de fabrication requises, nous débloquons des gains significatifs de temps et d'efficacité qui se traduisent directement par une productivité améliorée et une rentabilité accrue.",
+          "Réduction des coûts axée sur la qualité : Produisez des produits plus rapidement et à moindre coût tout en maintenant—ou même en dépassant—les normes de qualité actuelles. Nos optimisations ne compromettent jamais l'excellence que vos clients attendent.",
         ],
       },
       image: "/images/services/product-analysis.png",
@@ -161,16 +615,24 @@ export const companyConfig = {
         en: "Software Recommendation",
         fr: "Recommandation de logiciels",
       },
+      teaser: {
+        en: "Expert guidance in selecting the right CAD/CAM and production-planning software tailored to your specific operations.",
+        fr: "Conseils d'experts pour sélectionner les logiciels CAD/CAM et de planification de production adaptés à vos opérations spécifiques.",
+      },
       description: {
-        en: "There is no one-size-fits-all solution for all manufacturing operations. The choice of CAD/CAM software is almost endless. From software that can design in 2D and 3D to production-planning software that drives the shop floor, the combinations are numerous.",
-        fr: "Il n'existe pas de solution unique pour toutes les opérations de fabrication. Le choix de logiciels CAD/CAM est presque infini. Des logiciels qui peuvent concevoir en 2D et 3D aux logiciels de planification de production qui pilotent l'atelier, les combinaisons sont nombreuses.",
+        en: "One-size-fits-all solutions don't exist in modern manufacturing. The landscape of CAD/CAM software options is vast and complex—from sophisticated 2D/3D design platforms to comprehensive production-planning systems that orchestrate your entire shop floor. With countless combinations available, making the right choice requires expertise, experience, and deep understanding of your unique operational needs.",
+        fr: "Les solutions universelles n'existent pas dans la fabrication moderne. Le paysage des options de logiciels CAD/CAM est vaste et complexe—des plateformes de conception 2D/3D sophistiquées aux systèmes complets de planification de production qui orchestrent l'ensemble de votre atelier. Avec d'innombrables combinaisons disponibles, faire le bon choix nécessite expertise, expérience et compréhension approfondie de vos besoins opérationnels uniques.",
       },
       details: {
         en: [
-          "By analyzing operations from the order entry stage down through final output, we can make informed decisions into what type of platform is required. Taking a shotgun approach often results in unnecessary expenditure. Software needs to be relevant to the operations at hand while being flexible enough to grow as you grow.",
+          "End-to-End Operational Analysis: We conduct comprehensive analysis from order entry through final product output, examining every touchpoint in your manufacturing workflow. This holistic view enables informed, strategic platform decisions.",
+          "Avoiding the Shotgun Approach: Random software selection often leads to unnecessary capital expenditure, operational disruption, and integration nightmares. Our targeted methodology ensures you invest in solutions that deliver measurable ROI.",
+          "Vendor-Neutral Expertise: Unlike software vendors with inherent biases, our recommendations are based purely on what's best for your specific manufacturing environment, not sales commissions.",
         ],
         fr: [
-          "En analysant les opérations depuis l'étape de saisie des commandes jusqu'à la production finale, nous pouvons prendre des décisions éclairées sur le type de plateforme requis. Adopter une approche dispersée entraîne souvent des dépenses inutiles. Le logiciel doit être pertinent pour les opérations en cours tout en étant suffisamment flexible pour évoluer à mesure que vous grandissez.",
+          "Analyse opérationnelle de bout en bout : Nous effectuons une analyse complète de la saisie des commandes à la production finale, examinant chaque point de contact dans votre flux de travail de fabrication. Cette vue holistique permet des décisions de plateforme stratégiques et éclairées.",
+          "Éviter l'approche dispersée : La sélection aléatoire de logiciels conduit souvent à des dépenses en capital inutiles, à des perturbations opérationnelles et à des cauchemars d'intégration. Notre méthodologie ciblée garantit que vous investissez dans des solutions qui offrent un retour sur investissement mesurable.",
+          "Expertise neutre des fournisseurs : Contrairement aux fournisseurs de logiciels avec des biais inhérents, nos recommandations sont basées purement sur ce qui est le mieux pour votre environnement de fabrication spécifique, pas sur des commissions de vente.",
         ],
       },
       image: "/images/services/software-recommendation.png",
@@ -182,20 +644,24 @@ export const companyConfig = {
         en: "Software Development",
         fr: "Développement de logiciels",
       },
+      teaser: {
+        en: "Custom software solutions designed to integrate seamlessly with your existing systems and boost operational efficiency.",
+        fr: "Solutions logicielles personnalisées conçues pour s'intégrer de manière transparente à vos systèmes existants et améliorer l'efficacité opérationnelle.",
+      },
       description: {
-        en: "While existing software can meet most of the needs the industry has today, each operation has its unique attributes.",
-        fr: "Bien que les logiciels existants puissent répondre à la plupart des besoins de l'industrie aujourd'hui, chaque opération a ses attributs uniques.",
+        en: "While commercial off-the-shelf software addresses many industry needs, every manufacturing operation possesses unique characteristics, workflows, and requirements that demand specialized solutions. Our custom software development services bridge the gap between generic capabilities and your specific operational excellence goals.",
+        fr: "Bien que les logiciels commerciaux standard répondent à de nombreux besoins de l'industrie, chaque opération de fabrication possède des caractéristiques, des flux de travail et des exigences uniques qui exigent des solutions spécialisées. Nos services de développement de logiciels personnalisés comblent l'écart entre les capacités génériques et vos objectifs spécifiques d'excellence opérationnelle.",
       },
       details: {
         en: [
-          "Our programmers have the ability to develop scripts tailor-made to your operation. These programs are able to tie into your existing platform in order to achieve greater efficiency.",
-          "We can have your production-planning system pull information from your MRP/ERP system in order to drive production. We can have production-planning push information back to the purchasing department in order to determine JIT (just-in-time) material purchasing and delivery.",
-          "Custom program development can be a stand-alone solution or as part of a larger package.",
+          "Tailor-Made Solutions: Our experienced programmers develop custom scripts and applications specifically designed for your unique operational requirements. These solutions integrate seamlessly with your existing technology platform to unlock greater efficiency and productivity.",
+          "Bidirectional MRP/ERP Integration: Create intelligent data flows where your production-planning system automatically pulls critical information from your MRP/ERP system to drive real-time production decisions. Simultaneously, push production data back to purchasing departments to enable precise JIT (just-in-time) material procurement.",
+          "Automation of Manual Processes: Identify repetitive, time-consuming manual tasks and transform them into automated workflows that reduce errors, save time, and free your team for higher-value activities.",
         ],
         fr: [
-          "Nos programmeurs ont la capacité de développer des scripts sur mesure pour votre opération. Ces programmes sont capables de se lier à votre plateforme existante afin d'atteindre une plus grande efficacité.",
-          "Nous pouvons faire en sorte que votre système de planification de production extraie des informations de votre système MRP/ERP afin de piloter la production. Nous pouvons faire en sorte que la planification de production renvoie des informations au service des achats afin de déterminer l'achat et la livraison de matériel JIT (juste à temps).",
-          "Le développement de programmes personnalisés peut être une solution autonome ou faire partie d'un ensemble plus large.",
+          "Solutions sur mesure : Nos programmeurs expérimentés développent des scripts et des applications personnalisés spécialement conçus pour vos exigences opérationnelles uniques. Ces solutions s'intègrent de manière transparente avec votre plateforme technologique existante pour débloquer une plus grande efficacité et productivité.",
+          "Intégration bidirectionnelle MRP/ERP : Créez des flux de données intelligents où votre système de planification de production extrait automatiquement des informations critiques de votre système MRP/ERP pour piloter les décisions de production en temps réel. Simultanément, poussez les données de production vers les départements d'achat pour permettre un approvisionnement précis en matériel JIT (juste à temps).",
+          "Automatisation des processus manuels : Identifiez les tâches manuelles répétitives et chronophages et transformez-les en flux de travail automatisés qui réduisent les erreurs, économisent du temps et libèrent votre équipe pour des activités à plus forte valeur ajoutée.",
         ],
       },
       image: "/images/services/software-development.png",
@@ -207,20 +673,24 @@ export const companyConfig = {
         en: "Capital Expenditure Recommendation",
         fr: "Recommandation de dépenses en capital",
       },
+      teaser: {
+        en: "Unbiased machinery recommendations to maximize ROI on cutting, bending, and manufacturing equipment investments.",
+        fr: "Recommandations de machines impartiales pour maximiser le retour sur investissement des équipements de découpe, de pliage et de fabrication.",
+      },
       description: {
-        en: "As it is with software, a targeted approach needs to be taken when purchasing machinery. Do you purchase new or used?",
-        fr: "Comme c'est le cas avec les logiciels, une approche ciblée doit être adoptée lors de l'achat de machines. Achetez-vous du neuf ou de l'occasion?",
+        en: "Just like software selection, machinery purchasing demands a strategic, targeted approach. Should you invest in new or used equipment? Which technology platform best serves your production needs? These decisions represent substantial capital expenditures that will impact your operations for years to come. Making the right choice requires independent expertise, not sales pitches.",
+        fr: "Tout comme la sélection de logiciels, l'achat de machines exige une approche stratégique et ciblée. Devriez-vous investir dans des équipements neufs ou d'occasion ? Quelle plateforme technologique sert le mieux vos besoins de production ? Ces décisions représentent des dépenses en capital substantielles qui affecteront vos opérations pour les années à venir. Faire le bon choix nécessite une expertise indépendante, pas des arguments de vente.",
       },
       details: {
         en: [
-          "The purchase of cutting and bending machinery is a substantial capital expenditure. It is important to remember that each product or product line has a specific manufacturing process. Remember that machine sales representatives will always tout the benefits of their products while downplaying shortcomings.",
-          "We at Consult Metal have no financial ties to any of the machine manufacturers. What we do have is in-depth knowledge of the many machines on the market today. The idea is to pair you up with machinery that is relevant to your operations. Determining whether a laser or punch press or plasma or combination machine is required is critical to the production process. The number of bending centers required in order to keep up with the cutting cells must also be kept in mind.",
-          "At the end of the day we need to ask ourselves what our ROI will be.",
+          "Unbiased, Independent Analysis: Unlike machine sales representatives who naturally emphasize benefits while minimizing limitations, Consult Metal maintains zero financial ties to any machinery manufacturer. Our recommendations are driven purely by your best interests.",
+          "Technology Matching & Market Knowledge: We possess comprehensive knowledge of laser cutters, punch presses, plasma systems, combination machines, and bending equipment across all major manufacturers. We analyze your product mix, material types, and production volumes to identify the perfect technology fit.",
+          "ROI-Focused Decision Making: Every recommendation is backed by financial analysis demonstrating projected payback periods and long-term profitability impact. We evaluate new versus used equipment to ensure you get the best value for your investment.",
         ],
         fr: [
-          "L'achat de machines de découpe et de pliage représente une dépense en capital substantielle. Il est important de se rappeler que chaque produit ou gamme de produits a un processus de fabrication spécifique. Rappelez-vous que les représentants commerciaux de machines vanteront toujours les avantages de leurs produits tout en minimisant les lacunes.",
-          "Nous, chez Consult Metal, n'avons aucun lien financier avec aucun des fabricants de machines. Ce que nous avons, c'est une connaissance approfondie des nombreuses machines sur le marché aujourd'hui. L'idée est de vous jumeler avec des machines pertinentes pour vos opérations. Déterminer si un laser ou une presse à poinçonner ou un plasma ou une machine combinée est nécessaire est essentiel au processus de production. Le nombre de centres de pliage nécessaires pour suivre les cellules de découpe doit également être gardé à l'esprit.",
-          "En fin de compte, nous devons nous demander quel sera notre retour sur investissement.",
+          "Analyse indépendante et impartiale : Contrairement aux représentants commerciaux de machines qui mettent naturellement en évidence les avantages tout en minimisant les limitations, Consult Metal ne maintient aucun lien financier avec aucun fabricant de machines. Nos recommandations sont motivées purement par vos meilleurs intérêts.",
+          "Correspondance technologique et connaissance du marché : Nous possédons une connaissance complète des découpeurs laser, des presses à poinçonner, des systèmes plasma, des machines combinées et des équipements de pliage de tous les principaux fabricants. Nous analysons votre mix de produits, vos types de matériaux et vos volumes de production pour identifier l'adéquation technologique parfaite.",
+          "Prise de décision axée sur le ROI : Chaque recommandation est soutenue par une analyse financière démontrant les périodes de récupération projetées et l'impact sur la rentabilité à long terme. Nous évaluons les équipements neufs par rapport aux équipements d'occasion pour garantir que vous obtenez le meilleur rapport qualité-prix pour votre investissement.",
         ],
       },
       image: "/images/services/capital-expenditure.jpeg",
@@ -232,18 +702,24 @@ export const companyConfig = {
         en: "CAD Development",
         fr: "Développement CAD",
       },
+      teaser: {
+        en: "Professional 2D/3D CAD modeling with parametric design capabilities for flexible, production-ready manufacturing solutions.",
+        fr: "Modélisation CAO 2D/3D professionnelle avec capacités de conception paramétrique pour des solutions de fabrication flexibles et prêtes à la production.",
+      },
       description: {
-        en: "We are able to develop detailed 2D models which can be analyzed for errors that can lead to the production process. These same models can be folded and rendered in 3D format.",
-        fr: "Nous sommes en mesure de développer des modèles 2D détaillés qui peuvent être analysés pour détecter les erreurs pouvant conduire au processus de production. Ces mêmes modèles peuvent être pliés et rendus au format 3D.",
+        en: "Our expert CAD development services deliver precision-engineered 2D models that undergo rigorous error analysis before reaching the production floor. These meticulously crafted models seamlessly transform from detailed 2D drawings into accurate 3D visualizations, providing comprehensive perspectives for design validation and manufacturing planning.",
+        fr: "Nos services experts de développement CAO fournissent des modèles 2D d'ingénierie de précision qui subissent une analyse d'erreur rigoureuse avant d'atteindre l'atelier de production. Ces modèles méticuleusement conçus se transforment de manière transparente de dessins 2D détaillés en visualisations 3D précises, fournissant des perspectives complètes pour la validation de conception et la planification de fabrication.",
       },
       details: {
         en: [
-          "We can also take 3D models and break them down into flats and prepare the parts for immediate production.",
-          "Parametric modeling plays a critical role in today's product lines. Being able to manufacture similar products with varying dimensions without having to constantly redraw a new model is vital to lean manufacturing. Imagine being able to dynamically control your CAD models. At Consult Metal, we do this to.",
+          "Precision 2D/3D Modeling: Develop highly detailed models with built-in error checking to identify and eliminate potential production issues before they become costly mistakes. Models seamlessly fold and render between 2D and 3D formats for comprehensive design review.",
+          "Parametric Modeling Excellence: Harness the power of parametric design to manufacture families of similar products with varying dimensions without constantly redrawing new models. Change a single dimension and watch the entire assembly update automatically.",
+          "Design for Manufacturing Integration: Every model considers manufacturing constraints, material properties, tooling capabilities, and production efficiency. We ensure both beautiful design and practical manufacturability.",
         ],
         fr: [
-          "Nous pouvons également prendre des modèles 3D et les décomposer en plats et préparer les pièces pour une production immédiate.",
-          "La modélisation paramétrique joue un rôle essentiel dans les gammes de produits d'aujourd'hui. Être capable de fabriquer des produits similaires avec des dimensions variables sans avoir à redessiner constamment un nouveau modèle est essentiel à la fabrication allégée. Imaginez pouvoir contrôler dynamiquement vos modèles CAO. Chez Consult Metal, nous faisons également cela.",
+          "Modélisation 2D/3D de précision : Développez des modèles hautement détaillés avec vérification d'erreurs intégrée pour identifier et éliminer les problèmes de production potentiels avant qu'ils ne deviennent des erreurs coûteuses. Les modèles se plient et se rendent de manière transparente entre les formats 2D et 3D pour un examen de conception complet.",
+          "Excellence en modélisation paramétrique : Exploitez la puissance de la conception paramétrique pour fabriquer des familles de produits similaires avec des dimensions variables sans redessiner constamment de nouveaux modèles. Changez une seule dimension et regardez l'ensemble de l'assemblage se mettre à jour automatiquement.",
+          "Intégration conception-fabrication : Chaque modèle considère les contraintes de fabrication, les propriétés des matériaux, les capacités d'outillage et l'efficacité de production. Nous assurons à la fois un beau design et une fabricabilité pratique.",
         ],
       },
       image: "/images/services/cad-development.jpg",
@@ -267,33 +743,6 @@ export const companyConfig = {
         en: "Consult Metal supports and consults clients through every step of the business improvement process.",
         fr: "Consult Metal accompagne et conseille les clients à chaque étape du processus d'amélioration des affaires.",
       },
-    },
-    profile: {
-      label: {
-        en: "PROFILE",
-        fr: "PROFIL",
-      },
-      title: {
-        en: "Meet The Experts",
-        fr: "Rencontrez les experts",
-      },
-      content: {
-        paragraphs: [
-          {
-            en: "With more than 20 plus years in the sheet metal industry, the experts at Consult Metal are at the cutting-edge of lean manufacturing.",
-            fr: "Avec plus de 20 ans d'expérience dans l'industrie de la tôle, les experts de Consult Metal sont à la pointe de la fabrication lean.",
-          },
-          {
-            en: "We offer the most up-to-date software packages as well as knowledge-based services in order to optimize your operations and minimize costs. From order entry through to product design and final output, we can analyze each and every step of operations in order to gain maximum efficiency at every stage of the manufacturing process.",
-            fr: "Nous offrons les progiciels les plus récents ainsi que des services basés sur les connaissances afin d'optimiser vos opérations et de minimiser les coûts. De la saisie des commandes à la conception du produit et à la production finale, nous pouvons analyser chaque étape des opérations afin d'obtenir une efficacité maximale à chaque étape du processus de fabrication.",
-          },
-          {
-            en: "Know that our professionals have first-hand knowledge of the production process. Having worked our way up from the shop floor, we are able to see operations both from an operator's and manager's perspective.",
-            fr: "Sachez que nos professionnels ont une connaissance de première main du processus de production. Ayant travaillé depuis l'atelier, nous sommes en mesure de voir les opérations à la fois du point de vue de l'opérateur et du gestionnaire.",
-          },
-        ],
-      },
-      image: "/images/about/team.jpg",
     },
     background: {
       label: {

@@ -1,0 +1,281 @@
+/**
+ * SCSS Variables - ConsultMetal New Design
+ * Centralized design system for consistent styling
+ */
+
+// ===========================================
+// COLOR PALETTE
+// ===========================================
+
+// Primary Colors
+$color-primary: #343477;
+$color-primary-light: #565695;
+$color-primary-dark: #1a1a3e;
+
+// Secondary Colors
+$color-secondary: #4a4a6a;
+$color-secondary-light: #5a5a7a;
+$color-secondary-dark: #2a2a4a;
+
+// Neutral Colors
+$color-dark: #1a1a3e;
+$color-darker: #0d0d1f;
+$color-light: #f8f9fa;
+$color-lighter: #ffffff;
+
+// Text Colors
+$color-text-primary: #2a2a4a;
+$color-text-secondary: #4a4a6a;
+$color-text-muted: #5a5a7a;
+$color-text-light: #f8f9fa;
+$color-text-white: #ffffff;
+$color-text-body: #4a4a6a;          // Alias
+$color-text-tertiary: #5a5a7a;      // Alias
+
+// Background Colors
+$color-bg: #ffffff;
+$color-bg-light: #f8f9ff;
+$color-bg-dark: #1a1a3e;
+
+// Border Colors
+$color-border: #e5e7f2;
+$color-border-light: #e5e7f2;
+$color-border-dark: #d0d2e0;
+
+// Accent Colors
+$color-accent: #565695;
+$color-accent-hover: #343477;
+$color-accent-error: #dc3545;
+
+// Status Colors
+$color-success: #28a745;
+$color-warning: #ffc107;
+$color-error: #dc3545;
+$color-info: #17a2b8;
+
+// ===========================================
+// GRADIENTS
+// ===========================================
+
+$gradient-primary: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+$gradient-secondary: linear-gradient(135deg, $color-secondary 0%, $color-secondary-light 100%);
+$gradient-dark: linear-gradient(135deg, $color-dark 0%, $color-primary-dark 100%);
+$gradient-metallic: linear-gradient(135deg, 
+  rgba(52, 52, 119, 0.1) 0%, 
+  rgba(86, 86, 149, 0.2) 50%, 
+  rgba(52, 52, 119, 0.1) 100%
+);
+$gradient-shimmer: linear-gradient(90deg,
+  transparent 0%,
+  rgba(255, 255, 255, 0.1) 50%,
+  transparent 100%
+);
+$gradient-overlay: linear-gradient(135deg,
+  rgba(26, 26, 62, 0.95) 0%,
+  rgba(52, 52, 119, 0.85) 100%
+);
+$gradient-text: linear-gradient(135deg, $color-primary-light 0%, $color-accent 100%);
+
+// ===========================================
+// TYPOGRAPHY
+// ===========================================
+
+// Font Families
+$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+$font-secondary: 'Inter', sans-serif;
+$font-mono: 'Fira Code', 'Courier New', monospace;
+
+// Font Sizes
+$font-size-xs: 0.75rem;      // 12px
+$font-size-sm: 0.875rem;     // 14px
+$font-size-base: 1rem;       // 16px
+$font-size-md: 1.05rem;      // 16.8px
+$font-size-lg: 1.15rem;      // 18.4px
+$font-size-xl: 1.25rem;      // 20px
+$font-size-2xl: 1.5rem;      // 24px
+$font-size-3xl: 2rem;        // 32px
+$font-size-4xl: 2.5rem;      // 40px
+$font-size-5xl: 3rem;        // 48px
+$font-size-6xl: 3.5rem;      // 56px
+$font-size-7xl: 4rem;        // 64px
+$font-size-8xl: 5rem;        // 80px
+
+// Font Weights
+$font-weight-thin: 100;
+$font-weight-extralight: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+// Line Heights
+$line-height-tight: 1.2;
+$line-height-snug: 1.4;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.7;
+$line-height-loose: 2;
+
+// Letter Spacing
+$letter-spacing-tight: -0.05em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.05em;
+$letter-spacing-wider: 0.1em;
+$letter-spacing-widest: 0.2em;
+
+// ===========================================
+// SPACING SYSTEM
+// ===========================================
+
+$spacing-xs: 0.25rem;      // 4px
+$spacing-sm: 0.5rem;       // 8px
+$spacing-md: 1rem;         // 16px
+$spacing-lg: 1.5rem;       // 24px
+$spacing-xl: 2rem;         // 32px
+$spacing-2xl: 3rem;        // 48px
+$spacing-3xl: 4rem;        // 64px
+$spacing-4xl: 6rem;        // 96px
+$spacing-5xl: 8rem;        // 128px
+$spacing-6xl: 12rem;       // 192px
+
+// Spacing Aliases (for compatibility)
+$space-1: 0.25rem;         // 4px
+$space-2: 0.5rem;          // 8px
+$space-3: 0.75rem;         // 12px
+$space-4: 1rem;            // 16px
+$space-5: 1.25rem;         // 20px
+$space-6: 1.5rem;          // 24px
+$space-8: 2rem;            // 32px
+$space-10: 2.5rem;         // 40px
+$space-12: 3rem;           // 48px
+$space-16: 4rem;           // 64px
+$space-20: 5rem;           // 80px
+$space-24: 6rem;           // 96px
+$space-32: 8rem;           // 128px
+
+// ===========================================
+// LAYOUT
+// ===========================================
+
+$container-max-width: 1440px;
+$container-padding: 2rem;
+
+// Breakpoints
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+$breakpoint-2xl: 1440px;
+
+// ===========================================
+// BORDERS & RADIUS
+// ===========================================
+
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+
+$border-radius-none: 0;
+$border-radius-sm: 0.25rem;    // 4px
+$border-radius-md: 0.5rem;     // 8px
+$border-radius-lg: 0.75rem;    // 12px
+$border-radius-xl: 1rem;       // 16px
+$border-radius-2xl: 1.5rem;    // 24px
+$border-radius-full: 9999px;
+
+// Radius Aliases (for compatibility)
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 0.75rem;
+$radius-xl: 1rem;
+$radius-2xl: 1.5rem;
+$radius-full: 9999px;
+
+// ===========================================
+// SHADOWS
+// ===========================================
+
+$shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-sm: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+$shadow-xl: 0 12px 24px 0 rgba(0, 0, 0, 0.18);
+$shadow-2xl: 0 24px 48px 0 rgba(0, 0, 0, 0.22);
+$shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+// Metallic Shadows
+$shadow-metallic: 0 8px 32px rgba(52, 52, 119, 0.15),
+                   0 4px 16px rgba(86, 86, 149, 0.1);
+$shadow-metallic-hover: 0 12px 48px rgba(52, 52, 119, 0.25),
+                         0 8px 24px rgba(86, 86, 149, 0.15);
+
+// Shadow Aliases (for compatibility)
+$shadow-metallic-md: 0 8px 32px rgba(52, 52, 119, 0.15),
+                      0 4px 16px rgba(86, 86, 149, 0.1);
+$shadow-metallic-lg: 0 12px 48px rgba(52, 52, 119, 0.25),
+                      0 8px 24px rgba(86, 86, 149, 0.15);
+
+// ===========================================
+// ANIMATIONS
+// ===========================================
+
+// Durations
+$duration-fastest: 0.1s;
+$duration-fast: 0.2s;
+$duration-normal: 0.3s;
+$duration-slow: 0.5s;
+$duration-slower: 0.8s;
+$duration-slowest: 1s;
+
+// Easing Functions
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+$ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// Easing Aliases (for compatibility)
+$easing-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+// ===========================================
+// Z-INDEX LAYERS
+// ===========================================
+
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// ===========================================
+// OVERLAYS & BACKDROPS
+// ===========================================
+
+$overlay-dark: rgba(26, 26, 62, 0.9);
+$overlay-medium: rgba(26, 26, 62, 0.7);
+$overlay-light: rgba(26, 26, 62, 0.5);
+$overlay-subtle: rgba(26, 26, 62, 0.3);
+
+$backdrop-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+// ===========================================
+// GEOMETRIC FRAME
+// ===========================================
+
+$frame-corner-size: 30px;
+$frame-line-width: 2px;
+$frame-color: $color-primary-light;
+
+// ===========================================
+// INDUSTRIAL BADGE
+// ===========================================
+
+$badge-line-width: 40px;
+$badge-line-height: 2px;
+$badge-gap: 12px;
+$badge-color: $color-primary-light;

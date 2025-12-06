@@ -1,0 +1,263 @@
+/**
+ * NewFooter Styles - ConsultMetal New Design
+ */
+
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+.new-footer {
+  position: relative;
+  background: $color-darker;
+  overflow: hidden;
+  margin-top: auto;
+
+  .footer-background {
+    position: absolute;
+    inset: 0;
+    background: $gradient-dark;
+    z-index: 1;
+  }
+
+  .footer-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: $backdrop-pattern;
+    opacity: 0.3;
+    z-index: 2;
+  }
+
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr 1fr 1.5fr;
+    gap: $spacing-2xl;
+    padding: $spacing-5xl 0 $spacing-3xl;
+
+    @include respond-to(xl) {
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: $spacing-2xl;
+      
+      .footer-section:nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-2xl;
+    }
+
+    @include respond-to(md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  // Brand Section
+  .footer-brand {
+    @include respond-to(lg) {
+      grid-column: span 2;
+    }
+
+    @include respond-to(md) {
+      grid-column: span 1;
+    }
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+  }
+
+  .logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: $gradient-primary;
+    border-radius: $border-radius-md;
+    position: relative;
+    overflow: hidden;
+
+    .logo-letter {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      color: $color-text-white;
+      position: relative;
+      z-index: 2;
+
+      &:first-child {
+        margin-right: -4px;
+      }
+    }
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .logo-name {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-white;
+    line-height: 1;
+  }
+
+  .logo-tagline {
+    font-size: $font-size-xs;
+    font-weight: $font-weight-medium;
+    color: $color-primary-light;
+    letter-spacing: $letter-spacing-wider;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .footer-description {
+    font-size: $font-size-sm;
+    color: rgba($color-text-light, 0.7);
+    line-height: $line-height-relaxed;
+    margin-bottom: $spacing-lg;
+    max-width: 400px;
+  }
+
+  .footer-badge {
+    margin-top: $spacing-md;
+  }
+
+  // Headings
+  .footer-heading {
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    color: $color-text-white;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+    margin-bottom: $spacing-lg;
+    position: relative;
+    padding-bottom: $spacing-sm;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: $gradient-text;
+    }
+  }
+
+  // Links
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  .footer-link {
+    font-size: $font-size-sm;
+    color: rgba($color-text-light, 0.7);
+    text-decoration: none;
+    @include transition;
+    padding: $spacing-xs 0;
+
+    &:hover {
+      color: $color-text-white;
+      padding-left: $spacing-sm;
+    }
+  }
+
+  // Contact
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    margin-bottom: $spacing-xl;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    font-size: $font-size-sm;
+    color: rgba($color-text-light, 0.9);
+    text-decoration: none;
+    @include transition;
+
+    &:hover {
+      color: $color-text-white;
+
+      .contact-icon {
+        color: $color-primary-light;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+    color: $color-primary-light;
+    flex-shrink: 0;
+    @include transition;
+  }
+
+  .btn-footer {
+    width: 100%;
+    justify-content: center;
+  }
+
+  // Footer Bottom
+  .footer-bottom {
+    border-top: 1px solid rgba($color-text-white, 0.1);
+    padding: $spacing-xl 0;
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+
+    @include respond-to(md) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .copyright {
+    font-size: $font-size-sm;
+    color: rgba($color-text-light, 0.6);
+    margin: 0;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    gap: $spacing-lg;
+  }
+
+  .footer-bottom-link {
+    font-size: $font-size-sm;
+    color: rgba($color-text-light, 0.6);
+    text-decoration: none;
+    @include transition;
+
+    &:hover {
+      color: $color-text-white;
+    }
+  }
+}

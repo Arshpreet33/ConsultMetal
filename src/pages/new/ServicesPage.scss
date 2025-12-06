@@ -1,0 +1,484 @@
+/**
+ * Services Page Styles - ConsultMetal New Design
+ * Modern metallic service card design
+ */
+
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+/* ========================================
+ * SERVICES PAGE WRAPPER
+ * ======================================== */
+.services-page {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ========================================
+ * SERVICES SECTION
+ * ======================================== */
+.services-section {
+  padding: $space-24 0;
+  background: linear-gradient(to bottom, $color-bg-light 0%, #ffffff 100%);
+  position: relative;
+}
+
+.section-intro {
+  text-align: center;
+  margin-bottom: $space-16;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .section-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: $color-text-primary;
+    margin-bottom: $space-6;
+    line-height: 1.1;
+
+    .title-highlight {
+      font-weight: 700;
+      background: $gradient-primary;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+
+  .section-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: $color-text-secondary;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+/* ========================================
+ * SERVICES GRID
+ * ======================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-8;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: $radius-xl;
+  padding: $space-10 $space-8;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $color-border-light;
+  box-shadow: $shadow-sm;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.6s $easing-smooth;
+
+  .services-grid.visible & {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: $gradient-primary;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s $easing-smooth;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-metallic-lg;
+    border-color: $color-primary-light;
+
+    .icon-bg {
+      transform: scale(1.2);
+      opacity: 0.15;
+    }
+  }
+}
+
+.service-card-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ========================================
+ * SERVICE ICON
+ * ======================================== */
+.service-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  margin-bottom: $space-6;
+}
+
+.service-icon {
+  font-size: 4rem;
+  filter: grayscale(0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+
+  .service-card:hover & {
+    filter: grayscale(0);
+    transform: scale(1.15) translateY(-5px);
+  }
+}
+
+.icon-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: $gradient-primary;
+  opacity: 0.1;
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+/* ========================================
+ * SERVICE TEXT
+ * ======================================== */
+.service-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $color-text-primary;
+  margin-bottom: $space-4;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.service-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: $color-text-secondary;
+  margin-bottom: $space-6;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* ========================================
+ * SERVICE FEATURES
+ * ======================================== */
+.service-features {
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  margin-bottom: $space-6;
+  padding: $space-5 0;
+  border-top: 1px solid $color-border-light;
+  border-bottom: 1px solid $color-border-light;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-2;
+  font-size: 0.9rem;
+
+  .feature-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: $gradient-primary;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .feature-text {
+    color: $color-text-body;
+    line-height: 1.5;
+  }
+}
+
+/* ========================================
+ * SERVICE LINK
+ * ======================================== */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  color: $color-primary;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: $space-3 $space-6;
+  border: 2px solid $color-primary;
+  border-radius: $radius-lg;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+
+  .link-icon {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: $gradient-primary;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($color-primary, 0.3);
+    
+    .link-icon {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.card-accent {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, $color-primary-light, transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  .service-card:hover & {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+ * WHY CHOOSE SECTION
+ * ======================================== */
+.why-choose-section {
+  padding: $space-32 0;
+  background: #ffffff;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $space-16;
+
+  .section-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: $color-text-primary;
+    margin-bottom: $space-10;
+    line-height: 1.1;
+
+    &.centered {
+      text-align: center;
+    }
+
+    .title-highlight {
+      font-weight: 700;
+      background: $gradient-primary;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+}
+
+/* ========================================
+ * ADVANTAGES GRID
+ * ======================================== */
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-8;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.advantage-card {
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  border-radius: $radius-xl;
+  padding: $space-10 $space-6;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $color-border-light;
+  transform: translateY(40px);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: $gradient-primary;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-metallic-md;
+    border-color: $color-primary-light;
+  }
+}
+
+.advantage-icon {
+  font-size: 3.5rem;
+  margin-bottom: $space-6;
+  filter: grayscale(0.3);
+  transition: all 0.3s ease;
+
+  .advantage-card:hover & {
+    filter: grayscale(0);
+    transform: scale(1.1);
+  }
+}
+
+.advantage-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: $color-text-primary;
+  margin-bottom: $space-4;
+  line-height: 1.3;
+}
+
+.advantage-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: $color-text-secondary;
+  margin: 0;
+}
+
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ========================================
+ * RESPONSIVE STYLES
+ * ======================================== */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-6;
+  }
+
+  .advantages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-intro .section-title,
+  .section-header .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: $space-5;
+  }
+
+  .advantages-grid {
+    grid-template-columns: 1fr;
+    gap: $space-6;
+  }
+
+  .services-section,
+  .why-choose-section {
+    padding: $space-16 0;
+  }
+
+  .section-intro,
+  .section-header {
+    margin-bottom: $space-10;
+  }
+
+  .section-intro .section-title,
+  .section-header .section-title {
+    font-size: 2rem;
+  }
+
+  .section-intro .section-description {
+    font-size: 1rem;
+  }
+
+  .service-icon-wrapper {
+    height: 80px;
+  }
+
+  .service-icon {
+    font-size: 3.5rem;
+  }
+
+  .service-card {
+    padding: $space-8 $space-6;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-intro .section-title,
+  .section-header .section-title {
+    font-size: 1.75rem;
+  }
+
+  .service-icon-wrapper {
+    height: 70px;
+  }
+
+  .service-icon {
+    font-size: 3rem;
+  }
+
+  .advantage-icon {
+    font-size: 3rem;
+  }
+}
+
+/* ========================================
+ * REDUCED MOTION
+ * ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .advantage-card {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}

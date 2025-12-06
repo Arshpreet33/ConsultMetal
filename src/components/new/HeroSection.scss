@@ -1,0 +1,198 @@
+/**
+ * HeroSection Styles - ConsultMetal New Design
+ */
+
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  // Heights
+  &.hero-full {
+    min-height: 100vh;
+  }
+
+  &.hero-large {
+    min-height: 80vh;
+  }
+
+  &.hero-medium {
+    min-height: 60vh;
+  }
+
+  &.hero-small {
+    min-height: 400px;
+  }
+
+  // Background
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    .hero-video,
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Overlay
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    &.overlay-dark {
+      background: $overlay-dark !important;
+    }
+
+    &.overlay-medium {
+      background: $overlay-medium !important;
+    }
+
+    &.overlay-light {
+      background: $overlay-light !important;
+    }
+  }
+
+  // Pattern
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: $backdrop-pattern;
+    opacity: 1;
+    z-index: 3;
+  }
+
+  // Content
+  .container {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+  }
+
+  .hero-content {
+    opacity: 0;
+    transform: translateY(60px);
+    @include transition(all, $duration-slower);
+
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Alignment
+  &.hero-align-left .hero-content {
+    text-align: left;
+  }
+
+  &.hero-align-center .hero-content {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+
+  &.hero-align-right .hero-content {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  // Typography
+  .hero-title {
+    font-size: $font-size-7xl;
+    font-weight: $font-weight-light;
+    color: $color-text-white;
+    margin-bottom: $spacing-lg;
+    line-height: $line-height-tight;
+
+    @include respond-to(xl) {
+      font-size: $font-size-6xl;
+    }
+
+    @include respond-to(lg) {
+      font-size: $font-size-5xl;
+    }
+
+    @include respond-to(md) {
+      font-size: $font-size-4xl;
+    }
+
+    @include respond-to(xs) {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  .hero-highlight {
+    @include gradient-text;
+    font-weight: $font-weight-bold;
+  }
+
+  .hero-subtitle {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-medium;
+    color: $color-text-light;
+    margin-bottom: $spacing-lg;
+    line-height: $line-height-snug;
+
+    @include respond-to(lg) {
+      font-size: $font-size-xl;
+    }
+
+    @include respond-to(md) {
+      font-size: $font-size-lg;
+    }
+  }
+
+  .hero-description {
+    font-size: $font-size-lg;
+    color: rgba($color-text-light, 0.9);
+    margin-bottom: $spacing-2xl;
+    line-height: $line-height-relaxed;
+    max-width: 700px;
+
+    @include respond-to(md) {
+      font-size: $font-size-md;
+    }
+  }
+
+  &.hero-align-center .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Actions
+  .hero-actions {
+    display: flex;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+
+    @include respond-to(xs) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &.hero-align-center .hero-actions {
+    justify-content: center;
+  }
+
+  &.hero-align-right .hero-actions {
+    justify-content: flex-end;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    @include respond-to(xs) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
