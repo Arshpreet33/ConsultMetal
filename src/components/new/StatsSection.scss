@@ -58,7 +58,7 @@
       rgba(255, 255, 255, 0.05) 0%,
       rgba(255, 255, 255, 0.1) 100%
     );
-    border: 1px solid rgba(86, 86, 149, 0.3);
+    border: 1px solid rgba(74, 111, 165, 0.3);
     border-radius: $border-radius-lg;
     text-align: center;
     overflow: hidden;
@@ -68,7 +68,7 @@
     &:hover {
       @include shadow-metallic-hover;
       transform: translateY(-8px);
-      border-color: rgba(86, 86, 149, 0.5);
+      border-color: rgba(74, 111, 165, 0.5);
     }
 
     &::before {
@@ -138,3 +138,4 @@
     left: 200%;
   }
 }
+

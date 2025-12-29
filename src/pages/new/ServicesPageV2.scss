@@ -54,8 +54,8 @@
 
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(52, 52, 119, 0.18);
-      border-color: rgba(52, 52, 119, 0.2);
+      box-shadow: 0 20px 40px rgba(43, 76, 126, 0.18);
+      border-color: rgba(43, 76, 126, 0.2);
 
       .service-image {
         transform: scale(1.05);
@@ -63,7 +63,7 @@
 
       .service-icon {
         transform: scale(1.1);
-        background: linear-gradient(135deg, #565695, #343477);
+        background: linear-gradient(135deg, $color-primary-light, $color-primary);
       }
 
       .card-shine {
@@ -123,7 +123,7 @@
     flex-direction: column;
     gap: var(--space-4);
     flex-grow: 1;
-    background: linear-gradient(135deg, #343477 0%, #565695 100%);
+    background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
 
     .service-icon {
       width: 60px;
@@ -203,7 +203,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #343477, #565695);
+    background: linear-gradient(90deg, $color-primary, $color-primary-light);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -241,7 +241,7 @@
 
       &:hover {
         transform: translateY(-6px);
-        box-shadow: 0 8px 24px rgba(52, 52, 119, 0.12);
+        box-shadow: 0 8px 24px rgba(43, 76, 126, 0.12);
         background: white;
       }
 
@@ -253,12 +253,12 @@
       .benefit-title {
         font-size: 1.25rem;
         font-weight: 700;
-        color: #1a1a3e;
+        color: $color-primary-dark;
         margin-bottom: var(--space-3);
       }
 
       .benefit-description {
-        color: #5a5a7a;
+        color: $color-text-muted;
         line-height: 1.6;
         font-size: 0.95rem;
       }
@@ -325,3 +325,6 @@
     }
   }
 }
+
+
+

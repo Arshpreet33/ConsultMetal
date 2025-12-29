@@ -23,7 +23,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #565695, transparent);
+  background: linear-gradient(90deg, transparent, $color-primary-light, transparent);
   opacity: 0.3;
 }
 
@@ -50,7 +50,7 @@
 .section-badge .badge-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #565695, transparent);
+  background: linear-gradient(90deg, transparent, $color-primary-light, transparent);
   max-width: 60px;
 }
 
@@ -58,7 +58,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 3px;
-  color: #565695;
+  color: $color-primary-light;
   text-transform: uppercase;
 }
 
@@ -66,7 +66,7 @@
 .section-title {
   font-size: 3.5rem;
   font-weight: 300;
-  color: #1a1a3e;
+  color: $color-primary-dark;
   margin-bottom: var(--space-10);
   line-height: 1.1;
 }
@@ -77,7 +77,7 @@
 
 .title-highlight {
   font-weight: 700;
-  background: linear-gradient(135deg, #343477 0%, #565695 100%);
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -86,7 +86,7 @@
 .industries-description {
   font-size: 1.15rem;
   line-height: 1.7;
-  color: #5a5a7a;
+  color: $color-text-muted;
   margin-top: var(--space-6);
   max-width: 600px;
   margin-left: auto;
@@ -113,7 +113,7 @@
   padding: var(--space-10) var(--space-8);
   position: relative;
   overflow: hidden;
-  border: 1px solid #e5e7f2;
+  border: 1px solid $color-border-light;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transform: translateY(40px);
   opacity: 0;
@@ -132,7 +132,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #343477, #565695);
+  background: linear-gradient(90deg, $color-primary, $color-primary-light);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -144,8 +144,8 @@
 
 .industry-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(52, 52, 119, 0.15);
-  border-color: #565695;
+  box-shadow: 0 12px 40px rgba(43, 76, 126, 0.15);
+  border-color: $color-primary-light;
 }
 
 .industry-card-inner {
@@ -179,7 +179,7 @@
 .industry-name {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #1a1a3e;
+  color: $color-primary-dark;
   margin-bottom: var(--space-4);
   line-height: 1.3;
 }
@@ -187,7 +187,7 @@
 .industry-description {
   font-size: 0.95rem;
   line-height: 1.7;
-  color: #5a5a7a;
+  color: $color-text-muted;
   margin: 0;
   min-height: 60px;
 }
@@ -202,7 +202,7 @@
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #565695, transparent);
+  background: linear-gradient(90deg, transparent, $color-primary-light, transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -287,3 +287,5 @@
     transition: none !important;
   }
 }
+
+
