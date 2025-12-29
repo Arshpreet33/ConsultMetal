@@ -4,6 +4,7 @@
  */
 
 import { Link } from 'react-router-dom';
+import { useMemo } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import companyConfig from '../../config/company.config';
 import StatsSection from '../../components/new/StatsSection';
@@ -16,7 +17,7 @@ import './HomePage.scss';
 
 const HomePage = () => {
   const { getText } = useLanguage();
-  const { homePage, imageAssets, services } = companyConfig;
+  const { homePage, imageAssets, services, products } = companyConfig;
   
   const [servicesRef, servicesVisible] = useScrollReveal();
   const [aboutRef, aboutVisible] = useScrollReveal();
@@ -24,8 +25,17 @@ const HomePage = () => {
   const [videoRef, videoVisible] = useScrollReveal();
   const [testimonialsRef, testimonialsVisible] = useScrollReveal();
 
-  // Get the first 3 services for the preview section
-  const featuredServices = services.slice(0, 3);
+  // Memoize expensive calculations
+  const featuredServices = useMemo(() => services.slice(0, 3), [services]);
+  
+  const statsItems = useMemo(() => 
+    homePage.stats.items.map(stat => ({
+      value: stat.value,
+      label: getText(stat.label),
+      description: getText(stat.description)
+    })), 
+    [homePage.stats.items, getText]
+  );
 
   return (
     <div className="home-page">
@@ -37,18 +47,9 @@ const HomePage = () => {
             src={imageAssets.home.hero.background} 
             alt="Manufacturing" 
             className="hero-image"
+            loading="eager"
+            fetchPriority="high"
           />
-          {/* Video logic commented out for now
-          <video 
-            className="hero-video" 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-          >
-            <source src={imageAssets.home.hero.video} type="video/mp4" />
-          </video>
-          */}
         </div>
 
         {/* Overlay Content Box */}
@@ -70,11 +71,7 @@ const HomePage = () => {
       </section>
 
       {/* Stats Section */}
-      <StatsSection items={homePage.stats.items.map(stat => ({
-        value: stat.value,
-        label: getText(stat.label),
-        description: getText(stat.description)
-      }))} />
+      <StatsSection items={statsItems} />
 
       {/* Services Preview Section */}
       <section className="services-preview" ref={servicesRef}>
@@ -99,7 +96,7 @@ const HomePage = () => {
                 key={service.slug}
                 to={`/services/${service.slug}`}
                 className="service-card"
-                style={{ transitionDelay: `${index * 0.1}s` }}
+                style={{ transitionDelay: `${index * 0.05}s` }}
               >
                 <div className="service-image-wrapper">
                   <img 
@@ -157,7 +154,7 @@ const HomePage = () => {
                   <div 
                     key={index} 
                     className="feature-item"
-                    style={{ transitionDelay: `${(index + 2) * 0.15}s` }}
+                    style={{ transitionDelay: `${(index + 2) * 0.08}s` }}
                   >
                     <span className="feature-icon">✓</span>
                     <span className="feature-text">{getText(feature)}</span>
@@ -200,7 +197,7 @@ const HomePage = () => {
               <div
                 key={index}
                 className="product-card"
-                style={{ transitionDelay: `${index * 0.1}s` }}
+                style={{ transitionDelay: `${index * 0.05}s` }}
               >
                 <div className="product-image-wrapper">
                   <img 
@@ -306,7 +303,7 @@ const HomePage = () => {
               <div
                 key={index}
                 className="testimonial-card"
-                style={{ transitionDelay: `${index * 0.1}s` }}
+                style={{ transitionDelay: `${index * 0.05}s` }}
               >
                 <div className="testimonial-quote">"</div>
                 <p className="testimonial-text">{getText(testimonial.quote)}</p>

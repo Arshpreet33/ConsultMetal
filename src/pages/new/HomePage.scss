@@ -11,7 +11,7 @@
  * ======================================== */
 .home-page {
   position: relative;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 /* ========================================
@@ -69,8 +69,8 @@
   .hero-content-box {
     position: relative;
     z-index: 2;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
     padding: 3rem 4rem;
     border-radius: 12px;
     max-width: 800px;
@@ -336,6 +336,11 @@
     grid-template-columns: 1fr;
     gap: $space-6;
   }
+  
+  &.visible .service-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .home-page .service-card {
@@ -349,7 +354,7 @@
   height: 450px;
   text-decoration: none;
   display: block;
-
+  
   @include respond-to(lg) {
     height: 400px;
   }
@@ -766,7 +771,7 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: $space-6;
   max-width: 1400px;
   margin: 0 auto;
@@ -892,7 +897,7 @@
   animation: waveMove 12s ease-in-out infinite alternate;
   opacity: 0;
   transform: translateY(60px);
-  transition: all 0.8s $easing-smooth;
+  transition: all 0.5s $easing-smooth;
 
   &.visible {
     opacity: 1;
@@ -982,7 +987,7 @@
   max-width: 600px;
   opacity: 0;
   transform: translateX(-40px);
-  transition: all 0.8s $easing-smooth;
+  transition: all 0.5s $easing-smooth;
 
   .video-section.visible & {
     opacity: 1;
@@ -1064,8 +1069,8 @@
   width: 100%;
   opacity: 0;
   transform: translateX(40px);
-  transition: all 0.8s $easing-smooth;
-  transition-delay: 0.2s;
+  transition: all 0.5s $easing-smooth;
+  transition-delay: 0.1s;
 
   .video-section.visible & {
     opacity: 1;
@@ -1106,7 +1111,7 @@
   animation: patternSlide 40s linear infinite;
   opacity: 0;
   transform: translateY(60px);
-  transition: all 0.8s $easing-smooth;
+  transition: all 0.5s $easing-smooth;
 
   &.visible {
     opacity: 1;
@@ -1379,7 +1384,7 @@
  * ======================================== */
 @media (max-width: 1200px) {
   .products-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .testimonials-grid {

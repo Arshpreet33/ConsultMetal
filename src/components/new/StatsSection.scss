@@ -6,7 +6,7 @@
 @import '../../assets/styles/new/mixins';
 
 .stats-section {
-  @include section-spacing;
+  // @include section-spacing;
   background: $gradient-dark;
   position: relative;
   overflow: hidden;

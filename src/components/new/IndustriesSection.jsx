@@ -7,7 +7,7 @@
  * - Symmetrical grid layout
  */
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, memo } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import companyConfig from '../../config/company.config';
 import './IndustriesSection.scss';
@@ -109,4 +109,4 @@ const IndustriesSection = () => {
   );
 };
 
-export default IndustriesSection;
+export default memo(IndustriesSection);

@@ -3,6 +3,7 @@
  * Metallic stats cards with shimmer animation
  */
 
+import { memo } from 'react';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import IndustrialBadge from './IndustrialBadge';
 import './StatsSection.scss';
@@ -38,4 +39,4 @@ const StatsSection = ({ label, items, className = '' }) => {
   );
 };
 
-export default StatsSection;
+export default memo(StatsSection);

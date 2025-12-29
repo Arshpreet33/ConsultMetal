@@ -3,6 +3,7 @@
  * Call-to-action section with metallic design
  */
 
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import './CTASection.scss';
@@ -51,4 +52,4 @@ const CTASection = ({
   );
 };
 
-export default CTASection;
+export default memo(CTASection);
