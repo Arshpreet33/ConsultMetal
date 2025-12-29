@@ -13,7 +13,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import NewLayout from './components/new/NewLayout';
 import HomePage from './pages/new/HomePage';
 import NewAboutPage from './pages/new/AboutPage';
-import NewServicesPage from './pages/new/ServicesPage';
+// import NewServicesPage from './pages/new/ServicesPage';
 import NewServicesPageV2 from './pages/new/ServicesPageV2';
 import NewServiceDetailPage from './pages/new/ServiceDetailPage';
 import NewProductsPage from './pages/new/ProductsPage';
@@ -23,7 +23,7 @@ import NewContactPage from './pages/new/ContactPage';
 // Old Design Layout & Pages
 import OldLayout from './components/Layout/OldLayout';
 import OldAboutPage from './pages/AboutPage';
-import OldAboutPageV2 from './pages/AboutPageV2';
+// import OldAboutPageV2 from './pages/AboutPageV2';
 import OldContactPage from './pages/ContactPage';
 import OldProductsPage from './pages/ProductsPage';
 import OldProductDetailPage from './pages/ProductDetailPage';
@@ -67,7 +67,7 @@ function App() {
           <Route path="/old" element={<OldLayout />}>
             <Route index element={<OldAboutPage />} />
             <Route path="about" element={<OldAboutPage />} />
-            <Route path="about-v2" element={<OldAboutPageV2 />} />
+            {/* <Route path="about-v2" element={<OldAboutPageV2 />} /> */}
             <Route path="contact" element={<OldContactPage />} />
             <Route path="products" element={<OldProductsPage />} />
             <Route path="products/:slug" element={<OldProductDetailPage />} />
