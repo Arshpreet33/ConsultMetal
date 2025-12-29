@@ -99,8 +99,8 @@ const NewFooter = () => {
               <Link to="/products/nesting-software" className="footer-link">
                 {getText({ en: 'Nesting Software', fr: 'Logiciel de nidification' })}
               </Link>
-              <Link to="/products/cad-cam-software" className="footer-link">
-                {getText({ en: 'CAD/CAM Software', fr: 'Logiciel CAD/CAM' })}
+              <Link to="/products/shop-planner" className="footer-link">
+                {getText({ en: 'Shop Planner', fr: 'Planificateur d\'atelier' })}
               </Link>
             </nav>
           </div>

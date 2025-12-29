@@ -79,7 +79,7 @@ export const companyConfig = {
     products: {
       hero: "/images/products/products-hero.jpg",
       nestingSoftware: "/images/products/nesting-software.png",
-      cadCamSoftware: "/images/products/cad-cam-software.jpg",
+      shopPlanner: "/images/products/shop-planner.jpg",
     },
     // Contact Page Images
     contact: {
@@ -501,41 +501,43 @@ export const companyConfig = {
       image: "/images/products/nesting-software.png",
     },
     {
-      id: "cad-cam-software",
-      slug: "cad-cam-software",
+      id: "shop-planner",
+      slug: "shop-planner",
       name: {
-        en: "CAD/CAM Software",
-        fr: "Logiciel CAD/CAM",
+        en: "Shop Planner",
+        fr: "Planificateur d'atelier",
       },
       category: {
         en: "Software Solutions",
         fr: "Solutions logicielles",
       },
       teaser: {
-        en: "Powerful 2D/3D design and manufacturing software for precise product development and seamless production workflows.",
-        fr: "Logiciel puissant de conception et de fabrication 2D/3D pour le développement précis de produits et des flux de production fluides.",
+        en: "Comprehensive production planning and shop floor management software to optimize scheduling, resource allocation, and manufacturing efficiency.",
+        fr: "Logiciel complet de planification de production et de gestion d'atelier pour optimiser la planification, l'allocation des ressources et l'efficacité de fabrication.",
       },
       description: {
-        en: "Success in manufacturing begins with getting the fundamentals right. Within the manufacturing process, this critical foundation starts at the design stage. A properly designed product doesn't just look good—it determines your company's competitive advantage and long-term success.\n\nThe way a product is designed directly influences manufacturing efficiency, cost-effectiveness, and overall production quality. Poor design decisions made early in the development cycle can result in costly production challenges, material waste, and quality issues that plague your manufacturing process for years.\n\nAs an authorized reseller of Autodesk products, Consult Metal delivers industry-leading CAD/CAM solutions that empower your team to design with confidence. Our comprehensive 2D/3D software packages provide the tools and capabilities necessary to transform concepts into production-ready designs that optimize manufacturability from the very beginning.",
-        fr: "Le succès en fabrication commence par obtenir les fondamentaux corrects. Dans le processus de fabrication, cette base critique commence au stade de la conception. Un produit bien conçu ne fait pas que bien paraître—il détermine votre avantage concurrentiel et votre succès à long terme.\n\nLa façon dont un produit est conçu influence directement l'efficacité de fabrication, la rentabilité et la qualité globale de production. De mauvaises décisions de conception prises au début du cycle de développement peuvent entraîner des défis de production coûteux, du gaspillage de matériaux et des problèmes de qualité qui affectent votre processus de fabrication pendant des années.\n\nEn tant que revendeur agréé de produits Autodesk, Consult Metal fournit des solutions CAD/CAM de pointe qui permettent à votre équipe de concevoir en toute confiance. Nos packages logiciels 2D/3D complets fournissent les outils et les capacités nécessaires pour transformer les concepts en conceptions prêtes pour la production qui optimisent la fabricabilité dès le début.",
+        en: "Efficient shop floor management is the backbone of successful manufacturing operations. Without proper planning and scheduling tools, even the most advanced machinery and skilled workforce can struggle with bottlenecks, delays, and resource conflicts that drain profitability.\n\nShop Planner transforms your production environment by providing real-time visibility into every aspect of your manufacturing operations. From job scheduling and machine allocation to material tracking and workforce management, our comprehensive software solution ensures your shop floor runs at peak efficiency.\n\nConsult Metal's Shop Planner software integrates seamlessly with your existing systems to create a unified production management platform. Our solution helps you eliminate production bottlenecks, reduce lead times, optimize resource utilization, and deliver on-time results that exceed customer expectations. Take control of your shop floor operations and unlock the full potential of your manufacturing capabilities.",
+        fr: "Une gestion efficace de l'atelier est l'épine dorsale d'opérations de fabrication réussies. Sans outils de planification et d'ordonnancement appropriés, même les machines les plus avancées et la main-d'œuvre qualifiée peuvent avoir du mal avec les goulots d'étranglement, les retards et les conflits de ressources qui épuisent la rentabilité.\n\nShop Planner transforme votre environnement de production en fournissant une visibilité en temps réel sur tous les aspects de vos opérations de fabrication. De la planification des travaux et de l'allocation des machines au suivi des matériaux et à la gestion de la main-d'œuvre, notre solution logicielle complète garantit que votre atelier fonctionne à une efficacité maximale.\n\nLe logiciel Shop Planner de Consult Metal s'intègre de manière transparente à vos systèmes existants pour créer une plateforme de gestion de production unifiée. Notre solution vous aide à éliminer les goulots d'étranglement de production, à réduire les délais, à optimiser l'utilisation des ressources et à livrer des résultats dans les délais qui dépassent les attentes des clients. Prenez le contrôle de vos opérations d'atelier et libérez tout le potentiel de vos capacités de fabrication.",
       },
       features: {
         en: [
-          "Autodesk Authorized Partnership: As an authorized reseller of Autodesk products, Consult Metal provides clients with industry-leading 2D/3D CAD/CAM packages, ensuring your design and conception stage starts on the strongest possible foundation.",
-          "Comprehensive 2D Modeling & Error Analysis: Develop detailed, precision-engineered 2D models that can be thoroughly analyzed for potential production errors before they become costly mistakes. These models seamlessly fold and render into accurate 3D visualizations.",
-          "3D to Flat Pattern Conversion: Expert conversion of complex 3D models into flat patterns, with parts immediately prepared for production. This streamlined workflow eliminates delays and ensures manufacturing-ready outputs.",
-          "Dynamic Parametric Modeling: Leverage parametric modeling capabilities that are critical to modern product lines. Manufacture similar products with varying dimensions without constantly redrawing new models—a vital component of lean manufacturing. Dynamically control your CAD models to adapt quickly to changing customer requirements.",
-          "Seamless Design-to-Manufacturing Workflow: Integrate design seamlessly with your manufacturing processes, ensuring what's designed can be efficiently produced.",
+          "Real-Time Production Scheduling: Dynamic job scheduling that adapts to changing priorities, machine availability, and resource constraints. Optimize your production calendar to maximize throughput and meet critical deadlines.",
+          "Machine & Resource Allocation: Intelligent assignment of jobs to machines based on capabilities, availability, and workload. Prevent bottlenecks and ensure balanced utilization of your manufacturing assets.",
+          "Material Tracking & Inventory Management: Track raw materials, work-in-progress, and finished goods throughout your shop floor. Automated alerts for low stock levels and seamless integration with purchasing systems.",
+          "Workforce Management: Schedule operators efficiently, track labor hours, and analyze productivity metrics. Ensure the right skills are assigned to the right jobs at the right time.",
+          "Real-Time Shop Floor Visibility: Live dashboards showing current production status, machine utilization, job progress, and potential delays. Make informed decisions with up-to-the-minute operational data.",
+          "Performance Analytics & Reporting: Comprehensive reporting on production efficiency, on-time delivery rates, machine utilization, and bottleneck analysis. Data-driven insights to continuously improve operations.",
         ],
         fr: [
-          "Partenariat autorisé Autodesk : En tant que revendeur agréé de produits Autodesk, Consult Metal fournit aux clients des packages CAD/CAM 2D/3D de pointe de l'industrie, garantissant que votre étape de conception et de conception commence sur la base la plus solide possible.",
-          "Modélisation 2D complète et analyse d'erreurs : Développez des modèles 2D détaillés et d'ingénierie de précision qui peuvent être analysés en profondeur pour détecter les erreurs de production potentielles avant qu'elles ne deviennent des erreurs coûteuses. Ces modèles se plient et se rendent de manière transparente en visualisations 3D précises.",
-          "Conversion 3D en patron plat : Conversion experte de modèles 3D complexes en patrons plats, avec des pièces immédiatement préparées pour la production. Ce flux de travail rationalisé élimine les retards et garantit des sorties prêtes à la fabrication.",
-          "Modélisation paramétrique dynamique : Tirez parti des capacités de modélisation paramétrique qui sont essentielles aux gammes de produits modernes. Fabriquez des produits similaires avec des dimensions variables sans redessiner constamment de nouveaux modèles—un composant vital de la fabrication allégée. Contrôlez dynamiquement vos modèles CAO pour vous adapter rapidement aux exigences changeantes des clients.",
-          "Flux de travail conception-fabrication transparent : Intégrez la conception de manière transparente avec vos processus de fabrication, garantissant que ce qui est conçu peut être produit efficacement.",
+          "Planification de production en temps réel : Planification dynamique des travaux qui s'adapte aux priorités changeantes, à la disponibilité des machines et aux contraintes de ressources. Optimisez votre calendrier de production pour maximiser le débit et respecter les délais critiques.",
+          "Allocation de machines et de ressources : Affectation intelligente des travaux aux machines en fonction des capacités, de la disponibilité et de la charge de travail. Prévenez les goulots d'étranglement et assurez une utilisation équilibrée de vos actifs de fabrication.",
+          "Suivi des matériaux et gestion des stocks : Suivez les matières premières, les travaux en cours et les produits finis dans votre atelier. Alertes automatisées pour les niveaux de stock bas et intégration transparente avec les systèmes d'achat.",
+          "Gestion de la main-d'œuvre : Planifiez efficacement les opérateurs, suivez les heures de travail et analysez les mesures de productivité. Assurez-vous que les bonnes compétences sont affectées aux bons emplois au bon moment.",
+          "Visibilité de l'atelier en temps réel : Tableaux de bord en direct montrant l'état actuel de la production, l'utilisation des machines, la progression des travaux et les retards potentiels. Prenez des décisions éclairées avec des données opérationnelles à jour.",
+          "Analyses de performance et rapports : Rapports complets sur l'efficacité de la production, les taux de livraison à temps, l'utilisation des machines et l'analyse des goulots d'étranglement. Des informations basées sur les données pour améliorer continuellement les opérations.",
         ],
       },
-      image: "/images/products/cad-cam-software.jpg",
+      image: "/images/products/shop-planner.jpg",
     },
   ],
 
