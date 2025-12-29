@@ -10,13 +10,12 @@ import { useLanguage } from '../../context/LanguageContext';
 import companyConfig from '../../config/company.config';
 import CTASection from '../../components/new/CTASection';
 import IndustriesSection from '../../components/new/IndustriesSection';
-import HeroAnimated from '../../components/Shared/HeroAnimated';
+import PageBanner from '../../components/new/PageBanner';
 import './AboutPage.scss';
 
 const AboutPage = () => {
   const { getText } = useLanguage();
   const { about, imageAssets } = companyConfig;
-  const statsRef = useRef(null);
   const historyRef = useRef(null);
   const missionRef = useRef(null);
   const valuesRef = useRef(null);
@@ -34,32 +33,13 @@ const AboutPage = () => {
       { threshold: 0.15, rootMargin: '0px 0px -80px 0px' }
     );
 
-    const elements = [statsRef.current, historyRef.current, missionRef.current, valuesRef.current];
+    const elements = [historyRef.current, missionRef.current, valuesRef.current];
     elements.forEach(el => el && observer.observe(el));
 
     return () => {
       elements.forEach(el => el && observer.unobserve(el));
     };
   }, []);
-
-  const companyStats = [
-    { 
-      number: '20+', 
-      label: getText({ en: 'Years Experience', fr: 'Années d\'expérience' })
-    },
-    { 
-      number: '500+', 
-      label: getText({ en: 'Projects Completed', fr: 'Projets réalisés' })
-    },
-    { 
-      number: '100%', 
-      label: getText({ en: 'Client Satisfaction', fr: 'Satisfaction client' })
-    },
-    { 
-      number: '24/7', 
-      label: getText({ en: 'Support Available', fr: 'Support disponible' })
-    }
-  ];
 
   const coreValues = [
     {
@@ -98,41 +78,15 @@ const AboutPage = () => {
 
   return (
     <div className="about-page">
-      {/* Hero Section with Metallic Overlay */}
-      <section className="hero">
-        <div className="hero-overlay"></div>
-        <div className="hero-pattern"></div>
-        <div className="container">
-          <div className="hero-content">
-            <HeroAnimated
-              title={getText(about.hero.heading)}
-              description={getText(about.hero.subtitle)}
-              clipOriginY="30%"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section - Metallic Cards */}
-      <section className="stats-section" ref={statsRef}>
-        <div className="container">
-          <div className="stats-grid">
-            {companyStats.map((stat, index) => (
-              <div 
-                key={index} 
-                className="stat-card"
-                style={{ transitionDelay: `${index * 0.1}s` }}
-              >
-                <div className="stat-card-inner">
-                  <div className="stat-number">{stat.number}</div>
-                  <div className="stat-label">{stat.label}</div>
-                  <div className="stat-accent"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Page Banner */}
+      <PageBanner
+        badge={getText(about.hero.heading)}
+        title="About"
+        highlight="Us"
+        description={getText(about.hero.subtitle)}
+        backgroundImage="/images/about/about-hero.jpeg"
+        height="medium"
+      />
 
       {/* History Section - Split Layout with Geometric Accent */}
       <section className="history-section" ref={historyRef}>
