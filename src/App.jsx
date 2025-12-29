@@ -65,7 +65,7 @@ function App() {
 
           {/* Old Design Routes */}
           <Route path="/old" element={<OldLayout />}>
-            <Route index element={<OldAboutPage />} />
+            {/* <Route index element={<OldAboutPage />} /> */}
             {/* <Route path="about" element={<OldAboutPage />} /> */}
             {/* <Route path="about-v2" element={<OldAboutPageV2 />} /> */}
             <Route path="contact" element={<OldContactPage />} />
