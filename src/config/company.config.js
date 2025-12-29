@@ -499,6 +499,10 @@ export const companyConfig = {
         ],
       },
       image: "/images/products/nesting-software.png",
+      url: {
+        en: "https://wicam.com/en/",
+        fr: "https://wicam.com/fr/",
+      },
     },
     {
       id: "shop-planner",

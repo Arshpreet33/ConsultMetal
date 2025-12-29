@@ -210,10 +210,33 @@ const ProductDetailPage = () => {
                 </div>
               )}
 
-              <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem' }}>
+              <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                 <Link to="/contact" className="btn btn-primary">
                   <span className="btn-text">{getText({ en: 'Request Quote', fr: 'Demander un devis' })}</span>
                 </Link>
+                {product.url && (
+                  <a 
+                    href={getText(product.url)} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="btn btn-secondary"
+                    style={{
+                      background: 'linear-gradient(135deg, #565695, #343477)',
+                      color: '#ffffff',
+                      border: 'none'
+                    }}
+                  >
+                    <span className="btn-text">{getText({ en: 'Visit Live Demo', fr: 'Voir la démonstration' })}</span>
+                    <svg 
+                      style={{ marginLeft: '0.5rem', width: '1rem', height: '1rem' }} 
+                      fill="none" 
+                      viewBox="0 0 24 24" 
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                )}
                 <Link to="/products" className="btn btn-outline">
                   <span className="btn-text">{getText({ en: 'All Products', fr: 'Tous les produits' })}</span>
                 </Link>
