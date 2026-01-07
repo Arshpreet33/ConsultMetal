@@ -7,13 +7,10 @@ import { useState } from 'react';
 import { useLanguage } from '../../context/LanguageContext';
 import PageBanner from '../../components/new/PageBanner';
 import IndustrialBadge from '../../components/new/IndustrialBadge';
-import useScrollReveal from '../../hooks/useScrollReveal';
 import './ContactPage.scss';
 
 const ContactPage = () => {
   const { getText } = useLanguage();
-  const [formRef, formVisible] = useScrollReveal();
-  const [infoRef, infoVisible] = useScrollReveal();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -145,7 +142,7 @@ const ContactPage = () => {
         <div className="container">
           <div className="contact-grid">
             {/* Contact Form */}
-            <div className={`contact-form-wrapper ${formVisible ? 'visible' : ''}`} ref={formRef}>
+            <div className="contact-form-wrapper">
               <IndustrialBadge 
                 text={getText({ en: 'SEND US A MESSAGE', fr: 'ENVOYEZ-NOUS UN MESSAGE' })} 
               />
@@ -284,7 +281,7 @@ const ContactPage = () => {
             </div>
 
             {/* Contact Info */}
-            <div className={`contact-info-wrapper ${infoVisible ? 'visible' : ''}`} ref={infoRef}>
+            <div className="contact-info-wrapper">
               <div className="contact-info-card">
                 <IndustrialBadge 
                   text={getText({ en: 'CONTACT DETAILS', fr: 'COORDONNÉES' })} 

@@ -90,7 +90,6 @@ const AboutPage = () => {
 
       {/* History Section - Split Layout with Geometric Accent */}
       <section className="history-section" ref={historyRef}>
-        <div className="geometric-bg left"></div>
         <div className="container">
           <div className="history-grid">
             <div className="history-image-wrapper">
@@ -133,7 +132,6 @@ const AboutPage = () => {
 
       {/* Mission Section - Reversed Split Layout */}
       <section className="mission-section" ref={missionRef}>
-        <div className="geometric-bg right"></div>
         <div className="container">
           <div className="mission-grid">
             <div className="mission-content">

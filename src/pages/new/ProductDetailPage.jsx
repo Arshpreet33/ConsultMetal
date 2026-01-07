@@ -10,6 +10,7 @@ import PageBanner from '../../components/new/PageBanner';
 import CTASection from '../../components/new/CTASection';
 import IndustriesSection from '../../components/new/IndustriesSection';
 import { useEffect, useRef, useState } from 'react';
+import './ProductDetailPage.scss';
 
 const ProductDetailPage = () => {
   const { slug } = useParams();
@@ -73,20 +74,14 @@ const ProductDetailPage = () => {
         height="medium"
       />
 
-      <section style={{ padding: '4rem 0', background: '#ffffff' }}>
+      <section className="product-detail-content">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', maxWidth: '1200px', margin: '0 auto' }}>
+          <div className="product-detail-grid">
             <div>
               <img 
                 src={product.image} 
                 alt={getText(product.name)}
-                style={{ 
-                  width: '100%', 
-                  borderRadius: '1rem', 
-                  boxShadow: '0 10px 40px rgba(0,0,0,0.1)',
-                  transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                  cursor: 'pointer'
-                }}
+                className="product-image"
                 onMouseEnter={(e) => {
                   e.target.style.transform = 'translateY(-10px) scale(1.02)';
                   e.target.style.boxShadow = '0 20px 60px rgba(52, 52, 119, 0.25)';
@@ -210,7 +205,7 @@ const ProductDetailPage = () => {
                 </div>
               )}
 
-              <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <div className="product-actions">
                 <Link to="/contact" className="btn btn-primary">
                   <span className="btn-text">{getText({ en: 'Request Quote', fr: 'Demander un devis' })}</span>
                 </Link>

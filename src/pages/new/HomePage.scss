@@ -228,44 +228,12 @@
 }
 
 /* ========================================
- * GEOMETRIC BACKGROUND
- * ======================================== */
-.geometric-bg {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  opacity: 0.03;
-  pointer-events: none;
-
-  &.left {
-    top: 10%;
-    left: 0;
-    background: 
-      linear-gradient(45deg, $color-primary 25%, transparent 25%),
-      linear-gradient(-45deg, $color-primary 25%, transparent 25%);
-    background-size: 40px 40px;
-  }
-
-  &.right {
-    top: 10%;
-    right: 0;
-    background: 
-      linear-gradient(45deg, $color-primary 25%, transparent 25%),
-      linear-gradient(-45deg, $color-primary 25%, transparent 25%);
-    background-size: 40px 40px;
-  }
-}
-
-/* ========================================
  * SERVICES PREVIEW SECTION
  * ======================================== */
 .home-page .services-preview {
   padding: $space-20 0;
-  background: 
-    linear-gradient(135deg, rgba(74, 111, 165, 0.15) 0%, transparent 50%, rgba(43, 76, 126, 0.18) 100%),
-    linear-gradient(to bottom, #e8ebf7 0%, #dfe3f3 100%);
+  background: #f8f9fc;
   position: relative;
-  overflow: hidden;
 
   @include respond-to(md) {
     padding: $space-16 0;
@@ -273,50 +241,6 @@
 
   @include respond-to(xs) {
     padding: $space-12 0;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -20%;
-    right: -15%;
-    width: 800px;
-    height: 800px;
-    background: radial-gradient(circle, rgba(74, 111, 165, 0.25) 0%, rgba(43, 76, 126, 0.12) 40%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: floatWave 15s ease-in-out infinite;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -10%;
-    left: -10%;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(43, 76, 126, 0.2) 0%, rgba(74, 111, 165, 0.1) 40%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: floatWaveReverse 18s ease-in-out infinite;
-  }
-
-  @keyframes floatWave {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-    }
-    50% {
-      transform: translate(-30px, 30px) scale(1.1);
-    }
-  }
-
-  @keyframes floatWaveReverse {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-    }
-    50% {
-      transform: translate(40px, -40px) scale(1.15);
-    }
   }
 }
 
@@ -460,18 +384,7 @@
 .home-page .about-preview {
   padding: $space-20 0;
   position: relative;
-  background: 
-    repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 50px,
-      rgba(43, 76, 126, 0.04) 50px,
-      rgba(43, 76, 126, 0.04) 100px
-    ),
-    linear-gradient(to right, #fafbfd 0%, #f5f7fc 50%, #fafbfd 100%);
-  overflow: hidden;
-  background-size: 100% 100%, 200% 100%;
-  animation: slideBackground 20s linear infinite;
+  background: #ffffff;
 
   @include respond-to(md) {
     padding: $space-16 0;
@@ -479,51 +392,6 @@
 
   @include respond-to(xs) {
     padding: $space-12 0;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-      transparent, 
-      rgba(255, 255, 255, 0.2) 50%, 
-      transparent
-    );
-    animation: shimmer 8s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(74, 111, 165, 0.12), transparent);
-    transform: translateY(-50%);
-  }
-
-  @keyframes slideBackground {
-    0% {
-      background-position: 0% 0%, 0% 0%;
-    }
-    100% {
-      background-position: 0% 0%, 200% 0%;
-    }
-  }
-
-  @keyframes shimmer {
-    0%, 100% {
-      left: -100%;
-    }
-    50% {
-      left: 100%;
-    }
   }
 }
 
@@ -679,13 +547,8 @@
  * ======================================== */
 .home-page .products-showcase {
   padding: $space-20 0;
-  background: 
-    radial-gradient(circle at 2px 2px, rgba(43, 76, 126, 0.3) 1.5px, transparent 1.5px),
-    linear-gradient(135deg, #dce0f2 0%, #e8ebf7 50%, #d5daf0 100%);
-  background-size: 35px 35px, 100% 100%;
+  background: #f5f7fa;
   position: relative;
-  overflow: hidden;
-  animation: gridMove 30s linear infinite;
   opacity: 0;
   transform: translateY(60px);
   transition: all 0.8s $easing-smooth;
@@ -701,71 +564,6 @@
 
   @include respond-to(xs) {
     padding: $space-12 0;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -25%;
-    left: -15%;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(74, 111, 165, 0.18) 0%, rgba(43, 76, 126, 0.08) 40%, transparent 60%);
-    border-radius: 50%;
-    animation: rotateFloat 25s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    right: -10%;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(43, 76, 126, 0.15) 0%, rgba(74, 111, 165, 0.08) 40%, transparent 60%);
-    border-radius: 50%;
-    animation: rotateFloatReverse 20s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  @keyframes gridMove {
-    0% {
-      background-position: 0 0, 0 0;
-    }
-    100% {
-      background-position: 35px 35px, 0 0;
-    }
-  }
-
-  @keyframes rotateFloat {
-    0%, 100% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-      transform: translate(60px, -40px) rotate(10deg);
-    }
-    50% {
-      transform: translate(0, -80px) rotate(0deg);
-    }
-    75% {
-      transform: translate(-60px, -40px) rotate(-10deg);
-    }
-  }
-
-  @keyframes rotateFloatReverse {
-    0%, 100% {
-      transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-      transform: translate(-50px, 50px) rotate(-8deg);
-    }
-    50% {
-      transform: translate(0, 100px) rotate(0deg);
-    }
-    75% {
-      transform: translate(50px, 50px) rotate(8deg);
-    }
   }
 }
 
@@ -888,13 +686,8 @@
  * ======================================== */
 .home-page .video-section {
   padding: $space-20 0;
-  background: 
-    linear-gradient(110deg, transparent 0%, rgba(74, 111, 165, 0.18) 50%, transparent 100%),
-    linear-gradient(to bottom, #e5e8f4 0%, #d8dcef 50%, #e5e8f4 100%);
+  background: #ffffff;
   position: relative;
-  overflow: hidden;
-  background-size: 200% 100%, 100% 100%;
-  animation: waveMove 12s ease-in-out infinite alternate;
   opacity: 0;
   transform: translateY(60px);
   transition: all 0.5s $easing-smooth;
@@ -910,60 +703,6 @@
 
   @include respond-to(xs) {
     padding: $space-12 0;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, 
-      transparent, 
-      rgba(43, 76, 126, 0.3) 20%, 
-      rgba(74, 111, 165, 0.4) 50%, 
-      rgba(43, 76, 126, 0.3) 80%, 
-      transparent
-    );
-    animation: borderPulse 3s ease-in-out infinite;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, 
-      transparent, 
-      rgba(43, 76, 126, 0.3) 20%, 
-      rgba(74, 111, 165, 0.4) 50%, 
-      rgba(43, 76, 126, 0.3) 80%, 
-      transparent
-    );
-    animation: borderPulse 3s ease-in-out infinite 1.5s;
-  }
-
-  @keyframes waveMove {
-    0% {
-      background-position: 0% 0%, 0% 0%;
-    }
-    100% {
-      background-position: 100% 0%, 0% 0%;
-    }
-  }
-
-  @keyframes borderPulse {
-    0%, 100% {
-      opacity: 0.6;
-      transform: scaleX(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scaleX(0.98);
-    }
   }
 }
 
@@ -1102,13 +841,8 @@
  * ======================================== */
 .home-page .testimonials-section {
   padding: $space-20 0;
-  background: 
-    linear-gradient(135deg, transparent 25%, rgba(43, 76, 126, 0.04) 25%, rgba(43, 76, 126, 0.04) 50%, transparent 50%, transparent 75%, rgba(74, 111, 165, 0.05) 75%),
-    linear-gradient(to bottom, #f7f9fd 0%, #fafbfe 50%, #f5f7fc 100%);
-  background-size: 60px 60px, 100% 100%;
+  background: #f9fafb;
   position: relative;
-  overflow: hidden;
-  animation: patternSlide 40s linear infinite;
   opacity: 0;
   transform: translateY(60px);
   transition: all 0.5s $easing-smooth;
@@ -1124,63 +858,6 @@
 
   @include respond-to(xs) {
     padding: $space-12 0;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    right: -5%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(74, 111, 165, 0.08) 0%, rgba(43, 76, 126, 0.04) 40%, transparent 60%);
-    border-radius: 50%;
-    animation: pulse 8s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -5%;
-    left: -5%;
-    width: 550px;
-    height: 550px;
-    background: radial-gradient(circle, rgba(43, 76, 126, 0.07) 0%, rgba(74, 111, 165, 0.04) 40%, transparent 60%);
-    border-radius: 50%;
-    animation: pulseReverse 10s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  @keyframes patternSlide {
-    0% {
-      background-position: 0 0, 0 0;
-    }
-    100% {
-      background-position: 60px 60px, 0 0;
-    }
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(1.2);
-      opacity: 0.7;
-    }
-  }
-
-  @keyframes pulseReverse {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scale(0.9);
-      opacity: 0.8;
-    }
   }
 }
 

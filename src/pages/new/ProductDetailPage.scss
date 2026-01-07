@@ -1,0 +1,140 @@
+/**
+ * Product Detail Page Styles - Mobile Responsive
+ */
+
+@import '../../assets/styles/new/variables';
+@import '../../assets/styles/new/mixins';
+
+.product-detail-page {
+  .product-detail-content {
+    padding: 4rem 0;
+    background: #ffffff;
+
+    @include respond-to(md) {
+      padding: 2rem 0;
+    }
+  }
+
+  .product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include respond-to(md) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .product-image {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(52, 52, 119, 0.25);
+    }
+
+    @include respond-to(md) {
+      &:hover {
+        transform: none;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .product-info {
+    .product-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: linear-gradient(135deg, #343477, #565695);
+      color: #fff;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+
+      @include respond-to(md) {
+        font-size: 2rem;
+      }
+
+      @include respond-to(xs) {
+        font-size: 1.75rem;
+      }
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #5a5a7a;
+      margin-bottom: 2rem;
+
+      @include respond-to(md) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .features-list {
+    margin-top: 2rem;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+
+      @include respond-to(md) {
+        font-size: 1.25rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #e5e7f2;
+        font-size: 1rem;
+        line-height: 1.6;
+
+        @include respond-to(md) {
+          font-size: 0.95rem;
+        }
+
+        &:before {
+          content: '✓';
+          display: inline-block;
+          width: 1.5rem;
+          color: #565695;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .product-actions {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    @include respond-to(md) {
+      flex-direction: column;
+      
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

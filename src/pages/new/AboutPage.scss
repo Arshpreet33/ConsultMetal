@@ -59,41 +59,12 @@
 }
 
 /* ========================================
- * GEOMETRIC BACKGROUND
- * ======================================== */
-.geometric-bg {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  opacity: 0.03;
-  pointer-events: none;
-}
-
-.geometric-bg.left {
-  top: 10%;
-  left: 0;
-  background: 
-    linear-gradient(45deg, $color-primary 25%, transparent 25%),
-    linear-gradient(-45deg, $color-primary 25%, transparent 25%);
-  background-size: 40px 40px;
-}
-
-.geometric-bg.right {
-  top: 10%;
-  right: 0;
-  background: 
-    linear-gradient(45deg, $color-primary 25%, transparent 25%),
-    linear-gradient(-45deg, $color-primary 25%, transparent 25%);
-  background-size: 40px 40px;
-}
-
-/* ========================================
  * HISTORY SECTION V2 - Image Left
  * ======================================== */
 .history-section {
   padding: var(--space-24) 0 var(--space-20) 0;
   position: relative;
-  background: linear-gradient(to bottom, #f8f9ff 0%, #ffffff 100%);
+  background: #f8f9fc;
 }
 
 .history-grid {
@@ -136,6 +107,15 @@
   transform: translateY(60px);
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (max-width: 768px) {
+    gap: var(--space-10);
+  }
 }
 
 .about-page .mission-section.visible .mission-grid {
@@ -323,7 +303,7 @@
  * ======================================== */
 .values-section {
   padding: var(--space-32) 0;
-  background: linear-gradient(to bottom, #f8f9ff 0%, #ffffff 100%);
+  background: #f5f7fa;
 }
 
 .values-header {

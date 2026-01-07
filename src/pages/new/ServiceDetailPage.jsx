@@ -10,6 +10,7 @@ import PageBanner from '../../components/new/PageBanner';
 import CTASection from '../../components/new/CTASection';
 import IndustriesSection from '../../components/new/IndustriesSection';
 import { useEffect, useRef, useState } from 'react';
+import './ServiceDetailPage.scss';
 
 const ServiceDetailPage = () => {
   const { slug } = useParams();
@@ -73,32 +74,19 @@ const ServiceDetailPage = () => {
         height="medium"
       />
 
-      <section style={{ padding: '4rem 0', background: '#ffffff' }}>
+      <section className="service-detail-content">
         <div className="container">
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             
             {/* Image and Content Side by Side */}
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: '1fr 1fr', 
-              gap: '3rem', 
-              alignItems: 'start',
-              marginBottom: '4rem'
-            }}>
+            <div className="service-detail-grid">
               {/* Large Service Image */}
               <div>
                 <img 
                   src={`/images/services/icon-${service.slug}.png`}
                   alt={getText(service.name)}
+                  className="service-image"
                   style={{ 
-                    width: '100%',
-                    height: 'auto',
-                    objectFit: 'contain',
-                    borderRadius: '16px',
-                    boxShadow: '0 10px 40px rgba(52, 52, 119, 0.15)',
-                    border: '1px solid rgba(86, 86, 149, 0.1)',
-                    position: 'sticky',
-                    top: '2rem',
                     transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)',
                     cursor: 'pointer'
                   }}

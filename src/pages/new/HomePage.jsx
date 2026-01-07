@@ -125,7 +125,6 @@ const HomePage = () => {
 
       {/* About Preview Section */}
       <section className={`about-preview ${aboutVisible ? 'visible' : ''}`} ref={aboutRef}>
-        <div className="geometric-bg left"></div>
         <div className="container">
           <div className="about-grid">
             <div className="about-image-wrapper">
@@ -234,7 +233,6 @@ const HomePage = () => {
 
       {/* Video Section */}
       <section className={`video-section ${videoVisible ? 'visible' : ''}`} ref={videoRef}>
-        <div className="geometric-bg right"></div>
         <div className="container">
           <div className="video-grid">
             <div className="video-content">
