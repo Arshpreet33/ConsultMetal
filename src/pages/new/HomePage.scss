@@ -14,6 +14,12 @@
   // overflow-x: hidden;
 }
 
+.home-page ~ * .new-header .mobile-menu-toggle,
+body:has(.home-page) .new-header .mobile-menu-toggle {
+  padding-right: $spacing-md;
+  margin-right: $spacing-md;
+}
+
 /* ========================================
  * HOME STATS SECTION
  * ======================================== */
