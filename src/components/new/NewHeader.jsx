@@ -142,6 +142,10 @@ const NewHeader = () => {
           </Link>
           
           <div className="mobile-actions">
+            <Link to="/contact" className="btn-primary btn-mobile">
+              {getText(nav.bookConsultation)}
+            </Link>
+            
             <button onClick={toggleLanguage} className="language-toggle-mobile">
               {getText(nav.language)}
             </button>

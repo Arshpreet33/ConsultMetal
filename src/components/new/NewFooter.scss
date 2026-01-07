@@ -33,27 +33,23 @@
 
   .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1.2fr 1fr 1.5fr;
-    gap: $spacing-2xl;
-    padding: $spacing-5xl 0 $spacing-3xl;
+    grid-template-columns: 1fr;
+    gap: $spacing-3xl;
+    padding: $spacing-2xl 0;
 
-    @include respond-to(xl) {
+    @media (min-width: 1025px) {
+      grid-template-columns: 2fr 1fr 1.2fr 1fr 1.5fr;
+      gap: $spacing-2xl;
+      padding: $spacing-5xl 0 $spacing-3xl;
+    }
+
+    @media (min-width: 1025px) and (max-width: 1200px) {
       grid-template-columns: 2fr 1fr 1fr 1.5fr;
       gap: $spacing-2xl;
       
       .footer-section:nth-child(3) {
         grid-column: span 2;
       }
-    }
-
-    @include respond-to(lg) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: $spacing-2xl;
-    }
-
-    @include respond-to(md) {
-      grid-template-columns: 1fr;
-      gap: $spacing-xl;
     }
   }
 
@@ -64,28 +60,21 @@
 
   // Brand Section
   .footer-brand {
-    @include respond-to(lg) {
-      grid-column: span 2;
-    }
-
-    @include respond-to(md) {
-      grid-column: span 1;
-    }
   }
 
   .footer-logo {
     display: flex;
     align-items: center;
     gap: $spacing-md;
-    margin-bottom: $spacing-lg;
+    margin-bottom: $spacing-xl;
   }
 
   .logo-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: $gradient-primary;
     border-radius: $border-radius-md;
     position: relative;
@@ -111,10 +100,14 @@
   }
 
   .logo-name {
-    font-size: $font-size-xl;
+    font-size: $font-size-2xl;
     font-weight: $font-weight-bold;
     color: $color-text-white;
     line-height: 1;
+    
+    @media (min-width: 1025px) {
+      font-size: $font-size-xl;
+    }
   }
 
   .logo-tagline {
@@ -127,11 +120,16 @@
   }
 
   .footer-description {
-    font-size: $font-size-sm;
-    color: rgba($color-text-light, 0.7);
+    font-size: $font-size-base;
+    color: rgba($color-text-light, 0.8);
     line-height: $line-height-relaxed;
-    margin-bottom: $spacing-lg;
-    max-width: 400px;
+    margin-bottom: $spacing-xl;
+    max-width: 100%;
+    
+    @media (min-width: 1025px) {
+      font-size: $font-size-sm;
+      max-width: 400px;
+    }
   }
 
   .footer-badge {
@@ -140,7 +138,7 @@
 
   // Headings
   .footer-heading {
-    font-size: $font-size-base;
+    font-size: $font-size-lg;
     font-weight: $font-weight-bold;
     color: $color-text-white;
     text-transform: uppercase;
@@ -157,6 +155,10 @@
       width: 40px;
       height: 2px;
       background: $gradient-text;
+    }
+    
+    @media (min-width: 1025px) {
+      font-size: $font-size-base;
     }
   }
 
