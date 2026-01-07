@@ -10,13 +10,11 @@ import PageBanner from '../../components/new/PageBanner';
 import IndustrialBadge from '../../components/new/IndustrialBadge';
 import CTASection from '../../components/new/CTASection';
 import IndustriesSection from '../../components/new/IndustriesSection';
-import useScrollReveal from '../../hooks/useScrollReveal';
 import './ServicesPage.scss';
 
 const ServicesPage = () => {
   const { getText } = useLanguage();
   const { services, imageAssets } = companyConfig;
-  const [ref, isVisible] = useScrollReveal();
 
   return (
     <div className="services-page">
@@ -34,7 +32,7 @@ const ServicesPage = () => {
       />
 
       {/* Services Grid Section */}
-      <section className="services-section" ref={ref}>
+      <section className="services-section">
         <div className="container">
           <div className="section-intro">
             <IndustrialBadge 
@@ -52,12 +50,11 @@ const ServicesPage = () => {
             </p>
           </div>
 
-          <div className={`services-grid ${isVisible ? 'visible' : ''}`}>
+          <div className="services-grid">
             {services.map((service, index) => (
               <div
                 key={service.slug}
                 className="service-card"
-                style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <div className="service-card-inner">
                   <div className="service-icon-wrapper">

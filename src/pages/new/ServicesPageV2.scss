@@ -24,11 +24,6 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: var(--space-8);
     margin-top: var(--space-12);
-
-    &.visible .service-card {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
   // Service Card - Clean Modern Design - FORCE SPECIFICITY
@@ -41,8 +36,14 @@
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out;
+
+    // Stagger animation for each card
+    @for $i from 1 through 12 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.1}s;
+      }
+    }
     text-decoration: none;
     color: inherit;
     border: 1px solid rgba(0, 0, 0, 0.06);
@@ -326,5 +327,13 @@
   }
 }
 
-
-
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
