@@ -78,7 +78,7 @@ export const companyConfig = {
     // Products Page Images
     products: {
       hero: "/images/products/products-hero.jpg",
-      nestingSoftware: "/images/products/nesting-software.png",
+      nestingSoftware: "/images/products/nesting-software.jpg",
       shopPlanner: "/images/products/shop-planner.jpg",
     },
     // Contact Page Images
@@ -498,7 +498,7 @@ export const companyConfig = {
           "Maximisation du rendement des matériaux : Des algorithmes d'imbrication sophistiqués garantissent une utilisation maximale des matériaux, réduisant considérablement les déchets et diminuant les coûts de matériaux.",
         ],
       },
-      image: "/images/products/nesting-software.png",
+      image: "/images/products/nesting-software.jpg",
       url: {
         en: "https://wicam.com/en/",
         fr: "https://wicam.com/fr/",
@@ -720,7 +720,7 @@ export const companyConfig = {
         en: [
           "Precision 2D/3D Modeling: Develop highly detailed models with built-in error checking to identify and eliminate potential production issues before they become costly mistakes. Models seamlessly fold and render between 2D and 3D formats for comprehensive design review.",
           "Parametric Modeling Excellence: Harness the power of parametric design to manufacture families of similar products with varying dimensions without constantly redrawing new models. Change a single dimension and watch the entire assembly update automatically.",
-          "Design for Manufacturing Integration: Every model considers manufacturing constraints, material properties, tooling capabilities, and production efficiency. We ensure both beautiful design and practical manufacturability.",
+          // "Design for Manufacturing Integration: Every model considers manufacturing constraints, material properties, tooling capabilities, and production efficiency. We ensure both beautiful design and practical manufacturability.",
         ],
         fr: [
           "Modélisation 2D/3D de précision : Développez des modèles hautement détaillés avec vérification d'erreurs intégrée pour identifier et éliminer les problèmes de production potentiels avant qu'ils ne deviennent des erreurs coûteuses. Les modèles se plient et se rendent de manière transparente entre les formats 2D et 3D pour un examen de conception complet.",

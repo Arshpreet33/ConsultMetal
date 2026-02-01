@@ -27,6 +27,15 @@
       gap: 2rem;
       margin-bottom: 2rem;
     }
+
+    // CAD Development second row spacing
+    &.cad-second-row {
+      margin-top: 3rem;
+
+      @include respond-to(md) {
+        margin-top: 2rem;
+      }
+    }
   }
 
   .service-image {
